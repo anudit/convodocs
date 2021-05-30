@@ -1,0 +1,56 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# Dynamic Embeddable Convo
+
+## Introduction
+
+You can utilize Convo to create a dynamic comments section on any page/section of a website. Dynamic Embeddable Convos are useful in scenarios when you have thousands of pages in your website or serve dynamically generated pages requiring one or multiple comment boxes on each one of those pages.
+
+Refer [here](/integrate/custom-interface), if you are looking to build a custom interface instead of using an iframe.
+
+
+## Integration
+
+Dynamic Embeddable Convos use a combination of the **Site URL** and **Custom Thread ID** to uniquely identify a comments section without having to create one through Convo's Interface.
+
+
+```html
+// Link Format
+https://theconvo.space/embed/dt?url=<url-encoded-website-link>&threadId=<unique-thread-identifier>
+```
+Here are the details on the *required* query parameters for a dynamic embeddable convo,
+- `url`: This is the url encoded (`encodeURIComponent()`) full website link. This should ideally contain the url *without* any query parameters or internal links (i.e origin+pathname). You can use `new URL("<your-site-url>")` to clean your url and get the origin and pathname values easily.
+- `threadId`: This is a unique identifier for the comments page on your site, you can set unique values for this key to have multiple threads on the same `url`.
+
+
+<Callout emoji="ℹ️">
+  Values of `url` and `threadId` combined become the primary identifier for a dynamic convo. Do not use the same values for `url` and `threadId` on a different page unless you want the same convo their too.
+</Callout>
+
+Example,
+```jsx
+<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdeepdao.io%2F&threadId=fJPU8mZiQwVXV6K1xXlw" allowtransparency="true" width="100%" height="600px" style="border: none;">
+  Comments
+</iframe>
+```
+
+Now you can use this snippet on any website by simply inserting this HTML wherever you want the comments page to appear.
+
+<Callout emoji="ℹ️">
+  Values of `url` and `threadId` combined become the primary identifier for a dynamic convo. Do not use the same values for `url` and `threadId` on a different page unless you want the same convo their too.
+  Here it is recommended to set `allowtransparency="true"` in the iframe to automatically adapt to the color scheme of the page.
+</Callout>
+
+
+## Customization Options
+
+| Query Param 	| Description 	| Default Value 	|
+|-	|:-	|:-:	|
+| theme 	|     Set the default theme of the embedded page. `dark` or `light` 	| `dark` 	|
+
+
+### Comments
+<br/>
+<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=dynamic-embeddable-convo" allowtransparency="true" width="100%" style={{ height: 'fit-content'}}>
+  Comments
+</iframe>

@@ -1,0 +1,190 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# Custom Interface
+
+##  API Details
+Early-access API Endpoint : https://theconvo.space/api
+
+<Callout emoji="⚠️">
+  Breaking changes might be introduced to the endpoints as Convo is still in Early-access. All such changes will be informed well in advance.
+</Callout>
+
+<Callout emoji="ℹ️">
+  Use `apikey=CONVO` added as a query parameter for all requests. Returns a `401` Unauthorized Error otherwise.
+</Callout>
+
+
+## Step 1 - User Authentication
+
+### Authenticating a User
+
+**Auth Route : `/auth`**
+
+<Callout emoji="ℹ️">
+    You do not require an auth token for read-only `GET` requests. Each authentication token is valid for `1 day` only.
+</Callout>
+
+Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+  "signature":"0x76138b631abf63e1cced43cd19c4b8f417977b7fb929b15b38f2db8f70243a3d00739746911104e4244bcc12369cf34ab91ef21481a36fdd5e027ffd0ad145c11b"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `signature` 	|  Ethereum signature of `data` using the above `signerAddress`	|
+
+Data Format = `I allow this site to access my data on The Convo Space using the account <signerAddress>`.
+Eg `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20'
+
+```jsx
+let signer = await provider.getSigner();
+let signerAddress = await signer.getAddress();
+let data = `I allow this site to access my data on The Convo Space using the account ${signerAddress}`;
+let signature = await signer.signMessage(data);
+```
+
+**Response**
+
+```json
+{
+  "success":true,
+  "message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
+}
+```
+
+| Response Param 	| Description 	|
+|:-	|:-	|
+| `success` 	| `Boolean`, status of the request.	|
+| `message` 	| Contains either the JWT auth token if `success==true` or an error message `success==false` |
+
+
+### Validating Authentication
+
+**Auth Route : `/validateAuth`**
+
+Send a `POST` request to the endpoint with the following example body,
+```json
+{
+  "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `token` 	|  The JWT Authentication Token to validate.	|
+
+
+**Response**
+
+```json
+{
+  "success":true,
+  "message":"Valid Auth Token"
+}
+```
+
+| Response Param 	| Description 	|
+|:-	|:-	|
+| `success` 	| `Boolean`, status of the request.	|
+| `message` 	| If `success==true` then "Valid Auth Token" else returns the error message |
+
+Possible Error Messages,
+
+- `200`: Invalid Auth Token.
+- `400`: Internal JWT Auth Error Message.
+- `400`: signerAddress or token is missing/invalid.
+- `500`: Internal Error.
+
+## Step 2 - Fetching Data
+
+<Callout emoji="ℹ️">
+  URLs passed as query parameters must be URL encoded using `encodeURIComponent()`
+</Callout>
+
+###  Fetching Threads
+
+- All Threads: `/threads`
+- By ThreadId : `/threads?threadId=fJPU8mZiQwVXV6K1xXlw`
+- By URL : `/threads?url=https%3A%2F%2Fgoogle.com%2F`
+
+###  Fetching Comments
+
+- By ThreadId : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw`
+- By URL : `/comments?url=https%3A%2F%2Fgoogle.com%2F`
+- By ThreadId and URL : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw&url=https%3A%2F%2Fdeepdao.io%2F`
+
+## Step 3 - Creating a comment
+
+**Route : `/comment`**
+
+Send a `POST` request to the endpoint with the following request schema,
+```
+{
+  'token': <JWT-Auth-token>,
+  'signerAddress': <ethereum-address-of-author>,
+  'comment': <plaintext-comment>,
+  'threadId': <threadId-of-the-thread>,
+  'url': encodeURIComponent(<url-of-the-page>),
+}
+```
+
+**Response**
+
+```json
+
+{
+  '_id': <unique-id-of-comment>
+  'createdOn': <timestamp>,
+  'author': <same-as-signerAddress>,
+  'text': <same-as-comment>,
+  'url': <same-as-url>,
+  'tid': <same-as-threadId>,
+}
+
+```
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+## Step 4 - Deleting a comment
+
+**Route : `/comment`**
+
+Send a `DELETE` request to the endpoint with the following request schema,
+```
+{
+  'token': <JWT-Auth-token>,
+  'commentId': <unique-id-of-comment>
+}
+```
+
+**Response**
+
+```json
+{
+  'success': true,
+}
+```
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+
+### Comments
+<br/>
+<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=custom-interface" allowtransparency="true" width="100%" height="auto">
+  Comments
+</iframe>

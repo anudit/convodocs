@@ -1,0 +1,14 @@
+node_modules
+.next
+.DS_Store
+yarn-error.log
+dist
+examples
+packages
+
+
+# Pwa generated files
+**/public/workbox-*.js
+**/public/sw.js
+**/public/worker-*.js
+/pages/learn

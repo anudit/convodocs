@@ -1,0 +1,30 @@
+{
+  "name": "convodocs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next --port 8000",
+    "start": "next start --port 8000",
+    "build": "next build"
+  },
+  "author": "Anudit Nagar",
+  "license": "MIT",
+  "dependencies": {
+    "critters": "^0.0.10",
+    "next": "^10.2.3",
+    "next-compose-plugins": "^2.2.1",
+    "next-pwa": "^5.2.21",
+    "nextra": "0.4.4",
+    "nextra-theme-docs": "1.1.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Docs | The Convo Space",
+    "short_name": "Convo Docs",
+    "icons": [
+      {
+        "src": "./android-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./android-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "maskable"
+      }
+    ],
+    "theme_color": "#000",
+    "background_color": "#000",
+    "start_url": ".",
+    "display": "standalone",
+    "orientation": "any"
+  }
