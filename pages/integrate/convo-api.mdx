@@ -1,6 +1,6 @@
 import Callout from 'nextra-theme-docs/callout'
 
-# Custom Interface
+# Convo API
 
 ##  API Details
 Early-access API Endpoint : https://theconvo.space/api
@@ -29,7 +29,8 @@ Send a `POST` request to the endpoint with the following example body,
 ```json
 {
   "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
-  "signature":"0x76138b631abf63e1cced43cd19c4b8f417977b7fb929b15b38f2db8f70243a3d00739746911104e4244bcc12369cf34ab91ef21481a36fdd5e027ffd0ad145c11b"
+  "signature":"0x76138b631abf63e1cced43cd19c4b8f417977b7fb929b15b38f2db8f70243a3d00739746911104e4244bcc12369cf34ab91ef21481a36fdd5e027ffd0ad145c11b",
+  "timestamp": 1623254904621
 }
 ```
 
@@ -37,14 +38,18 @@ Send a `POST` request to the endpoint with the following example body,
 |-	|:-	|
 | `signerAddress` 	| The address of the account to authenticate. 	|
 | `signature` 	|  Ethereum signature of `data` using the above `signerAddress`	|
+| `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
 
-Data Format = `I allow this site to access my data on The Convo Space using the account <signerAddress>`.
-Eg `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20'
+`data` Format = `I allow this site to access my data on The Convo Space using the account <signerAddress>. Timestamp:<timestamp>`
+
+Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20. Timestamp:1623254904621'
 
 ```jsx
+// Sample signature generation code using ethers.js
+let timestamp = Date.now();
 let signer = await provider.getSigner();
 let signerAddress = await signer.getAddress();
-let data = `I allow this site to access my data on The Convo Space using the account ${signerAddress}`;
+let data = `I allow this site to access my data on The Convo Space using the account ${signerAddress}. Timestamp:${timestamp}`;
 let signature = await signer.signMessage(data);
 ```
 
@@ -99,7 +104,7 @@ Possible Error Messages,
 
 - `200`: Invalid Auth Token.
 - `400`: Internal JWT Auth Error Message.
-- `400`: signerAddress or token is missing/invalid.
+- `400`: signerAddress or token or timestamp is missing/invalid.
 - `500`: Internal Error.
 
 ## Step 2 - Fetching Data
@@ -185,6 +190,6 @@ Possible Response Error Messages,
 
 ### Comments
 <br/>
-<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=custom-interface" allowtransparency="true" width="100%" height="auto">
+<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=convo-api" allowtransparency="true" width="100%" height="auto">
   Comments
 </iframe>
