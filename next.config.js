@@ -9,10 +9,6 @@ const withNextra = require('nextra')({
 });
 
 const nextConfig = {
-    webpack(config) {
-        config.plugins.pop(); // remove stork plugin which was added by nextra. Remove when nextra version is bumped!
-        return config;
-    },
     future: {
         webpack5: true,
     },
