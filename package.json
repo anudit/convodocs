@@ -1,27 +1,24 @@
 {
-  "name": "convodocs",
+  "name": "nextra",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next --port 8000",
-    "start": "next start --port 8000",
+    "dev": "next",
+    "start": "next start",
     "build": "next build"
   },
-  "author": "Anudit Nagar",
+  "author": "Shu Ding",
   "license": "MIT",
   "dependencies": {
-    "critters": "^0.0.10",
-    "next": "^10.2.3",
-    "next-compose-plugins": "^2.2.1",
-    "next-pwa": "^5.2.21",
-    "nextra": "^0.4.5",
-    "nextra-theme-docs": "^1.1.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "next": "^10.0.8-canary.9",
+    "nextra": "^0.4.1",
+    "nextra-theme-docs": "^1.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "prettier": "^2.3.1"
+    "prettier": "^2.0.5"
   },
   "prettier": {
     "semi": false,
