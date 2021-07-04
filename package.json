@@ -12,16 +12,16 @@
   "license": "MIT",
   "dependencies": {
     "critters": "^0.0.10",
-    "next": "^10.2.3",
+    "next": "^11.0.1",
     "next-compose-plugins": "^2.2.1",
-    "next-pwa": "^5.2.21",
+    "next-pwa": "^5.2.22",
     "nextra": "^0.4.5",
     "nextra-theme-docs": "^1.1.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.2"
   },
   "prettier": {
     "semi": false,
