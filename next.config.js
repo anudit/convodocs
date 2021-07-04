@@ -9,12 +9,15 @@ const withNextra = require('nextra')({
 });
 
 const nextConfig = {
-    target: "experimental-serverless-trace",
-    poweredByHeader: false,
-    reactStrictMode: true,
-    experimental: {
-        optimizeCss:true
-    },
+  future: {
+    webpack5: true,
+  },
+  target: "experimental-serverless-trace",
+  poweredByHeader: false,
+  reactStrictMode: true,
+  experimental: {
+      optimizeCss:true
+  }
 }
 
 module.exports = withPlugins([
