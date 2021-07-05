@@ -61,7 +61,7 @@ export default {
     </>
   ),
   search: true,
-  customSearch: <DocSearch />,
+  // customSearch: <DocSearch />,
   prevLinks: true,
   nextLinks: true,
   footer: true,
