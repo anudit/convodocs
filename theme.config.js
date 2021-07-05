@@ -1,5 +1,7 @@
+import DocSearch from './components/DocSearch'
+
 export default {
-  repository: 'https://github.com/anudit/convodocs',
+  repository: 'https://github.com/anudit/convo',
   titleSuffix: ' – The Convo Space',
   logo: (
     <>
@@ -55,12 +57,16 @@ export default {
         href="/favicon-16x16.png"
       />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css" media="print" onLoad="this.media='all'" />
     </>
   ),
   search: true,
+  customSearch: <DocSearch />,
   prevLinks: true,
   nextLinks: true,
   footer: true,
-  footerEditOnGitHubLink: true,
+  docsRepository: 'https://github.com/anudit/convodocs',
+  branch: 'master',
+  footerEditOnGitHubLink: false,
   footerText: <>MIT {new Date().getFullYear()} © The Convo Space.</>,
 }
