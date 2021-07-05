@@ -25,7 +25,7 @@ const DocSearch = () => {
   useEffect(() => {
     if (window.docsearch) {
       window.docsearch({
-        apiKey: 'a4e8bd81b3ba12ea04b7dcec8e1426d9',
+        apiKey: 'c227cefd16ad744177b02419fc83a21b',
         indexName: 'data_convo',
         inputSelector: 'input#algolia-doc-search',
       })
