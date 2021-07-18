@@ -2,6 +2,8 @@
   "embeddable-convo": "Embeddable Convo",
   "dynamic-embeddable-convo": "Dynamic Embeddable Convo",
   "convo-api": "Convo API",
-  "unified-conversation-interface": "Unified Conversation Interface",
-  "brightid": "BrightID"
+  "trust-score": "Trust Score",
+  "brightid": "Convo x BrightID",
+  "convo-on-decentraland": "Convo x Decentraland",
+  "unified-conversation-interface": "Unified Conversation Interface"
 }

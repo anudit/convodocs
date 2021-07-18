@@ -25,6 +25,7 @@ const DocSearch = () => {
   useEffect(() => {
     if (window.docsearch) {
       window.docsearch({
+        appId: 'VT0SRL8DNS',
         apiKey: 'c227cefd16ad744177b02419fc83a21b',
         indexName: 'data_convo',
         inputSelector: 'input#algolia-doc-search',

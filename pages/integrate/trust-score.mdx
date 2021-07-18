@@ -1,0 +1,45 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# TrustScore
+
+## Introduction
+
+TrustScore aggregates the multiple on-chain social graphs acting as sources of reputation that count towards some points in building the overall TrustScore.
+
+## Integration
+
+### Querying TrustScore
+
+API Request format,
+```html
+https://theconvo.space/api/identity?address=<ethereum-address>&apikey=CONVO
+```
+
+Example,
+```html
+https://theconvo.space/api/identity?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&apikey=CONVO
+```
+
+Response,
+
+```json
+{
+  "score": 37,
+  "success": true,
+  "poh": false,
+  "brightId": false,
+  "poap": 24,
+  "ens": true,
+  "idena": false,
+  "cryptoScamDb": false,
+  "unstoppableDomains": false,
+  "uniswapSybil": 0,
+  "deepdao": 0,
+  "rabbitHole": 1
+}
+```
+
+### Comments
+<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=trust-score" allowtransparency="true" width="100%" height="auto" style={{marginTop:'10px'}} >
+  Comments
+</iframe>

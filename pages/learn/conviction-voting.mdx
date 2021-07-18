@@ -1,20 +1,16 @@
-import Image from 'next/image'
-
 # Conviction Voting
 
 Moderation is a crucial part of the system to ensure the dialogue between participants is effective. Moderation of a dialogue will always be in the hands of the community where a random subset of N participants will receive the request to show their conviction towards a comment staged for removal. If the overall conviction towards a certain sentiment (binary or probabilistic) reaches the threshold, the comment will be removed.
 
-<Image src="/conviction-voting.jpeg" alt="Nextra" width={1536/2} height={768/2} layout="intrinsic" />
+<img src="/conviction-voting.jpeg" alt="Conviction Voting" width={1536/2} height={768/2} layout="intrinsic" />
 
 The longer you hold a preference for a certain comment, the more that bucket fills up with your conviction. Your conviction grows according to a half life decay curve, giving more weight to that preference over time, up to a certain limit. If you decide to switch your preference to a new bucket, your conviction drains out of the previous direction according to the decay function, as if there were a small hole in the bottom of each bucket. By using decay curves to define the accumulation and reduction of conviction, we introduce temporal dynamics into the system, moving us closer to how systems work in nature. By dampening these abrupt movements, we eliminate the need for arbitrary token lock periods for governance and avoid last minute directional swings.
-
 
 More resources to learn about Conviction Voting,
 - [https://medium.com/giveth/conviction-voting-a-novel-continuous-decision-making-alternative-to-governance-aa746cfb9475](https://medium.com/giveth/conviction-voting-a-novel-continuous-decision-making-alternative-to-governance-aa746cfb9475)
 - [https://hackmd.io/@EtCgawsxS2mC6-Q0rCqhAw/rJMvfgOv4?type=view](https://hackmd.io/@EtCgawsxS2mC6-Q0rCqhAw/rJMvfgOv4?type=view)
 
 ### Comments
-<br/>
-<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=conviction-voting" allowtransparency="true" width="100%" style={{ height: 'fit-content'}}>
+<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=conviction-voting" allowtransparency="true" width="100%" height="auto" style={{marginTop:'10px'}} >
   Comments
 </iframe>

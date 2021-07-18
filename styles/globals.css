@@ -1,6 +1,6 @@
 .docs-search > span {
     width: 100%;
-  }
+}
 
 .algolia-autocomplete .algolia-docsearch-suggestion--category-header span {
 display: inline-block;
@@ -9,4 +9,8 @@ display: inline-block;
     width: 500px;
     min-width: 300px;
     max-width: calc(100vw - 50px);
+}
+
+#algolia-doc-search {
+  color:black;
 }
