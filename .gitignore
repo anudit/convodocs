@@ -6,5 +6,4 @@ dist
 examples
 packages
 
-.env.local
-out
+.env*

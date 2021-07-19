@@ -51,7 +51,7 @@ let timestamp = Date.now();
 let signer = await provider.getSigner();
 let signerAddress = await signer.getAddress();
 let data = `I allow this site to access my data on The Convo Space using the account ${signerAddress}. Timestamp:${timestamp}`;
-let signature = await signer.signMessage(data);
+let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ethers.utils.toUtf8Bytes(data)), signerAddress.toLowerCase() ]);
 ```
 
 **Response**
@@ -125,6 +125,10 @@ Possible Error Messages,
 - By ThreadId : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw`
 - By URL : `/comments?url=https%3A%2F%2Fgoogle.com%2F`
 - By ThreadId and URL : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw&url=https%3A%2F%2Fdeepdao.io%2F`
+
+You can pagintate by using `page` and `pageSize` query params.
+
+You can reorder the comments fetching the latest first using `latestFirst` query param.
 
 ## Step 3 - Creating a comment
 
