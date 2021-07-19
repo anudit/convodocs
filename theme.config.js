@@ -67,6 +67,6 @@ export default {
   footer: true,
   docsRepository: 'https://github.com/anudit/convodocs',
   branch: 'master',
-  footerEditOnGitHubLink: false,
+  footerEditOnGitHubLink: true,
   footerText: <>MIT {new Date().getFullYear()} © The Convo Space.</>,
 }
