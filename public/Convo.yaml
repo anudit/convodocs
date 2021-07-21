@@ -37,6 +37,7 @@ paths:
           description: urlencoded link of a page
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
           description: API Key obtained from the The Convo Space Dashboard
@@ -89,6 +90,7 @@ paths:
           description: Page Size for paginated requests.
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
           description: API Key obtained from the The Convo Space Dashboard
@@ -112,6 +114,7 @@ paths:
       parameters:
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
           required: true
@@ -155,6 +158,7 @@ paths:
       parameters:
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
           description: API Key obtained from the The Convo Space Dashboard
@@ -178,6 +182,78 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  score:
+                    type: number
+                  success:
+                    type: boolean
+                  poh:
+                    type: boolean
+                  brightId:
+                    type: boolean
+                  poap:
+                    type: number
+                  ens:
+                    type: boolean
+                  idena:
+                    type: boolean
+                  cryptoScamDb:
+                    type: boolean
+                  unstoppableDomains:
+                    type: boolean
+                  uniswapSybil:
+                    type: number
+                  deepdao:
+                    type: number
+                  rabbitHole:
+                    type: number
+                required:
+                  - score
+                  - success
+                  - poh
+                  - brightId
+                  - poap
+                  - ens
+                  - idena
+                  - cryptoScamDb
+                  - unstoppableDomains
+                  - uniswapSybil
+                  - deepdao
+                  - rabbitHole
+                x-examples:
+                  example-1:
+                    score: 37
+                    success: true
+                    poh: false
+                    brightId: false
+                    poap: 24
+                    ens: true
+                    idena: false
+                    cryptoScamDb: false
+                    unstoppableDomains: false
+                    uniswapSybil: 0
+                    deepdao: 0
+                    rabbitHole: 1
+              examples:
+                Example Response to 0xd8da6bf26964af9d7eed9e03e53415d37aa96045:
+                  value:
+                    score: 0
+                    success: true
+                    poh: true
+                    brightId: true
+                    poap: 0
+                    ens: true
+                    idena: true
+                    cryptoScamDb: true
+                    unstoppableDomains: true
+                    uniswapSybil: 0
+                    deepdao: 0
+                    rabbitHole: 0
         '401':
           description: Invalid API key
       operationId: get-identity
@@ -190,6 +266,7 @@ paths:
           required: true
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
           description: API Key obtained from the The Convo Space Dashboard
@@ -202,6 +279,30 @@ paths:
       responses:
         '200':
           description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                    minLength: 1
+                required:
+                  - success
+                  - message
+                x-examples:
+                  example-1:
+                    success: true
+                    message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE
+              examples:
+                Example Auth Result:
+                  value:
+                    success: true
+                    message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE
         '400':
           description: |-
             Recovered address from signature doesn't match signerAddress or signerAddress.
@@ -235,6 +336,7 @@ paths:
       parameters:
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
           description: API Key obtained from the The Convo Space Dashboard
@@ -246,6 +348,29 @@ paths:
       responses:
         '200':
           description: 'OK, Valid Auth Token'
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                    minLength: 1
+                required:
+                  - success
+                  - message
+                x-examples:
+                  example-1:
+                    success: true
+                    message: Valid Auth Token
+              examples:
+                Example Validation Response:
+                  value:
+                    success: true
+                    message: Valid Auth Token
         '400':
           description: |-
             Invalid Auth Token.
@@ -275,10 +400,11 @@ paths:
       parameters:
         - schema:
             type: string
+            default: CONVO
           in: query
           name: apikey
-          required: true
           description: API Key obtained from the The Convo Space Dashboard
+          required: true
 components:
   schemas: {}
   securitySchemes:
