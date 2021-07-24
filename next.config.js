@@ -10,7 +10,6 @@ const withNextra = require('nextra')({
 
 const nextConfig = {
     target: "experimental-serverless-trace",
-    exportPathMap: true,
     poweredByHeader: false,
     reactStrictMode: true,
     experimental: {

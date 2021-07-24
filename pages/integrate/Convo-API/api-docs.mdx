@@ -135,7 +135,7 @@ You can reorder the comments fetching the latest first using `latestFirst` query
 **Route : `/comment`**
 
 Send a `POST` request to the endpoint with the following request schema,
-```
+```json
 {
   'token': <JWT-Auth-token>,
   'signerAddress': <ethereum-address-of-author>,
@@ -148,7 +148,6 @@ Send a `POST` request to the endpoint with the following request schema,
 **Response**
 
 ```json
-
 {
   '_id': <unique-id-of-comment>
   'createdOn': <timestamp>,
@@ -171,7 +170,7 @@ Possible Response Error Messages,
 **Route : `/comment`**
 
 Send a `DELETE` request to the endpoint with the following request schema,
-```
+```json
 {
   'token': <JWT-Auth-token>,
   'commentId': <unique-id-of-comment>
@@ -189,6 +188,50 @@ Send a `DELETE` request to the endpoint with the following request schema,
 Possible Response Error Messages,
 
 - `400`: Invalid/Incomplete params
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+
+## Likes/Dislikes
+
+**Route : `/vote`**
+
+Send a `POST` request to the endpoint with the following body schema,
+```json
+{
+  "signerAddress": "<user-address>",
+  "token": "<JWT-Auth-Token>",
+  "commentId":"<Comment-Id>",
+  "type": "<Type-of-Vote>"
+}
+```
+
+The `type` field supports the folowing values,
+- `toggleUpvote`
+- `toggleDownvote`
+
+Eg,
+```json
+{
+    "signerAddress": "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjI3MTA3NjY5LCJleHAiOjE2MjcxOTQwNjl9.VJEViNmVxfxzY8dYTV_7r5SGrln6OcXUh50R3yePz1M",
+    "commentId":"01faymzw18ev9vgrq2qarkg9xb",
+    "type": "toggleUpvote"
+}
+```
+
+**Response**
+
+```json
+{
+  'success': true,
+}
+```
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `404`: Invalid Request Method
 - `503`: Invalid Auth
 - `500`: Internal Error.
 

@@ -4,7 +4,24 @@ import Callout from 'nextra-theme-docs/callout'
 
 ## Introduction
 
-TrustScore aggregates the multiple on-chain social graphs acting as sources of reputation that count towards some points in building the overall TrustScore.
+TrustScore aggregates the multiple on-chain social graphs acting as *sources of reputation* that count towards some points in building the overall TrustScore.
+
+Current Integrations
+- Proof of Humanity
+- BrightId
+- POAP
+- ENS
+- Idena
+- CryptoScam DB
+- Unstoppable Domains
+- Uniswap Sybil
+- DeepDAO
+- RabbitHole
+- SuperRare
+- Rarible
+- Foundation
+- AsyncArt
+- KnownOrigin
 
 ## Integration
 
@@ -15,7 +32,7 @@ API Request format,
 https://theconvo.space/api/identity?address=<ethereum-address>&apikey=CONVO
 ```
 
-Example,
+Example 1,
 ```html
 https://theconvo.space/api/identity?address=0xd8da6bf26964af9d7eed9e03e53415d37aa96045&apikey=CONVO
 ```
@@ -24,18 +41,82 @@ Response,
 
 ```json
 {
-  "score": 37,
+  "score": 38,
   "success": true,
   "poh": false,
   "brightId": false,
-  "poap": 24,
+  "poap": 25,
   "ens": true,
   "idena": false,
   "cryptoScamDb": false,
   "unstoppableDomains": false,
   "uniswapSybil": 0,
   "deepdao": 0,
-  "rabbitHole": 1
+  "rabbitHole": 0,
+  "foundation": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "superrare": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "rarible": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "knownorigin": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  }
+}
+```
+
+Example 2,
+```html
+https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257Ed62CF&apikey=CONVO
+```
+
+Response,
+
+```json
+{
+  "score": 1,
+  "success": true,
+  "brightId": false,
+  "cryptoScamDb": false,
+  "deepdao": 0,
+  "ens": false,
+  "idena": false,
+  "poap": 1,
+  "poh": false,
+  "rabbitHole": 0,
+  "uniswapSybil": 0,
+  "unstoppableDomains": false,
+  "rarible": {
+    "totalAmountSold": 545414.28828,
+    "totalCountSold": 19
+  },
+  "foundation": {
+    "totalAmountSold": 915544.9602105999,
+    "totalCountSold": 14
+  },
+  "asyncart": {
+    "totalAmountSold": 0,
+    "totalCountSold": 0
+  },
+  "superrare": {
+    "totalAmountSold": 28718.991565550437,
+    "totalCountSold": 2
+  },
+  "knownorigin": {
+    "totalAmountSold": 8646.187049999999,
+    "totalCountSold": 3
+  }
 }
 ```
 
