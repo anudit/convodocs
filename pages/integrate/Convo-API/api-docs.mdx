@@ -126,6 +126,28 @@ Possible Error Messages,
 - By URL : `/comments?url=https%3A%2F%2Fgoogle.com%2F`
 - By ThreadId and URL : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw&url=https%3A%2F%2Fdeepdao.io%2F`
 
+
+**Response Example**
+
+```json
+{
+  "_id": "01f71qnhfzt5zdf17k5xk5cz4m",
+  "_mod": 1627106452229067000,
+  "author": "0xa97276772e9A8D5408421D60c2749C68c2e2fC3a",
+  "createdOn": "1622482263131",
+  "downvotes": [],
+  "metadata": {},
+  "tag1": "",
+  "tag2": "",
+  "text": "HI",
+  "tid": "KIGZUnR4RzXDFheXoOwo",
+  "upvotes": [],
+  "url": "https://theconvo.space/",
+  "authorENS": "name.eth"
+},
+
+```
+
 You can pagintate by using `page` and `pageSize` query params.
 
 You can reorder the comments fetching the latest first using `latestFirst` query param.
@@ -158,6 +180,8 @@ Send a `POST` request to the endpoint with the following request schema,
 }
 
 ```
+
+You can add a `replyTo` query parameter with a valid comment `_id` value to add replies to any specific comment.
 
 Possible Response Error Messages,
 

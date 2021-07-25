@@ -405,6 +405,58 @@ paths:
           name: apikey
           description: API Key obtained from the The Convo Space Dashboard
           required: true
+  /vote:
+    post:
+      summary: Likes & Dislikes
+      operationId: post-vote
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  signerAddress: '0x707aC3937A9B31C225D8C240F5917Be97cab9F20'
+                  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjI3MTA3NjY5LCJleHAiOjE2MjcxOTQwNjl9.VJEViNmVxfxzY8dYTV_7r5SGrln6OcXUh50R3yePz1M
+                  commentId: 01faymzw18ev9vgrq2qarkg9xb
+                  type: toggleUpvote
+              properties:
+                signerAddress:
+                  type: string
+                  minLength: 1
+                token:
+                  type: string
+                  minLength: 1
+                commentId:
+                  type: string
+                  minLength: 1
+                type:
+                  type: string
+                  minLength: 1
+              required:
+                - signerAddress
+                - token
+                - commentId
+                - type
+            examples:
+              Add a Like to a Comment:
+                value:
+                  signerAddress: '0x707aC3937A9B31C225D8C240F5917Be97cab9F20'
+                  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjI3MTA3NjY5LCJleHAiOjE2MjcxOTQwNjl9.VJEViNmVxfxzY8dYTV_7r5SGrln6OcXUh50R3yePz1M
+                  commentId: 01faymzw18ev9vgrq2qarkg9xb
+                  type: toggleUpvote
+      description: Implement Likes & Dislikes
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: apikey
+          description: CONVO
+          required: true
 components:
   schemas: {}
   securitySchemes:
