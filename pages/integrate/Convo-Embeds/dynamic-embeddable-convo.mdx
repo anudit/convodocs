@@ -1,4 +1,5 @@
 import Callout from 'nextra-theme-docs/callout'
+import CommentBox from './../../../components/CommentBox'
 
 # Dynamic Embeddable Convo
 
@@ -6,7 +7,7 @@ import Callout from 'nextra-theme-docs/callout'
 
 You can utilize Convo to create a dynamic comments section on any page/section of a website. Dynamic Embeddable Convos are useful in scenarios when you have thousands of pages in your website or serve dynamically generated pages requiring one or multiple comment boxes on each one of those pages.
 
-Refer [here](/integrate/convo-api), if you are looking to build a custom interface instead of using an iframe.
+Refer [here](/integrate/Convo-API/api-docs), if you are looking to build a custom interface instead of using an iframe.
 
 
 ## Integration
@@ -50,6 +51,4 @@ Now you can use this snippet on any website by simply inserting this HTML wherev
 
 
 ### Comments
-<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=dynamic-embeddable-convo" allowtransparency="true" width="100%" height="auto" style={{marginTop:'10px'}} >
-  Comments
-</iframe>
+<CommentBox threadId="dynamic-embeddable-convo"/>

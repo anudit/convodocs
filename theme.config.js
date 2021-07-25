@@ -1,15 +1,19 @@
 import DocSearch from './components/DocSearch'
+import Logo from './components/Logo'
 
 export default {
   repository: 'https://github.com/anudit/convo',
   titleSuffix: ' – The Convo Space',
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Docs</span>
-      <span className="text-gray-600 font-normal hidden md:inline">
+      <Logo height={32} classes="mt-1" />
+      <span className="mx-2 mt-1 ml-2 mr-2 font-extrabold hidden md:inline">
         The Convo Space
       </span>
-    </>
+      <span className="text-gray-600 mt-1 font-normal hidden md:inline whitespace-no-wrap">
+        Documentation
+      </span>
+   </>
   ),
   head: (
     <>

@@ -1,4 +1,5 @@
 import Callout from 'nextra-theme-docs/callout'
+import CommentBox from './../../../components/CommentBox'
 
 # Embeddable Convo
 
@@ -6,7 +7,7 @@ import Callout from 'nextra-theme-docs/callout'
 
 Any thread created on Convo can be embedded as an interactive comments section on any website, using an iFrame.
 
-Refer [here](/integrate/convo-api), if you are looking to build a custom interface instead of using an iframe.
+Refer [here](/integrate/Convo-API/api-docs), if you are looking to build a custom interface instead of using an iframe.
 
 
 ## Integration
@@ -41,6 +42,4 @@ Now you can use this snippet on any website by simply inserting this HTML wherev
 
 
 ### Comments
-<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdocs.theconvo.space%2F&threadId=embeddable-convo" allowtransparency="true" width="100%" height="auto" style={{marginTop:'10px'}} >
-  Comments
-</iframe>
+<CommentBox threadId="embeddable-convo"/>
