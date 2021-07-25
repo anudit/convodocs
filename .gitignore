@@ -8,3 +8,4 @@ packages
 
 .env*
 out
+public/sw.js
