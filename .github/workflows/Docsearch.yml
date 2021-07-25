@@ -22,4 +22,7 @@ jobs:
         API_KEY: ${{ secrets.API_KEY }}
       run: node ./genenv.js
     - name: Run Docsearch Indexer
-      run: docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+      uses: addnab/docker-run-action@v3
+      with:
+        image: algolia/docsearch-scraper:latest
+        run: docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
