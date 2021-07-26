@@ -13,16 +13,8 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2.3.4
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 16
-    - name: Setup Env
+    - name: Run Docsearch Indexer
       env:
         APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
         API_KEY: ${{ secrets.API_KEY }}
-      run: node ./genenv.js
-    - name: Run Docsearch Indexer
-      uses: addnab/docker-run-action@v3
-      with:
-        image: algolia/docsearch-scraper:latest
-        run: docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+      run: docker run -i -e APPLICATION_ID=$APPLICATION_ID  -e API_KEY=$API_KEY -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
