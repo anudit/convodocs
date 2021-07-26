@@ -12,9 +12,9 @@ const nextConfig = {
     target: "experimental-serverless-trace",
     poweredByHeader: false,
     reactStrictMode: true,
-    experimental: {
-        optimizeCss: true
-    },
+    future : {
+      webpack5:true
+    }
 }
 
 module.exports = withPlugins([
