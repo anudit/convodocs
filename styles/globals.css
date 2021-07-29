@@ -12,6 +12,15 @@
   background-color: #111;
 }
 
+.dark .sidebar li.active>a {
+  background-color: #0083ff5c !important;
+}
+
+.dark .sidebar a:hover,
+.dark .sidebar button:hover {
+  background-color: #0083ff1c !important;
+}
+
 .algolia-autocomplete .algolia-docsearch-suggestion--category-header span {
   display: inline-block;
 }
