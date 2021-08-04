@@ -21,11 +21,11 @@ https://theconvo.space/embed/dt?url=<url-encoded-website-link>&threadId=<unique-
 ```
 Here are the details on the *required* query parameters for a dynamic embeddable convo,
 - `url`: This is the url encoded (`encodeURIComponent()`) full website link. This should ideally contain the url *without* any query parameters or internal links (i.e origin+pathname). You can use `new URL("<your-site-url>")` to clean your url and get the origin and pathname values easily.
-- `threadId`: This is a unique identifier for the comments page on your site, you can set unique values for this key to have multiple threads on the same `url`.
+- `threadId`: This is a unique identifier for the comments page on your site, you can set unique values for this key to have multiple threads on the same `url`. ThreadId is your own unique identifier, doesn't have to come from Convo. Could be a Contract Address, [Nft Id](/integrate/Convo-API/standards) etc
 
 
 <Callout emoji="ℹ️">
-  Values of `url` and `threadId` combined become the primary identifier for a dynamic convo. Do not use the same values for `url` and `threadId` on a different page unless you want the same convo their too.
+  Values of `url` and `threadId` combined become the primary identifier for a dynamic Convo. Do not use the same values for `url` and `threadId` on a different page/element unless you want the same convo over there too.
 </Callout>
 
 Example,
@@ -38,8 +38,7 @@ Example,
 Now you can use this snippet on any website by simply inserting this HTML wherever you want the comments page to appear.
 
 <Callout emoji="ℹ️">
-  Values of `url` and `threadId` combined become the primary identifier for a dynamic convo. Do not use the same values for `url` and `threadId` on a different page unless you want the same convo their too.
-  Here it is recommended to set `allowtransparency="true"` in the iframe to automatically adapt to the color scheme of the page.
+  Here it is recommended to set `allowtransparency="true"` in the iframe to automatically adapt the iframe to the color scheme of the page.
 </Callout>
 
 
