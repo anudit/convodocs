@@ -67,3 +67,31 @@
 .algolia-autocomplete pre {
 	display: none;
 }
+
+.algolia-autocomplete .algolia-docsearch-suggestion {
+  padding: 0;
+}
+
+.algolia-autocomplete .ds-dropdown-menu .ds-suggestions {
+  margin-top:0px;
+}
+
+.algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  display: none;
+  margin-top: 0px;
+  padding: 4px 12px;
+  font-size: 1em;
+  background: #1b1b1b;
+  font-weight: 700;
+  color: #fff;
+}
+
+.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+  border: 0px solid #d9d9d9;
+  background: #fff;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 0 0px 0px;
+}
