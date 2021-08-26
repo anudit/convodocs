@@ -58,6 +58,23 @@
   background: #090d20;
 }
 
+.card {
+  color:black;
+  border-color: #80808029;
+}
+.card:hover {
+  border-color:white;
+}
+
+
+.dark .card {
+  color:white;
+  border-color: #80808029;
+}
+.dark .card:hover {
+  border-color:white;
+}
+
 .copied_hint {
   position: absolute;
   top: -2px;
