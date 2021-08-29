@@ -4,7 +4,7 @@
   "description": "Documentation for building on The Convo Space.",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next --port=8000",
     "start": "next start",
     "build": "next build",
     "export": "next export"

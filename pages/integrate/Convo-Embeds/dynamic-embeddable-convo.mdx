@@ -5,10 +5,10 @@ import CommentBox from './../../../components/CommentBox'
 
 ## Introduction
 
-You can utilize Convo to create a dynamic comments section on any page/section of a website. Dynamic Embeddable Convos are useful in scenarios when you have thousands of pages in your website or serve dynamically generated pages requiring one or multiple comment boxes on each one of those pages.
+You can utilize Convo to create a dynamic comments section on any page/section of a website with a fully built UI provided by Convo.
+Dynamic Embeddable Convos are useful in scenarios when you have thousands of pages in your website or serve dynamically generated pages requiring one or multiple comment boxes on each one of those pages.
 
-Refer [here](/integrate/Convo-API/api-docs), if you are looking to build a custom interface instead of using an iframe.
-
+Refer [here](/integrate/Convo-API/api-docs), if you are looking to build a Custom UI instead of using an Iframe.
 
 ## Integration
 
@@ -25,11 +25,11 @@ Here are the details on the *required* query parameters for a dynamic embeddable
 
 
 <Callout emoji="ℹ️">
-  Values of `url` and `threadId` combined become the primary identifier for a dynamic Convo. Do not use the same values for `url` and `threadId` on a different page/element unless you want the same convo over there too.
+  Values of `url` and `threadId` combined become the primary identifier for a dynamic Convo. Do not use the same values for `url` and `threadId` on a different page/element unless you want the same Convo over there too.
 </Callout>
 
 Example,
-```jsx
+```js
 <iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdeepdao.io%2F&threadId=fJPU8mZiQwVXV6K1xXlw" allowtransparency="true" width="100%" height="600px" style="border: none;">
   Comments
 </iframe>
@@ -46,7 +46,8 @@ Now you can use this snippet on any website by simply inserting this HTML wherev
 
 | Query Param 	| Description 	| Default Value 	|
 |-	|:-	|:-:	|
-| theme 	|     Set the default theme of the embedded page. `dark` or `light` 	| `dark` 	|
+| theme 	|     Set the default theme of the Convo. `dark` or `light` 	| `dark` 	|
+| height 	|     Set the default height of the Chat Element.	| `300` |
 
 
 ### Comments
