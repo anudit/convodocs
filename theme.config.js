@@ -70,7 +70,7 @@ export default {
   nextLinks: true,
   footer: true,
   docsRepository: 'https://github.com/anudit/convodocs',
-  branch: 'master',
+  branch: 'main',
   footerEditOnGitHubLink: true,
   footerText: <>MIT {new Date().getFullYear()} © The Convo Space.</>,
 }

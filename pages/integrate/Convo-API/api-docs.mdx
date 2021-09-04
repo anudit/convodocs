@@ -1,5 +1,6 @@
 import Callout from 'nextra-theme-docs/callout'
 import CommentBox from './../../../components/CommentBox'
+import Tabs from './../../../components/Tabs'
 
 # Convo API
 
@@ -21,17 +22,23 @@ OpenAPI 3 Config : [https://github.com/anudit/convodocs/tree/main/public/Convo.y
 
 **Auth Route : `/auth`**
 
+**Full Endpoint : `https://theconvo.space/api/auth?apikey=CONVO`**
+
 <Callout emoji="ℹ️">
-    You do not require an auth token for read-only `GET` requests. Each authentication token is valid for `1 day` only.
+  You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
 </Callout>
 
+
+<Tabs>
+<div label="Ethereum">
 Send a `POST` request to the endpoint with the following example body,
 
 ```json
 {
   "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
   "signature":"0x76138b631abf63e1cced43cd19c4b8f417977b7fb929b15b38f2db8f70243a3d00739746911104e4244bcc12369cf34ab91ef21481a36fdd5e027ffd0ad145c11b",
-  "timestamp": 1623254904621
+  "timestamp": 1623254904621,
+  "chain":"ethereum"
 }
 ```
 
@@ -40,6 +47,7 @@ Send a `POST` request to the endpoint with the following example body,
 | `signerAddress` 	| The address of the account to authenticate. 	|
 | `signature` 	|  Ethereum signature of `data` using the above `signerAddress`	|
 | `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
+| `chain` 	|  Name of the chain, `ethereum` or `near`	|
 
 `data` Format = `I allow this site to access my data on The Convo Space using the account <signerAddress>. Timestamp:<timestamp>`
 
@@ -52,7 +60,62 @@ let signer = await provider.getSigner();
 let signerAddress = await signer.getAddress();
 let data = `I allow this site to access my data on The Convo Space using the account ${signerAddress}. Timestamp:${timestamp}`;
 let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ethers.utils.toUtf8Bytes(data)), signerAddress.toLowerCase() ]);
+
+let authBody = {
+  "signature": signature,
+  "signerAddress": signerAddress,
+  "timestamp": timestamp,
+  "chain": "ethereum"
+};
 ```
+
+</div>
+
+<div label="NEAR">
+
+Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "signerAddress":"54e94c146f0c3e4321f7deefd8ec5e3d4c715a9e6d805c5e10aeade18dfa30b8",
+  "signature":"a9f793d84cb90a03566d1f2ba05a7f3fa43b9d33c5be4ddbb943a3754cb7fd49fa4620d4827349a45948243f660db4547436cb2ad3b6549263ce01fcd63b200f",
+  "accountId":"convo.testnet",
+  "timestamp":1630751987917,
+  "chain":"near"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `signature` 	|  NEAR signature of `data` using the above `signerAddress`	|
+| `accountId` 	|  Your NEAR Account Id	|
+| `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
+| `chain` 	|  Name of the chain, `ethereum` or `near`	|
+
+`data` Format = `I allow this site to access my data on The Convo Space using the account <accountId>. Timestamp:<timestamp>`
+
+Example, `data` = 'I allow this site to access my data on The Convo Space using the account convo.testnet. Timestamp:1623254904621'
+
+```jsx
+// Sample signature generation code using near-api-js.js
+let accountId = wallet.getAccountId();
+const timestamp = Date.now();
+const tokenMessage = new TextEncoder().encode(`I allow this site to access my data on The Convo Space using the account ${accountId}. Timestamp:${timestamp}`);
+const signatureData = await wallet.account().connection.signer.signMessage(tokenMessage, accountId, 'testnet');
+
+let authBody = {
+  "signature": Buffer.from(signatureData.signature).toString('hex'),
+  "signerAddress": Buffer.from(signatureData.publicKey.data).toString('hex'),
+  "accountId": accountId,
+  "timestamp": timestamp,
+  "chain": "near"
+};
+
+```
+
+</div>
+</Tabs>
 
 **Response**
 
@@ -72,6 +135,8 @@ let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ether
 ### Validating Authentication
 
 **Auth Route : `/validateAuth`**
+
+**Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=CONVO`**
 
 Send a `POST` request to the endpoint with the following example body,
 ```json
@@ -108,24 +173,27 @@ Possible Error Messages,
 - `400`: signerAddress or token or timestamp is missing/invalid.
 - `500`: Internal Error.
 
-## Step 2 - Fetching Data
+## Step 2 - Querying Data
 
 <Callout emoji="ℹ️">
   URLs passed as query parameters must be URL encoded using `encodeURIComponent()`
 </Callout>
 
-###  Fetching Threads
+###  Querying Threads
 
 - All Threads: `/threads`
 - By ThreadId : `/threads?threadId=fJPU8mZiQwVXV6K1xXlw`
 - By URL : `/threads?url=https%3A%2F%2Fgoogle.com%2F`
 
-###  Fetching Comments
+###  Querying a Comment
+
+- By CommentId : `/comment?commentId=fJPU8mZiQwVXV6K1xXlw`
+
+###  Querying Comments
 
 - By ThreadId : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw`
 - By URL : `/comments?url=https%3A%2F%2Fgoogle.com%2F`
 - By ThreadId and URL : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw&url=https%3A%2F%2Fdeepdao.io%2F`
-
 
 **Response Example**
 
@@ -156,6 +224,8 @@ You can reorder the comments fetching the latest first using `latestFirst` query
 
 **Route : `/comments`**
 
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=CONVO`**
+
 Send a `POST` request to the endpoint with the following request schema,
 ```json
 {
@@ -181,7 +251,7 @@ Send a `POST` request to the endpoint with the following request schema,
 
 ```
 
-You can add a `replyTo` query parameter with a valid comment `_id` value to add replies to any specific comment.
+You can add a `replyTo` body parameter with a valid comment `_id` value to set that comment as a reply to any specific comment.
 
 Possible Response Error Messages,
 
