@@ -75,6 +75,10 @@
   border-color:white;
 }
 
+.dark path {
+  fill:white;
+}
+
 .copied_hint {
   position: absolute;
   top: -2px;
