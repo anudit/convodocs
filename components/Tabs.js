@@ -1,6 +1,6 @@
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { Ethereum, Near } from './icons'
+import { Ethereum, Near } from './Icons'
 
 const tabs = props => {
   return (
