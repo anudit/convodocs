@@ -138,10 +138,14 @@ let authBody = {
 
 **Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=CONVO`**
 
+
+<Tabs>
+<div label="Ethereum">
+
 Send a `POST` request to the endpoint with the following example body,
 ```json
 {
-  "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+  "signerAddress":"convo.testnet",
   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
 }
 ```
@@ -150,6 +154,26 @@ Send a `POST` request to the endpoint with the following example body,
 |-	|:-	|
 | `signerAddress` 	| The address of the account to authenticate. 	|
 | `token` 	|  The JWT Authentication Token to validate.	|
+
+</div>
+
+<div label="NEAR">
+
+Send a `POST` request to the endpoint with the following example body,
+```json
+{
+  "signerAddress":"convo.testnet",
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiY29udm8udGVzdG5ldCIsImNoYWluIjoibmVhciIsImlhdCI6MTYzMTM2NTA3MCwiZXhwIjoxNjMxNDUxNDcwfQ.XFv2IS1ZBrSgJUnY0B334iiTt5gL1pq-vgdYaKh1dk8"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The NEAR accountId of user. 	|
+| `token` 	|  The JWT Authentication Token to validate.	|
+
+</div>
+</Tabs>
 
 
 **Response**

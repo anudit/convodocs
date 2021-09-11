@@ -20,10 +20,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-tabs": "^3.2.2",
-    "webpack": "^5.52.0"
+    "webpack": "^5.52.1"
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "prettier": "^2.4.0"
   },
   "prettier": {
     "semi": false,
