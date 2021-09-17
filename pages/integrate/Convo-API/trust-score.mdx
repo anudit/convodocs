@@ -7,25 +7,31 @@ import CommentBox from './../../../components/CommentBox'
 
 TrustScore aggregates the multiple on-chain social graphs acting as *sources of reputation* that count towards some points in building the overall TrustScore.
 
-Current Integrations
-- Proof of Humanity
-- BrightId
-- POAP
-- ENS
-- Idena
-- CryptoScam DB
-- Unstoppable Domains
-- Uniswap Sybil
-- DeepDAO
-- Boardroom
-- RabbitHole
-- Mirror
-- SuperRare
-- Rarible
-- Foundation
-- AsyncArt
-- KnownOrigin
-- Coinvise
+Current Integrations and Score Weightage.
+
+| Integration         	| Factors and Score                                                                                                                                                                        	|
+|---------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Proof of Humanity   	| 8 Points for Verification                                                                                                                                                                	|
+| Uniswap Sybil       	| 10 Points for Verification                                                                                                                                                               	|
+| BrightId            	| 37 Points for Verification                                                                                                                                                               	|
+| POAP                	| 1 Point for Each POAP Received                                                                                                                                                           	|
+| ENS                 	| 10 Points for Reverse Resolution to your Address.                                                                                                                                        	|
+| Idena               	| 1 Point for Verification                                                                                                                                                                 	|
+| Gitcoin             	| 10 Points for funding a Grant.                                                                                                                                                           	|
+| CryptoScamDB        	| -20 Points for being flagged                                                                                                                                                             	|
+| Unstoppable Domains 	| 10 Points for Reverse Resolution to your Address.                                                                                                                                        	|
+| DeepDAO             	| 1 Point for Each DAO you are a member of. (Deeper Integration coming soon.)                                                                                                              	|
+| RabbitHole          	| Points equal to the Levels you cross on RabbitHole.                                                                                                                                     	|
+| Mirror              	| 10 Points for being a writer on Mirror                                                                                                                                                   	|
+| Coinvise            	| Tokens Created(a) : (a)^0.5 Points NFTs Created(b) : (b)^0.5 Points Total NFTs Sold(c): c Points Airdrops Sent(d): d Points Multisends(e): e Points Liquidity Pools Created(f): f Points 	|
+| Rarible             	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| Foundation          	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| Zora                	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| Async Art           	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| KnownOrigin          	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| SuperRare           	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| Boardroom           	| Number of Governance Proposals Accepted                                                                                                                                                  	|
+
 
 ## Integration
 
@@ -33,8 +39,9 @@ Current Integrations
 
 API Request format,
 ```html
-https://theconvo.space/api/identity?address=<ethereum-address>&apikey=CONVO
+https://theconvo.space/api/identity?address=<ethereum-address-or-ens>&apikey=CONVO
 ```
+
 
 Example 1,
 ```html
@@ -45,39 +52,67 @@ Response,
 
 ```json
 {
-  "score": 38,
-  "success": true,
-  "poh": false,
-  "brightId": false,
-  "poap": 25,
-  "ens": true,
-  "idena": false,
-  "cryptoScamDb": false,
-  "unstoppableDomains": false,
-  "uniswapSybil": 0,
-  "deepdao": 0,
-  "rabbitHole": 0,
-  "mirror": false,
-  "foundation": {
-    "totalCountSold": 0,
-    "totalAmountSold": 0
-  },
-  "superrare": {
-    "totalCountSold": 0,
-    "totalAmountSold": 0
-  },
-  "rarible": {
-    "totalCountSold": 0,
-    "totalAmountSold": 0
-  },
-  "knownorigin": {
-    "totalCountSold": 0,
-    "totalAmountSold": 0
-  },
-  "asyncart": {
-    "totalCountSold": 0,
-    "totalAmountSold": 0
-  }
+    "_id": "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+    "_mod": 1631841352993600000,
+    "asyncart": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    },
+    "brightId": false,
+    "coinvise": {
+        "airdropCount": 0,
+        "multisendCount": 0,
+        "nftsCreated": 0,
+        "tokensCreated": 0,
+        "totalAmountSold": 0,
+        "totalCountSold": 0,
+        "totalPoolCount": 0,
+        "totalPoolTvl": 0
+    },
+    "cryptoScamDb": false,
+    "deepdao": 0,
+    "ens": "vitalik.eth",
+    "foundation": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    },
+    "gitcoin": {
+        "funder": true
+    },
+    "idena": false,
+    "knownorigin": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    },
+    "mirror": {
+        "airdropCount": 0,
+        "multisendCount": 0,
+        "nftsCreated": 0,
+        "tokensCreated": 0,
+        "totalAmountSold": 0,
+        "totalCountSold": 0,
+        "totalPoolCount": 0,
+        "totalPoolTvl": 0
+    },
+    "poap": 32,
+    "poh": false,
+    "rabbitHole": 0,
+    "rarible": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    },
+    "score": 34,
+    "success": true,
+    "superrare": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    },
+    "uniswapSybil": 0,
+    "unstoppableDomains": false,
+    "zora": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    }
 }
 ```
 
@@ -90,39 +125,67 @@ Response,
 
 ```json
 {
-  "score": 1,
-  "success": true,
-  "brightId": false,
-  "cryptoScamDb": false,
-  "deepdao": 0,
-  "ens": false,
-  "idena": false,
-  "poap": 1,
-  "poh": false,
-  "rabbitHole": 0,
-  "uniswapSybil": 0,
-  "unstoppableDomains": false,
-  "mirror": false,
-  "rarible": {
-    "totalAmountSold": 545414.28828,
-    "totalCountSold": 19
-  },
-  "foundation": {
-    "totalAmountSold": 915544.9602105999,
-    "totalCountSold": 14
-  },
-  "asyncart": {
-    "totalAmountSold": 0,
-    "totalCountSold": 0
-  },
-  "superrare": {
-    "totalAmountSold": 28718.991565550437,
-    "totalCountSold": 2
-  },
-  "knownorigin": {
-    "totalAmountSold": 8646.187049999999,
-    "totalCountSold": 3
-  }
+    "_id": "0xD665afb9A4019a8c482352aaa862567257Ed62CF",
+    "_mod": 1631841037878356200,
+    "asyncart": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    },
+    "brightId": false,
+    "coinvise": {
+        "airdropCount": 0,
+        "multisendCount": 0,
+        "nftsCreated": 0,
+        "tokensCreated": 0,
+        "totalAmountSold": 0,
+        "totalCountSold": 0,
+        "totalPoolCount": 0,
+        "totalPoolTvl": 0
+    },
+    "cryptoScamDb": false,
+    "deepdao": 0,
+    "ens": false,
+    "foundation": {
+        "totalAmountSold": 1995440.3387773198,
+        "totalCountSold": 17
+    },
+    "gitcoin": {
+        "funder": false
+    },
+    "idena": false,
+    "knownorigin": {
+        "totalAmountSold": 14662.223909999999,
+        "totalCountSold": 3
+    },
+    "mirror": {
+        "airdropCount": 0,
+        "multisendCount": 0,
+        "nftsCreated": 0,
+        "tokensCreated": 0,
+        "totalAmountSold": 0,
+        "totalCountSold": 0,
+        "totalPoolCount": 0,
+        "totalPoolTvl": 0
+    },
+    "poap": 1,
+    "poh": false,
+    "rabbitHole": 0,
+    "rarible": {
+        "totalAmountSold": 1297974.6387385202,
+        "totalCountSold": 21
+    },
+    "score": 1,
+    "success": true,
+    "superrare": {
+        "totalAmountSold": 28718.991565550437,
+        "totalCountSold": 2
+    },
+    "uniswapSybil": false,
+    "unstoppableDomains": false,
+    "zora": {
+        "totalAmountSold": 0,
+        "totalCountSold": 0
+    }
 }
 ```
 
