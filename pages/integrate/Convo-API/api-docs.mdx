@@ -203,12 +203,6 @@ Possible Error Messages,
   URLs passed as query parameters must be URL encoded using `encodeURIComponent()`
 </Callout>
 
-###  Querying Threads
-
-- All Threads: `/threads`
-- By ThreadId : `/threads?threadId=fJPU8mZiQwVXV6K1xXlw`
-- By URL : `/threads?url=https%3A%2F%2Fgoogle.com%2F`
-
 ###  Querying a Comment
 
 - By CommentId : `/comment?commentId=fJPU8mZiQwVXV6K1xXlw`
@@ -218,6 +212,15 @@ Possible Error Messages,
 - By ThreadId : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw`
 - By URL : `/comments?url=https%3A%2F%2Fgoogle.com%2F`
 - By ThreadId and URL : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw&url=https%3A%2F%2Fdeepdao.io%2F`
+
+###  Querying Threads
+
+`/threads` endpoint gets the metadata for any ThreadId. This will soon be the place for adding permissions to conversations like moderators, url & token gating and many more.
+
+- All Threads: `/threads`
+- By ThreadId : `/threads?threadId=fJPU8mZiQwVXV6K1xXlw`
+- By URL : `/threads?url=https%3A%2F%2Fgoogle.com%2F`
+
 
 **Response Example**
 

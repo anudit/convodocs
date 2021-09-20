@@ -2,7 +2,7 @@ import DocSearch from './components/DocSearch'
 import Logo from './components/Logo'
 
 export default {
-  repository: 'https://github.com/anudit/convo',
+  repository: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – The Convo Space',
   logo: (
     <>
