@@ -1,0 +1,68 @@
+import CommentBox from './../../../components/CommentBox'
+
+# Convo SDK
+
+SDK containing all the functions you'll need to build on [theconvo.space](theconvo.space)
+
+🌲 Tree Shaking Supported ✔️<br/>
+🆓 Side Effect Free ✔️<br/>
+🪨 Fully TypeScript Compatible ✔️<br/>
+🤏 Just 7.9kB Minified (1.8kB Minified+GZipped)<br/>
+
+[Jump to Sample Projects](#sample-projects-1)
+
+
+## Installation
+
+### NodeJs
+```bash
+yarn add @theconvospace/sdk
+# or
+npm i --save @theconvospace/sdk
+# or
+pnpm i --save @theconvospace/sdk
+```
+
+### Browser
+
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/@theconvospace/sdk@0.1.9/dist/bundle.min.js"></script>
+```
+
+## Setup
+
+1. Generate and Copy an API key from [https://theconvo.space/dashboard/developer](https://theconvo.space/dashboard/developer)
+2. Import Convo in your own project.
+    ```js
+    import { Convo } from '@theconvospace/sdk';
+    // or
+    import { Convo } from 'https://esm.run/@theconvospace/sdk';
+    // or
+    const { Convo } = require('@theconvospace/sdk');
+    ```
+3. Setup an new instance of Convo using
+    ```js
+    const convo = new Convo("apikey")
+    ```
+    Replace `apikey` with your newly generated key.
+
+## Auth
+
+## Comments
+
+## Threads
+
+## Identity
+
+## Utility
+
+## Sample Projects
+
+1. NextJS/React Sample Project<br/>
+    [Code](https://github.com/anudit/convosdk/tree/main/examples/nextjs) | [Demo - convosdk-examples-nextjs.vercel.app](https://convosdk-examples-nextjs.vercel.app)
+
+2. Browser (Vanilla JS) Sample Project<br/>
+    [Code](https://github.com/anudit/convosdk/tree/main/examples/browser) | [Demo - convosdk-examples-browser.vercel.app](https://convosdk-examples-browser.vercel.app)
+
+### Comments
+<CommentBox threadId="convo-sdk"/>
