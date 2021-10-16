@@ -1,6 +1,6 @@
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { Ethereum, Near } from './Icons'
+import { Ethereum, Near, Npm, Pnpm, Yarn } from './Icons'
 
 const tabs = props => {
   return (
@@ -12,6 +12,9 @@ const tabs = props => {
             let icon
             if (label.toLowerCase() === 'ethereum') icon = Ethereum
             if (label.toLowerCase() === 'near') icon = Near
+            if (label.toLowerCase() === 'yarn') icon = Yarn
+            if (label.toLowerCase() === 'npm') icon = Npm
+            if (label.toLowerCase() === 'pnpm') icon = Pnpm
             return (
               <Tab key={`tab-${child.props.label}`}>
                 <div className="label-icon">{icon}</div>

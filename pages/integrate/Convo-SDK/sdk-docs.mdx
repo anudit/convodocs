@@ -1,4 +1,5 @@
 import CommentBox from './../../../components/CommentBox'
+import Tabs from './../../../components/Tabs'
 
 # Convo SDK
 
@@ -10,18 +11,28 @@ SDK containing all the functions you'll need to build on [theconvo.space](thecon
 🤏 Just 7.9kB Minified (1.8kB Minified+GZipped)<br/>
 
 [Jump to Sample Projects](#sample-projects-1)
-
+[Try it Out](https://npm.runkit.com/@theconvospace/sdk)
 
 ## Installation
 
 ### NodeJs
+<Tabs>
+<div label="Yarn">
 ```bash
 yarn add @theconvospace/sdk
-# or
+```
+</div>
+<div label="NPM">
+```bash
 npm i --save @theconvospace/sdk
-# or
+```
+</div>
+<div label="PNPM">
+```bash
 pnpm i --save @theconvospace/sdk
 ```
+</div>
+</Tabs>
 
 ### Browser
 
@@ -48,13 +59,172 @@ pnpm i --save @theconvospace/sdk
 
 ## Auth
 
+### Authenticate Session
+```js
+let resp = await convo.auth.authenticate(
+    signerAddress, // Ethereum Address or NEAR Public Key
+    signature, // Signed Data in Hex
+    timestampm  // Signed Data in Hex
+    chain, // Name of the Chain
+    accountId: // Near Account Id
+);
+```
+
+Example Usage,
+
+```jsx
+let timestamp = Date.now();
+let data = convo.auth.getSignatureData(accounts[0], timestamp);
+let signature = await web3.send(
+    'personal_sign',
+    [ethers.utils.hexlify(ethers.utils.toUtf8Bytes(data)), accounts[0].toLowerCase()]
+);
+convo.auth.authenticate(accounts[0], signature, timestamp, "ethereum").then(console.log);
+```
+
+### Validate Authentication
+```jsx
+let resp = await convo.auth.validate(
+    signerAddress, // Ethereum Address or NEAR Public Key
+    token // JWT Auth Token
+);
+```
+Example,
+```jsx
+convo.auth.validate(
+    accounts[0],
+    ""
+).then(console.log);
+```
+
+### Get Signature Data
+```jsx
+let resp = convo.auth.getSignatureData(
+    signerAddress, // Ethereum Address or NEAR Public Key
+    timestamp // timestamp
+);
+```
+Example,
+```jsx
+let timestamp = Date.now();
+console.log(convo.auth.getSignatureData(accounts[0], timestamp));
+```
+
 ## Comments
+
+### Create a Comment
+
+```jsx
+convo.comments.create(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    comment,  // Comment text
+    threadId,  // Unique threadId
+    url // Url of the page where the message is from.
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.create(
+    accounts[0],
+    "",
+    "New",
+    "KIGZUnR4RzXDFheXoOwo",
+    encodeURIComponent('https://theconvo.space/')
+);
+```
+
+### Delete a Comment
+
+```jsx
+convo.comments.delete(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    commentId // Comment ID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.delete(
+    accounts[0],
+    "",
+    "KIGZUnR4RzXDFheXoOwo"
+);
+```
+
+### Toggle Upvote
+```jsx
+convo.comments.toggleUpvote(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    commentId // Comment ID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.toggleUpvote(
+    accounts[0],
+    "",
+    "KIGZUnR4RzXDFheXoOwo"
+);
+```
+
+
+### Toggle Downvote
+```jsx
+convo.comments.toggleDownvote(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    commentId // Comment ID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.toggleDownvote(
+    accounts[0],
+    "",
+    "KIGZUnR4RzXDFheXoOwo"
+);
+```
+
+### Query Comments
+
 
 ## Threads
 
 ## Identity
 
+### Get TrustScore for Address
+
+```jsx
+convo.identity.getTrustScore(
+    signerAddress,  // Ethereum Address
+)
+```
+
+Example,
+```jsx
+let resp = await convo.identity.getTrustScore(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20"
+);
+```
+
 ## Utility
+
+### Log Internal Config
+
+```jsx
+convo.logConfig()
+```
+
+Example,
+```jsx
+let resp = await convo.logConfig();
+```
 
 ## Sample Projects
 
