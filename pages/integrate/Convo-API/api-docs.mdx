@@ -47,7 +47,7 @@ Send a `POST` request to the endpoint with the following example body,
 | `signerAddress` 	| The address of the account to authenticate. 	|
 | `signature` 	|  Ethereum signature of `data` using the above `signerAddress`	|
 | `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
-| `chain` 	|  Name of the chain, `ethereum` or `near`	|
+| `chain` 	| `ethereum`	|
 
 `data` Format = `I allow this site to access my data on The Convo Space using the account <signerAddress>. Timestamp:<timestamp>`
 
@@ -91,7 +91,7 @@ Send a `POST` request to the endpoint with the following example body,
 | `signature` 	|  NEAR signature of `data` using the above `signerAddress`	|
 | `accountId` 	|  Your NEAR Account Id	|
 | `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
-| `chain` 	|  Name of the chain, `ethereum` or `near`	|
+| `chain` 	| `near`	|
 
 `data` Format = `I allow this site to access my data on The Convo Space using the account <accountId>. Timestamp:<timestamp>`
 
@@ -112,6 +112,62 @@ let authBody = {
   "chain": "near"
 };
 
+```
+
+</div>
+
+<div label="Flow">
+
+Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "signature" : [{"f_type":"CompositeSignature","f_vsn":"1.0.0","addr":"0x4268f655cacd5436","keyId":1,"signature":"d8a12db6e43b6856b702d6fa593e3d9f2b8ac0e1b9ee56a17fc4543ef94cbb2356f1d4fbff910d1c70ba9c913cdb2eff06debfd7d1e8a25266b07a04b7531e4d"}],
+  "signerAddress": "0x4268f655cacd5436",
+  "timestamp": 1634402654144,
+  "chain":"flow"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `signature` 	|  `CompositeSignature` of `data` 	|
+| `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
+| `chain` 	| `flow`	|
+
+`data` Format = `I allow this site to access my data on The Convo Space using the account <accountId>. Timestamp:<timestamp>`
+
+Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x4268f655cacd5436. Timestamp:1634402654144'
+
+```jsx
+// Sample signature generation code using "@onflow/fcl"
+import * as fcl from "@onflow/fcl"
+
+fcl.config()
+    .put("challenge.scope", "email") // request for Email
+    .put("accessNode.api", "https://access-testnet.onflow.org") // Flow testnet
+    .put("discovery.wallet", "https://flow-wallet-testnet.blocto.app/api/flow/authn") // Blocto testnet wallet
+    .put("discovery.wallet.method", "HTTP/POST")
+    .put("service.OpenID.scopes", "email!")
+
+await fcl.authenticate();
+
+let timestamp = Date.now();
+const currentUser = await fcl.currentUser().snapshot();
+let data = `I allow this site to access my data on The Convo Space using the account ${currentUser.addr}. Timestamp:${timestamp}`;
+const MSG = Buffer.from(data).toString("hex");
+const signature = await fcl.currentUser().signUserMessage(MSG);
+
+
+let authBody = {
+  "signature": signature,
+  "signerAddress": currentUser.addr
+  "timestamp": timestamp,
+  "chain": "flow"
+};
+
+let isValid = await fcl.verifyUserSignatures(MSG, signature);
 ```
 
 </div>
@@ -145,7 +201,7 @@ let authBody = {
 Send a `POST` request to the endpoint with the following example body,
 ```json
 {
-  "signerAddress":"convo.testnet",
+  "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
 }
 ```
@@ -170,6 +226,23 @@ Send a `POST` request to the endpoint with the following example body,
 | Body Param 	| Description 	|
 |-	|:-	|
 | `signerAddress` 	| The NEAR accountId of user. 	|
+| `token` 	|  The JWT Authentication Token to validate.	|
+
+</div>
+
+<div label="Flow">
+
+Send a `POST` request to the endpoint with the following example body,
+```json
+{
+  "signerAddress":"0x4268f655cacd5436",
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiY29udm8udGVzdG5ldCIsImNoYWluIjoibmVhciIsImlhdCI6MTYzMTM2NTA3MCwiZXhwIjoxNjMxNDUxNDcwfQ.XFv2IS1ZBrSgJUnY0B334iiTt5gL1pq-vgdYaKh1dk8"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
 | `token` 	|  The JWT Authentication Token to validate.	|
 
 </div>

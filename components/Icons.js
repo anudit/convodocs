@@ -34,4 +34,11 @@ const Ethereum = (
       <path d="M502 10v140H362V10h140m-176 0v140H186V10h140m-176 0v140H10V10h140m352 176v140H362V186h140M512 0H352v160h160V0zM336 0H176v160h160V0zM160 0H0v160h160V0zm352 176H352v160h160V176zM336 336H176V176h160v160zm0 16H176v160h160V352zm176 0H352v160h160V352zm-352 0H0v160h160V352z" fill="currentColor"/>
     </svg>
   )
-  export { Ethereum, Near, Yarn, Npm, Pnpm }
+  const Flow = (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"  width="24" height="24" >
+      <path fill="currentColor" d="M159 97h49v50h-49z"/>
+      <path fill="currentColor" d="M109 165c0 10-8 19-18 19s-19-9-19-19 9-19 19-19v1h18V97H91a68 68 0 1 0 68 68v-18h-49v18z"/>
+      <path fill="currentColor" d="M177 72h56V23h-56c-37 0-68 30-68 68v6h50v-6c0-10 8-19 18-19z"/>
+    </svg>
+  )
+  export { Ethereum, Near, Yarn, Npm, Pnpm, Flow }
