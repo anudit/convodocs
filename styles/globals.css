@@ -117,7 +117,7 @@ a, code, p {
 .algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
   border: 0px solid #d9d9d9;
   background: #fff;
-  border-radius: 0px;
+  border-radius: 5px;
   overflow: auto;
   padding: 0 0px 0px;
 }
@@ -125,6 +125,10 @@ a, code, p {
 .dark .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu:before {
   background-color: #1b1b1b;
   border-color: #1b1b1b;
+}
+
+.algolia-docsearch-footer{
+  display:none;
 }
 
 /* Tabs */
