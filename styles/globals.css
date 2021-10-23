@@ -89,6 +89,12 @@ a, code, p {
   line-break: anywhere !important;
 }
 
+@media (min-width: 768px){
+  .md\:w-64 {
+      width: 20rem !important;
+  }
+}
+
 /* Algolia */
 .algolia-autocomplete pre {
 	display: none;
