@@ -1,11 +1,12 @@
 import Callout from 'nextra-theme-docs/callout'
 import CommentBox from './../../../components/CommentBox'
+import Callout from 'nextra-theme-docs/callout'
 
 # TrustScore
 
 ## Introduction
 
-TrustScore aggregates the multiple on-chain social graphs acting as *sources of reputation* that count towards some points in building the overall TrustScore for any Ethereum Address. This score is continuously evolving. As more platforms get integrated, the weights and the score will update too.
+TrustScore aggregates multiple on/off-chain ***sources of reputation*** into an overall social graph where each source counts towards some points in building the overall TrustScore for any Ethereum Address. This score is continuously evolving. As more platforms get integrated, the weights and the score will update too.
 
 Current Integrations and Score Weightage.
 
@@ -16,7 +17,9 @@ Current Integrations and Score Weightage.
 | BrightId            	| 37 Points for Verification                                                                                                                                                               	|
 | POAP                	| 1 Point for Each POAP Received                                                                                                                                                           	|
 | ENS                 	| 10 Points for Reverse Resolution to your Address.                                                                                                                                        	|
+| Polygon Ecosystem             	| Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention                                                                                                                                                           	|
 | Idena               	| 1 Point for Verification                                                                                                                                                                 	|
+| Celo Verified Attestations             	| 1 Point for each valid Attestation                                                                                                                                                              	|
 | Gitcoin             	| 10 Points for funding a Grant.                                                                                                                                                           	|
 | CryptoScamDB        	| -20 Points for being flagged                                                                                                                                                             	|
 | Unstoppable Domains 	| 10 Points for Reverse Resolution to your Address.                                                                                                                                        	|
@@ -196,6 +199,10 @@ Response,
 ```
 
 ### Verifying Response Signature
+
+<Callout emoji="ℹ️">
+	Convo uses `0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06` as SignatureAddress to sign the oracle data.
+</Callout>
 
 ```js
 const { utils } = require('ethers');
