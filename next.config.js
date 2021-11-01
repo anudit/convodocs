@@ -9,7 +9,6 @@ const withNextra = require('nextra')({
 });
 
 const nextConfig = {
-    target: "experimental-serverless-trace",
     poweredByHeader: false,
     reactStrictMode: true
 }

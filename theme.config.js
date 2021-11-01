@@ -2,7 +2,8 @@ import DocSearch from './components/DocSearch'
 import Logo from './components/Logo'
 
 export default {
-  repository: 'https://github.com/anudit/convodocs',
+  projectLink: 'https://github.com/anudit/convodocs',
+  docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – The Convo Space',
   logo: (
     <>
@@ -69,8 +70,8 @@ export default {
   prevLinks: true,
   nextLinks: true,
   footer: true,
-  docsRepository: 'https://github.com/anudit/convodocs',
   branch: 'main',
   footerEditOnGitHubLink: true,
-  footerText: <>MIT {new Date().getFullYear()} © The Convo Space.</>,
+  floatTOC: true,
+  footerText: `MIT ${new Date().getFullYear()} © The Convo Space.`,
 }
