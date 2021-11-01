@@ -47,7 +47,7 @@
 
 .search-slash {
   position: absolute;
-  right: 40px;
+  right: 10px;
   top: 6px;
   padding: 7px;
   background: #eef2f7;
@@ -55,7 +55,7 @@
 }
 
 .dark .search-slash {
-  background: #090d20;
+  background: #1e2d76;
 }
 
 .card {
@@ -135,6 +135,10 @@ a, code, p {
 
 .algolia-docsearch-footer{
   display:none;
+}
+
+.docs-search > span > span {
+  width: 100%;
 }
 
 /* Tabs */

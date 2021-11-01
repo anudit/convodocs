@@ -65,6 +65,7 @@ export default {
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css" media="print" onLoad="this.media='all'" />
     </>
   ),
+  floatTOC: true,
   search: true,
   customSearch: <DocSearch />,
   prevLinks: true,
@@ -72,6 +73,5 @@ export default {
   footer: true,
   branch: 'main',
   footerEditOnGitHubLink: true,
-  floatTOC: true,
   footerText: `MIT ${new Date().getFullYear()} © The Convo Space.`,
 }
