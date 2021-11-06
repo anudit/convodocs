@@ -26,12 +26,13 @@ Current Integrations and Score Weightage.
 | RabbitHole          	| Points equal to the Levels you cross on RabbitHole.                                                                                                                                     	|
 | Mirror              	| 10 Points for being a writer on Mirror                                                                                                                                                   	|
 | Coinvise            	| - Tokens Created(a) : (a)^0.5 Points <br/>- NFTs Created(b) : (b)^0.5 Points  <br/>- Total NFTs Sold(c): c Points <br/>- Airdrops Sent(d): d Points <br/>- Multisends(e): e Points <br/>- Liquidity Pools Created(f): f Points 	|
-| Rarible             	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
-| Foundation          	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| Showtime          	| Followers, Following 	|
+| Rarible             	| NFTs Sold, Average Sale Value, Followers, Following	|
+| Foundation          	| NFTs Sold, Average Sale Value, Followers, Following |
 | Zora                	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
 | Async Art           	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
 | KnownOrigin          	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
-| SuperRare           	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| SuperRare           	| NFTs Sold, Average Sale Value, Followers, Following |
 | Boardroom           	| Number of Governance Proposals Accepted                                                                                                                                                  	|
 | Coordinape           	| Number of teammates.                                                                                                                                                  	|
 
@@ -54,70 +55,79 @@ Response,
 
 ```json
 {
-	"_id":"0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
-	"_mod":1634607853663082200,
-	"asyncart":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"brightId":false,
-	"coinvise":{
-		"airdropCount":0,
-		"multisendCount":0,
-		"nftsCreated":0,
-		"tokensCreated":0,
-		"totalAmountSold":0,
-		"totalCountSold":0,
-		"totalPoolCount":0,
-		"totalPoolTvl":0
-	},
-	"coordinape":{
-		"teammates":0
-	},
-	"cryptoScamDb":false,
-	"deepdao":{
-		"daos":0,
-		"proposals":0,
-		"rank":0,
-		"relativeScore":0,
-		"score":0,
-		"votes":0
-	},
-	"ens":"vitalik.eth",
-	"foundation":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"gitcoin":{
-		"funder":true
-	},
-	"idena":false,
-	"knownorigin":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"mirror":false,
-	"poap":39,
-	"poh":false,
-	"rabbitHole":0,
-	"rarible":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"score":59,
-	"signature":"0x60532951c54d2133f9d569162f2e1a1c4c7a46806a961f941e2feb32152b9a4c3107e1d13cdae126a71280e02a268faebd2aaa7513473ca27fdbfe6ea0807d6a1c",
-	"signatureAddress":"0xccccA960A949eaa4d963f0cE29170AD55D4F5E49",
-	"success":true,
-	"superrare":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"uniswapSybil":false,
-	"unstoppableDomains":false,
-	"zora":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	}
+  "score": 59,
+  "success": true,
+  "poh": false,
+  "brightId": false,
+  "poap": 39,
+  "ens": "vitalik.eth",
+  "idena": false,
+  "cryptoScamDb": false,
+  "unstoppableDomains": false,
+  "uniswapSybil": false,
+  "deepdao": 0,
+  "rabbitHole": 0,
+  "mirror": false,
+  "foundation": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "followerCount": 0,
+    "followingCount": 0
+  },
+  "superrare": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "following": 0,
+    "followers": 0
+  },
+  "rarible": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "ownershipsWithStock": 0,
+    "itemsCreated": 65,
+    "ownerships": 191,
+    "hides": 0,
+    "followers": 28,
+    "followings": 0,
+    "likes": 0
+  },
+  "knownorigin": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "zora": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "coinvise": {
+    "tokensCreated": 0,
+    "nftsCreated": 0,
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "totalPoolTvl": 0,
+    "totalPoolCount": 0,
+    "multisendCount": 0,
+    "airdropCount": 0
+  },
+  "gitcoin": {
+    "funder": true
+  },
+  "coordinape": {
+    "teammates": 0
+  },
+  "celo": {
+    "attestations": 0
+  },
+  "polygon": {
+    "Score100": 0
+  },
+  "showtime": {},
+  "signature": "0x2823ab40b11674a329a32a4f865c40f8a379bbef76f75d81be9d231b771a34091429f2d446da2c392981ebd9a87c615c2b76c1f279bef2c1a4558362ee6683201b",
+  "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06"
 }
 ```
 
@@ -130,70 +140,79 @@ Response,
 
 ```json
 {
-	"_id":"0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
-	"_mod":1634607853663082200,
-	"asyncart":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"brightId":false,
-	"coinvise":{
-		"airdropCount":0,
-		"multisendCount":0,
-		"nftsCreated":0,
-		"tokensCreated":0,
-		"totalAmountSold":0,
-		"totalCountSold":0,
-		"totalPoolCount":0,
-		"totalPoolTvl":0
-	},
-	"coordinape":{
-		"teammates":0
-	},
-	"cryptoScamDb":false,
-	"deepdao":{
-		"daos":0,
-		"proposals":0,
-		"rank":0,
-		"relativeScore":0,
-		"score":0,
-		"votes":0
-	},
-	"ens":"vitalik.eth",
-	"foundation":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"gitcoin":{
-		"funder":true
-	},
-	"idena":false,
-	"knownorigin":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"mirror":false,
-	"poap":39,
-	"poh":false,
-	"rabbitHole":0,
-	"rarible":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"score":59,
-	"signature":"0x60532951c54d2133f9d569162f2e1a1c4c7a46806a961f941e2feb32152b9a4c3107e1d13cdae126a71280e02a268faebd2aaa7513473ca27fdbfe6ea0807d6a1c",
-	"signatureAddress":"0xccccA960A949eaa4d963f0cE29170AD55D4F5E49",
-	"success":true,
-	"superrare":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	},
-	"uniswapSybil":false,
-	"unstoppableDomains":false,
-	"zora":{
-		"totalAmountSold":0,
-		"totalCountSold":0
-	}
+  "score": 11,
+  "success": true,
+  "poh": false,
+  "brightId": false,
+  "poap": 1,
+  "ens": false,
+  "idena": false,
+  "cryptoScamDb": false,
+  "unstoppableDomains": false,
+  "uniswapSybil": false,
+  "deepdao": 0,
+  "rabbitHole": 0,
+  "mirror": false,
+  "foundation": {
+    "totalCountSold": 18,
+    "totalAmountSold": 2457815.6069172,
+    "followerCount": 1493,
+    "followingCount": 48
+  },
+  "superrare": {
+    "totalCountSold": 2,
+    "totalAmountSold": 28718.991565550437,
+    "following": 36,
+    "followers": 70
+  },
+  "rarible": {
+    "totalCountSold": 22,
+    "totalAmountSold": 1579751.3247412,
+    "ownershipsWithStock": 1,
+    "itemsCreated": 94,
+    "ownerships": 52,
+    "hides": 0,
+    "followers": 2095,
+    "followings": 108,
+    "likes": 33
+  },
+  "knownorigin": {
+    "totalCountSold": 3,
+    "totalAmountSold": 17812.1511
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "zora": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "coinvise": {
+    "tokensCreated": 0,
+    "nftsCreated": 0,
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "totalPoolTvl": 0,
+    "totalPoolCount": 0,
+    "multisendCount": 0,
+    "airdropCount": 0
+  },
+  "gitcoin": {
+    "funder": false
+  },
+  "coordinape": {
+    "teammates": 0
+  },
+  "celo": {
+    "attestations": 0
+  },
+  "polygon": {
+    "Score100": 0
+  },
+  "showtime": {},
+  "signature": "0x7ea7f4d91e9cc8910416c08009f55d5c50d32ee594eafd373bc17ac2e97d3aa10e343224cee1346f9903826c241ea18a6efd4ce8ea209b387c0775ed85326d831c",
+  "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06"
 }
 ```
 

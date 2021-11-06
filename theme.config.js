@@ -65,7 +65,6 @@ export default {
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css" media="print" onLoad="this.media='all'" />
     </>
   ),
-  floatTOC: true,
   search: true,
   customSearch: <DocSearch />,
   prevLinks: true,
