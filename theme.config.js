@@ -4,12 +4,13 @@ import Logo from './components/Logo'
 export default {
   projectLink: 'https://github.com/anudit/convodocs',
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
-  titleSuffix: ' – The Convo Space',
+  titleSuffix: ' – Convo Space',
+  floatTOC: true,
   logo: (
     <>
       <Logo height={32} classes="mt-1" />
       <span className="mx-2 mt-1 ml-2 mr-2 font-extrabold hidden md:inline">
-        The Convo Space
+        Convo Space
       </span>
       <span className="text-gray-600 mt-1 font-normal hidden md:inline whitespace-no-wrap">
         Documentation
