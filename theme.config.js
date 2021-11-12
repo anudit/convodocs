@@ -5,7 +5,6 @@ export default {
   projectLink: 'https://github.com/anudit/convodocs',
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – Convo Space',
-  floatTOC: true,
   logo: (
     <>
       <Logo height={32} classes="mt-1" />
