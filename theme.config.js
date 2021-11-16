@@ -5,7 +5,7 @@ export default {
   projectLink: 'https://github.com/anudit/convodocs',
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – Convo Space',
-  unstable_stork: true,
+  UNSTABLE_stork: true,
   floatTOC: true,
   logo: (
     <>

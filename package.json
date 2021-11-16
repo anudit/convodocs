@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next --port=8000",
     "start": "next start",
-    "build": "cross-env STORK_PATH=$(pwd)/bin/stork.bin next build",
+    "build": "cross-env STORK_PATH=./stork.bin next build",
     "export": "next export"
   },
   "author": "Anudit Nagar",
