@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next --port=8000",
     "start": "next start",
-    "build": "STORK_PATH=/public/stork.bin next build",
+    "build": "STORK_PATH=$(pwd)/bin/stork.bin next build",
     "export": "next export"
   },
   "author": "Anudit Nagar",
