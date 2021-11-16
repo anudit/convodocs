@@ -5,6 +5,8 @@ export default {
   projectLink: 'https://github.com/anudit/convodocs',
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – Convo Space',
+  unstable_stork: true,
+  floatTOC: true,
   logo: (
     <>
       <Logo height={32} classes="mt-1" />
@@ -66,7 +68,7 @@ export default {
     </>
   ),
   search: true,
-  customSearch: <DocSearch />,
+  // customSearch: <DocSearch />,
   prevLinks: true,
   nextLinks: true,
   footer: true,
