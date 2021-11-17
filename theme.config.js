@@ -1,20 +1,20 @@
-import DocSearch from './components/DocSearch'
+// import DocSearch from './components/DocSearch'
 import Logo from './components/Logo'
 
 export default {
+  github: "https://github.com/anudit/convo",
   projectLink: 'https://github.com/anudit/convodocs',
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – Convo Space',
-  UNSTABLE_stork: true,
+  search: true,
+  // customSearch: <DocSearch />,
+  unstable_stork: true,
   floatTOC: true,
   logo: (
     <>
-      <Logo height={32} classes="mt-1" />
+      <Logo height={32} classes="mt-1 invert-on-dark" />
       <span className="mx-2 mt-1 ml-2 mr-2 font-extrabold hidden md:inline">
         Convo Space
-      </span>
-      <span className="text-gray-600 mt-1 font-normal hidden md:inline whitespace-no-wrap">
-        Documentation
       </span>
    </>
   ),
@@ -67,12 +67,13 @@ export default {
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css" media="print" onLoad="this.media='all'" />
     </>
   ),
-  search: true,
-  // customSearch: <DocSearch />,
   prevLinks: true,
   nextLinks: true,
   footer: true,
   branch: 'main',
   footerEditOnGitHubLink: true,
   footerText: `MIT ${new Date().getFullYear()} © The Convo Space.`,
-}
+  i18n: [
+    { locale: "en-US", text: "English" }
+  ],
+};

@@ -1,0 +1,240 @@
+---
+title: Trust Score
+---
+
+import CommentBox from './../../../components/CommentBox'
+import Callout from 'nextra-theme-docs/callout'
+
+# TrustScore
+
+## Introduction
+
+TrustScore aggregates multiple on/off-chain ***sources of reputation*** into an overall social graph where each source counts towards some points in building the overall TrustScore for any Ethereum Address. This score is continuously evolving. As more platforms get integrated, the weights and the score will update too.
+
+Current Integrations and Score Weightage.
+
+| Integration         	| Factors and Score                                                                                                                                                                        	|
+|---------------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Proof of Humanity   	| 8 Points for Verification                                                                                                                                                                	|
+| Uniswap Sybil       	| 10 Points for Verification                                                                                                                                                               	|
+| BrightId            	| 37 Points for Verification                                                                                                                                                               	|
+| POAP                	| 1 Point for Each POAP Received                                                                                                                                                           	|
+| ENS                 	| 10 Points for Reverse Resolution to your Address.                                                                                                                                        	|
+| Polygon Ecosystem             	| Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention                                                                                                                                                           	|
+| Idena               	| 1 Point for Verification                                                                                                                                                                 	|
+| Celo Verified Attestations             	| 1 Point for each valid Attestation                                                                                                                                                              	|
+| Gitcoin             	| 10 Points for funding a Grant.                                                                                                                                                           	|
+| CryptoScamDB        	| -20 Points for being flagged                                                                                                                                                             	|
+| Unstoppable Domains 	| 10 Points for Reverse Resolution to your Address.                                                                                                                                        	|
+| DeepDAO             	| 1 Point for Each DAO you are a member of. (Deeper Integration coming soon.)                                                                                                              	|
+| RabbitHole          	| Points equal to the Levels you cross on RabbitHole.                                                                                                                                     	|
+| Mirror              	| 10 Points for being a writer on Mirror                                                                                                                                                   	|
+| Coinvise            	| - Tokens Created(a) : (a)^0.5 Points <br/>- NFTs Created(b) : (b)^0.5 Points  <br/>- Total NFTs Sold(c): c Points <br/>- Airdrops Sent(d): d Points <br/>- Multisends(e): e Points <br/>- Liquidity Pools Created(f): f Points 	|
+| Showtime          	| Followers, Following 	|
+| Rarible             	| NFTs Sold, Average Sale Value, Followers, Following	|
+| Foundation          	| NFTs Sold, Average Sale Value, Followers, Following |
+| Zora                	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| Async Art           	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| KnownOrigin          	| NFTs Sold, Average Sale Value                                                                                                                                                            	|
+| SuperRare     | NFTs Sold, Average Sale Value, Followers, Following |
+| Boardroom     | Number of Governance Proposals Accepted|
+| Coordinape    | Number of teammates. |
+| Cyberconnect  | - Followers <br/>- Following  <br/>- Social  <br/>- Display Name 	|
+
+## Integration
+
+### Querying TrustScore
+
+API Request format,
+```html
+https://theconvo.space/api/identity?address=<ethereum-address-or-ens>&apikey=CONVO
+```
+
+
+Example 1,
+```html
+https://theconvo.space/api/identity?address=vitalik.eth&apikey=CONVO
+```
+
+Response,
+
+```json
+{
+  "score": 59,
+  "success": true,
+  "poh": false,
+  "brightId": false,
+  "poap": 39,
+  "ens": "vitalik.eth",
+  "idena": false,
+  "cryptoScamDb": false,
+  "unstoppableDomains": false,
+  "uniswapSybil": false,
+  "deepdao": 0,
+  "rabbitHole": 0,
+  "mirror": false,
+  "foundation": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "followerCount": 0,
+    "followingCount": 0
+  },
+  "superrare": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "following": 0,
+    "followers": 0
+  },
+  "rarible": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "ownershipsWithStock": 0,
+    "itemsCreated": 65,
+    "ownerships": 191,
+    "hides": 0,
+    "followers": 28,
+    "followings": 0,
+    "likes": 0
+  },
+  "knownorigin": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "zora": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "coinvise": {
+    "tokensCreated": 0,
+    "nftsCreated": 0,
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "totalPoolTvl": 0,
+    "totalPoolCount": 0,
+    "multisendCount": 0,
+    "airdropCount": 0
+  },
+  "gitcoin": {
+    "funder": true
+  },
+  "coordinape": {
+    "teammates": 0
+  },
+  "celo": {
+    "attestations": 0
+  },
+  "polygon": {
+    "Score100": 0
+  },
+  "showtime": {},
+  "signature": "0x2823ab40b11674a329a32a4f865c40f8a379bbef76f75d81be9d231b771a34091429f2d446da2c392981ebd9a87c615c2b76c1f279bef2c1a4558362ee6683201b",
+  "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06"
+}
+```
+
+Example 2,
+```html
+https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257Ed62CF&apikey=CONVO
+```
+
+Response,
+
+```json
+{
+  "score": 11,
+  "success": true,
+  "poh": false,
+  "brightId": false,
+  "poap": 1,
+  "ens": false,
+  "idena": false,
+  "cryptoScamDb": false,
+  "unstoppableDomains": false,
+  "uniswapSybil": false,
+  "deepdao": 0,
+  "rabbitHole": 0,
+  "mirror": false,
+  "foundation": {
+    "totalCountSold": 18,
+    "totalAmountSold": 2457815.6069172,
+    "followerCount": 1493,
+    "followingCount": 48
+  },
+  "superrare": {
+    "totalCountSold": 2,
+    "totalAmountSold": 28718.991565550437,
+    "following": 36,
+    "followers": 70
+  },
+  "rarible": {
+    "totalCountSold": 22,
+    "totalAmountSold": 1579751.3247412,
+    "ownershipsWithStock": 1,
+    "itemsCreated": 94,
+    "ownerships": 52,
+    "hides": 0,
+    "followers": 2095,
+    "followings": 108,
+    "likes": 33
+  },
+  "knownorigin": {
+    "totalCountSold": 3,
+    "totalAmountSold": 17812.1511
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "zora": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "coinvise": {
+    "tokensCreated": 0,
+    "nftsCreated": 0,
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "totalPoolTvl": 0,
+    "totalPoolCount": 0,
+    "multisendCount": 0,
+    "airdropCount": 0
+  },
+  "gitcoin": {
+    "funder": false
+  },
+  "coordinape": {
+    "teammates": 0
+  },
+  "celo": {
+    "attestations": 0
+  },
+  "polygon": {
+    "Score100": 0
+  },
+  "showtime": {},
+  "signature": "0x7ea7f4d91e9cc8910416c08009f55d5c50d32ee594eafd373bc17ac2e97d3aa10e343224cee1346f9903826c241ea18a6efd4ce8ea209b387c0775ed85326d831c",
+  "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06"
+}
+```
+
+### Verifying Response Signature
+
+<Callout emoji="ℹ️">
+	Convo uses `0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06` as SignatureAddress to sign the oracle data.
+</Callout>
+
+```js
+const { utils } = require('ethers');
+
+let resp = await fetch('https://theconvo.space/api/identity?address=vitalik.eth&apikey=CONVO');
+let { signature, signatureAddress, _mod, ...scoreData } = await resp.json();
+let recoveredAddress = utils.verifyMessage(JSON.stringify(scoreData), signature);
+console.log( recoveredAddress === signatureAddress );
+```
+
+## Comments
+<CommentBox threadId="trust-score"/>

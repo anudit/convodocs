@@ -1,0 +1,441 @@
+---
+title: Convo API
+---
+
+import Callout from 'nextra-theme-docs/callout'
+import CommentBox from './../../../components/CommentBox'
+import Tabs from './../../../components/Tabs'
+
+# Convo API
+
+##  API Details
+Early-access API Endpoint : [https://theconvo.space/api/](https://theconvo.space/api)
+
+API Playground : [https://playground.theconvo.space/](https://playground.theconvo.space)
+
+OpenAPI 3 Config : [https://github.com/anudit/convodocs/tree/main/public/Convo.yaml/](https://github.com/anudit/convodocs/tree/main/public/Convo.yaml)
+
+<Callout emoji="ℹ️">
+  Use `apikey=CONVO` added as a query parameter for all requests. Returns a `401` Unauthorized Error otherwise.
+  Breaking changes might be introduced to the endpoints as Convo is still in Early-access. All such changes will be informed well in advance.
+</Callout>
+
+## Step 1 - User Authentication
+
+### Authenticating a User
+
+**Auth Route : `/auth`**
+
+**Full Endpoint : `https://theconvo.space/api/auth?apikey=CONVO`**
+
+<Callout emoji="ℹ️">
+  You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
+</Callout>
+
+
+<Tabs>
+<div label="Ethereum">
+Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+  "signature":"0x76138b631abf63e1cced43cd19c4b8f417977b7fb929b15b38f2db8f70243a3d00739746911104e4244bcc12369cf34ab91ef21481a36fdd5e027ffd0ad145c11b",
+  "timestamp": 1623254904621,
+  "chain":"ethereum"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `signature` 	|  Ethereum signature of `data` using the above `signerAddress`	|
+| `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
+| `chain` 	| `ethereum`	|
+
+`data` Format = `I allow this site to access my data on The Convo Space using the account <signerAddress>. Timestamp:<timestamp>`
+
+Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20. Timestamp:1623254904621'
+
+```jsx
+// Sample signature generation code using ethers.js
+let timestamp = Date.now();
+let signer = await provider.getSigner();
+let signerAddress = await signer.getAddress();
+let data = `I allow this site to access my data on The Convo Space using the account ${signerAddress}. Timestamp:${timestamp}`;
+let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ethers.utils.toUtf8Bytes(data)), signerAddress.toLowerCase() ]);
+
+let authBody = {
+  "signature": signature,
+  "signerAddress": signerAddress,
+  "timestamp": timestamp,
+  "chain": "ethereum"
+};
+```
+
+</div>
+
+<div label="NEAR">
+
+Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "signerAddress":"54e94c146f0c3e4321f7deefd8ec5e3d4c715a9e6d805c5e10aeade18dfa30b8",
+  "signature":"a9f793d84cb90a03566d1f2ba05a7f3fa43b9d33c5be4ddbb943a3754cb7fd49fa4620d4827349a45948243f660db4547436cb2ad3b6549263ce01fcd63b200f",
+  "accountId":"convo.testnet",
+  "timestamp":1630751987917,
+  "chain":"near"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `signature` 	|  NEAR signature of `data` using the above `signerAddress`	|
+| `accountId` 	|  Your NEAR Account Id	|
+| `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
+| `chain` 	| `near`	|
+
+`data` Format = `I allow this site to access my data on The Convo Space using the account <accountId>. Timestamp:<timestamp>`
+
+Example, `data` = 'I allow this site to access my data on The Convo Space using the account convo.testnet. Timestamp:1623254904621'
+
+```jsx
+// Sample signature generation code using near-api-js.js
+let accountId = wallet.getAccountId();
+const timestamp = Date.now();
+const tokenMessage = new TextEncoder().encode(`I allow this site to access my data on The Convo Space using the account ${accountId}. Timestamp:${timestamp}`);
+const signatureData = await wallet.account().connection.signer.signMessage(tokenMessage, accountId, 'testnet');
+
+let authBody = {
+  "signature": Buffer.from(signatureData.signature).toString('hex'),
+  "signerAddress": Buffer.from(signatureData.publicKey.data).toString('hex'),
+  "accountId": accountId,
+  "timestamp": timestamp,
+  "chain": "near"
+};
+
+```
+
+</div>
+
+<div label="Flow">
+
+Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "signature" : [{"f_type":"CompositeSignature","f_vsn":"1.0.0","addr":"0x4268f655cacd5436","keyId":1,"signature":"d8a12db6e43b6856b702d6fa593e3d9f2b8ac0e1b9ee56a17fc4543ef94cbb2356f1d4fbff910d1c70ba9c913cdb2eff06debfd7d1e8a25266b07a04b7531e4d"}],
+  "signerAddress": "0x4268f655cacd5436",
+  "timestamp": 1634402654144,
+  "chain":"flow"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `signature` 	|  `CompositeSignature` of `data` 	|
+| `timestamp` 	|  Timestamp of the instant the signature request was fired.	|
+| `chain` 	| `flow`	|
+
+`data` Format = `I allow this site to access my data on The Convo Space using the account <accountId>. Timestamp:<timestamp>`
+
+Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x4268f655cacd5436. Timestamp:1634402654144'
+
+```jsx
+// Sample signature generation code using "@onflow/fcl"
+import * as fcl from "@onflow/fcl"
+
+fcl.config()
+    .put("challenge.scope", "email") // request for Email
+    .put("accessNode.api", "https://access-testnet.onflow.org") // Flow testnet
+    .put("discovery.wallet", "https://flow-wallet-testnet.blocto.app/api/flow/authn") // Blocto testnet wallet
+    .put("discovery.wallet.method", "HTTP/POST")
+    .put("service.OpenID.scopes", "email!")
+
+await fcl.authenticate();
+
+let timestamp = Date.now();
+const currentUser = await fcl.currentUser().snapshot();
+let data = `I allow this site to access my data on The Convo Space using the account ${currentUser.addr}. Timestamp:${timestamp}`;
+const MSG = Buffer.from(data).toString("hex");
+const signature = await fcl.currentUser().signUserMessage(MSG);
+
+
+let authBody = {
+  "signature": signature,
+  "signerAddress": currentUser.addr
+  "timestamp": timestamp,
+  "chain": "flow"
+};
+
+let isValid = await fcl.verifyUserSignatures(MSG, signature);
+```
+
+</div>
+</Tabs>
+
+**Response**
+
+```json
+{
+  "success":true,
+  "message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
+}
+```
+
+| Response Param 	| Description 	|
+|:-	|:-	|
+| `success` 	| `Boolean`, status of the request.	|
+| `message` 	| Contains either the JWT auth token if `success==true` or an error message `success==false` |
+
+
+### Validating Authentication
+
+**Auth Route : `/validateAuth`**
+
+**Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=CONVO`**
+
+
+<Tabs>
+<div label="Ethereum">
+
+Send a `POST` request to the endpoint with the following example body,
+```json
+{
+  "signerAddress":"0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `token` 	|  The JWT Authentication Token to validate.	|
+
+</div>
+
+<div label="NEAR">
+
+Send a `POST` request to the endpoint with the following example body,
+```json
+{
+  "signerAddress":"convo.testnet",
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiY29udm8udGVzdG5ldCIsImNoYWluIjoibmVhciIsImlhdCI6MTYzMTM2NTA3MCwiZXhwIjoxNjMxNDUxNDcwfQ.XFv2IS1ZBrSgJUnY0B334iiTt5gL1pq-vgdYaKh1dk8"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The NEAR accountId of user. 	|
+| `token` 	|  The JWT Authentication Token to validate.	|
+
+</div>
+
+<div label="Flow">
+
+Send a `POST` request to the endpoint with the following example body,
+```json
+{
+  "signerAddress":"0x4268f655cacd5436",
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiY29udm8udGVzdG5ldCIsImNoYWluIjoibmVhciIsImlhdCI6MTYzMTM2NTA3MCwiZXhwIjoxNjMxNDUxNDcwfQ.XFv2IS1ZBrSgJUnY0B334iiTt5gL1pq-vgdYaKh1dk8"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `signerAddress` 	| The address of the account to authenticate. 	|
+| `token` 	|  The JWT Authentication Token to validate.	|
+
+</div>
+</Tabs>
+
+
+**Response**
+
+```json
+{
+  "success":true,
+  "message":"Valid Auth Token"
+}
+```
+
+| Response Param 	| Description 	|
+|:-	|:-	|
+| `success` 	| `Boolean`, status of the request.	|
+| `message` 	| If `success==true` then "Valid Auth Token" else returns the error message |
+
+Possible Error Messages,
+
+- `200`: Invalid Auth Token.
+- `400`: Internal JWT Auth Error Message.
+- `400`: signerAddress or token or timestamp is missing/invalid.
+- `500`: Internal Error.
+
+## Step 2 - Querying Data
+
+<Callout emoji="ℹ️">
+  URLs passed as query parameters must be URL encoded using `encodeURIComponent()`
+</Callout>
+
+###  Querying a Comment
+
+- By CommentId : `/comment?commentId=fJPU8mZiQwVXV6K1xXlw`
+
+###  Querying Comments
+
+- By ThreadId : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw`
+- By URL : `/comments?url=https%3A%2F%2Fgoogle.com%2F`
+- By ThreadId and URL : `/comments?threadId=fJPU8mZiQwVXV6K1xXlw&url=https%3A%2F%2Fdeepdao.io%2F`
+
+###  Querying Threads
+
+`/threads` endpoint gets the metadata for any ThreadId. This will soon be the place for adding permissions to conversations like moderators, url & token gating and many more.
+
+- All Threads: `/threads`
+- By ThreadId : `/threads?threadId=fJPU8mZiQwVXV6K1xXlw`
+- By URL : `/threads?url=https%3A%2F%2Fgoogle.com%2F`
+
+
+**Response Example**
+
+```json
+{
+  "_id": "01f71qnhfzt5zdf17k5xk5cz4m",
+  "_mod": 1627106452229067000,
+  "author": "0xa97276772e9A8D5408421D60c2749C68c2e2fC3a",
+  "createdOn": "1622482263131",
+  "downvotes": [],
+  "metadata": {},
+  "tag1": "",
+  "tag2": "",
+  "text": "HI",
+  "tid": "KIGZUnR4RzXDFheXoOwo",
+  "upvotes": [],
+  "url": "https://theconvo.space/",
+  "authorENS": "name.eth"
+},
+
+```
+
+You can pagintate by using `page` and `pageSize` query params.
+
+You can reorder the comments fetching the latest first using `latestFirst` query param.
+
+## Step 3 - Creating a comment
+
+**Route : `/comments`**
+
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=CONVO`**
+
+Send a `POST` request to the endpoint with the following request schema,
+```json
+{
+  'token': <JWT-Auth-token>,
+  'signerAddress': <ethereum-address-of-author>,
+  'comment': <plaintext-comment>,
+  'threadId': <threadId-of-the-thread>,
+  'url': encodeURIComponent(<url-of-the-page>),
+}
+```
+
+**Response**
+
+```json
+{
+  '_id': <unique-id-of-comment>
+  'createdOn': <timestamp>,
+  'author': <same-as-signerAddress>,
+  'text': <same-as-comment>,
+  'url': <same-as-url>,
+  'tid': <same-as-threadId>,
+}
+
+```
+
+You can add a `replyTo` body parameter with a valid comment `_id` value to set that comment as a reply to any specific comment.
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+## Step 4 - Deleting a comment
+
+**Route : `/comments`**
+
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=CONVO`**
+
+Send a `DELETE` request to the endpoint with the following request schema,
+```json
+{
+  'token': <JWT-Auth-token>,
+  'commentId': <unique-id-of-comment>
+}
+```
+
+**Response**
+
+```json
+{
+  'success': true,
+}
+```
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+
+## Likes and Dislikes
+
+**Route : `/vote`**
+
+**Full Endpoint : `https://theconvo.space/api/vote?apikey=CONVO`**
+
+Send a `POST` request to the endpoint with the following body schema,
+```json
+{
+  "signerAddress": "<user-address>",
+  "token": "<JWT-Auth-Token>",
+  "commentId":"<Comment-Id>",
+  "type": "<Type-of-Vote>"
+}
+```
+
+The `type` field supports the folowing values,
+- `toggleUpvote`
+- `toggleDownvote`
+
+Eg,
+```json
+{
+    "signerAddress": "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjI3MTA3NjY5LCJleHAiOjE2MjcxOTQwNjl9.VJEViNmVxfxzY8dYTV_7r5SGrln6OcXUh50R3yePz1M",
+    "commentId":"01faymzw18ev9vgrq2qarkg9xb",
+    "type": "toggleUpvote"
+}
+```
+
+**Response**
+
+```json
+{
+  'success': true,
+}
+```
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `404`: Invalid Request Method
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+## Comments
+<CommentBox threadId="convo-api"/>

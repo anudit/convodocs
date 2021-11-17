@@ -2,14 +2,13 @@ const withPWA = require('next-pwa')
 const withPlugins = require('next-compose-plugins')
 const runtimeCaching = require('next-pwa/cache')
 const { PHASE_PRODUCTION_BUILD, PHASE_PRODUCTION_SERVER } = require('next/constants')
-
-const withNextra = require('nextra')({
-    theme: 'nextra-theme-docs',
-    themeConfig: './theme.config.js',
-    stork: true,
-    unstable_stork: true,
-    unstable_staticImage: true,
+const withNextra = require("nextra")({
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.js",
+  unstable_stork: true,
+  unstable_staticImage: true,
 });
+
 
 const nextConfig = {
     poweredByHeader: false,
@@ -23,5 +22,10 @@ module.exports = withPlugins([
         runtimeCaching
       },
     }, [PHASE_PRODUCTION_BUILD, PHASE_PRODUCTION_SERVER]],
-    [withNextra]
+    [withNextra, {
+      i18n: {
+        locales: ["en-US"],
+        defaultLocale: "en-US",
+      }
+    }]
 ], nextConfig)

@@ -1,0 +1,47 @@
+---
+title: BrightID
+---
+
+import Callout from 'nextra-theme-docs/callout'
+import CommentBox from './../../../components/CommentBox'
+
+# Convo x BrightID
+
+## Introduction
+
+BrightID is a social identity network that allows you to prove that you’re only using one account
+
+Please refer to the [BrightID Docs](https://dev.brightid.org/docs/guides/docs/basic-integration.md) for more details.
+
+## Integration
+
+### Querying Verification
+
+API Request format,
+```html
+https://app.brightid.org/node/v5/verifications/Convo/<ethereum-address>
+```
+
+Example,
+```html
+https://app.brightid.org/node/v5/verifications/Convo/0xd8da6bf26964af9d7eed9e03e53415d37aa96045
+```
+
+### Verifying User
+
+API Request format,
+```html
+https://app.brightid.org/link-verification/http:%2f%2fnode.brightid.org/Convo/<ethereum-address>
+```
+
+Example,
+```html
+https://app.brightid.org/link-verification/http:%2f%2fnode.brightid.org/Convo/0xd8da6bf26964af9d7eed9e03e53415d37aa96045
+```
+or deeplink using,
+```html
+brightid://link-verification/http:%2f%2fnode.brightid.org/Convo/0xd8da6bf26964af9d7eed9e03e53415d37aa96045
+```
+
+## Comments
+<CommentBox threadId="brightid"/>
