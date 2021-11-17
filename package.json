@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "STORK_PATH=$(pwd)/bin/stork.bin next build"
+    "build": "STORK_PATH=$(pwd)/bin/stork.bin next build",
+    "export": "next export"
   },
-  "author": "Shu Ding",
-  "license": "Apache-2.0",
+  "author": "Anudit Nagar",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@reach/skip-nav": "^0.10.5",

@@ -1,4 +1,4 @@
-// import DocSearch from './components/DocSearch'
+import DocSearch from './components/DocSearch'
 import Logo from './components/Logo'
 
 export default {
@@ -7,8 +7,8 @@ export default {
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: ' – Convo Space',
   search: true,
-  // customSearch: <DocSearch />,
-  unstable_stork: true,
+  customSearch: <DocSearch />,
+  // unstable_stork: true,
   floatTOC: true,
   logo: (
     <>

@@ -5,8 +5,8 @@ const { PHASE_PRODUCTION_BUILD, PHASE_PRODUCTION_SERVER } = require('next/consta
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.js",
-  unstable_stork: true,
-  unstable_staticImage: true,
+  // unstable_stork: true,
+  // unstable_staticImage: true,
 });
 
 
