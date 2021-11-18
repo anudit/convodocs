@@ -1,9 +1,27 @@
 ---
 title: Convo SDK
 ---
+import CommentBox from './../../../components/CommentBox';
+import Tabs from './../../../components/Tabs';
+import Markdown from 'markdown-to-jsx';
+import { useSSG } from 'nextra/ssg';
 
-import CommentBox from './../../../components/CommentBox'
-import Tabs from './../../../components/Tabs'
+export const getStaticProps = ({ params }) => {
+  return fetch(`https://bundlephobia.com/api/size?package=@theconvospace/sdk`)
+    .then(res => res.json())
+    .then(releases => {
+        console.log(releases);
+        return ({ props: { ssg: releases }, revalidate: 10 })
+    })
+}
+
+export const BundleRender = () => {
+  const releases = useSSG();
+  return (<Markdown>
+  {"🤏 Just " + parseFloat(releases.size/1000).toFixed(2) + "kB Minified (" + parseFloat(releases.gzip/1000).toFixed(2) + "kB Minified+GZipped)"}
+  </Markdown>)
+}
+
 
 # Convo SDK
 
@@ -12,7 +30,7 @@ SDK containing all the functions you'll need to build on [theconvo.space](thecon
 🌲 Tree Shaking Supported ✔️<br/>
 🆓 Side Effect Free ✔️<br/>
 🪨 Fully TypeScript Compatible ✔️<br/>
-🤏 Just 8.37kB Minified (1.85kB Minified+GZipped) <br/>
+<BundleRender/> <br/>
 
 [Jump to Sample Projects](#sample-projects)
 [Try it Out](https://npm.runkit.com/@theconvospace/sdk)
@@ -72,3 +90,4 @@ pnpm i --save @theconvospace/sdk
 
 ## Comments
 <CommentBox threadId="convo-sdk"/>
+

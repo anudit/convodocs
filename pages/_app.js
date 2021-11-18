@@ -55,7 +55,6 @@ export default function Nextra({ Component, pageProps }) {
           border-color:white;
         }
 
-
         .dark .card {
           color:white;
           border-color: #80808029;
@@ -76,7 +75,7 @@ export default function Nextra({ Component, pageProps }) {
 
         @media (min-width: 768px){
           .md\:w-64 {
-              width: 18rem !important;
+              width: 20rem !important;
           }
         }
 
