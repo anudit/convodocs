@@ -28,10 +28,10 @@ const DocSearch = () => {
         appId: 'VT0SRL8DNS',
         apiKey: 'c227cefd16ad744177b02419fc83a21b',
         indexName: 'data_convo',
-        inputSelector: 'input#algolia-doc-search',
-        debug: true
+        container: 'input#algolia-doc-search',
+        debug: true,
+        placeholder: "Search Docs",
       });
-      console.log('docsearch setup', docsearch);
     }
   }, [])
 

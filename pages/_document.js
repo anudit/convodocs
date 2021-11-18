@@ -6,16 +6,19 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://VT0SRL8DNS-dsn.algolia.net" crossOrigin="true" />
+        </Head>
         <body>
           <SkipNavLink />
           <Main />
           <NextScript />
           <script
-            src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js"
+            src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"
             async
             defer
           />
+          <script src="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha"></script>
         </body>
       </Html>
     )

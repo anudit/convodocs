@@ -10,7 +10,6 @@ export const getStaticProps = ({ params }) => {
   return fetch(`https://bundlephobia.com/api/size?package=@theconvospace/sdk`)
     .then(res => res.json())
     .then(releases => {
-        console.log(releases);
         return ({ props: { ssg: releases }, revalidate: 10 })
     })
 }
