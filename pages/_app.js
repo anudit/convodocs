@@ -75,7 +75,7 @@ export default function Nextra({ Component, pageProps }) {
 
         @media (min-width: 768px){
           .md\:w-64 {
-              width: 20rem !important;
+              width: 18rem !important;
           }
         }
 
