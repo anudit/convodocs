@@ -30,15 +30,16 @@ const DocSearch = () => {
         indexName: 'data_convo',
         inputSelector: 'input#algolia-doc-search',
         debug: true
-      })
+      });
+      console.log('docsearch setup', docsearch);
     }
   }, [])
 
-  useEffect(()=>{
-    if (document.getElementsByClassName('ds-dropdown-menu').length>1){
-      document.getElementsByClassName('ds-dropdown-menu')[0].remove();
-    }
-  })
+  // useEffect(()=>{
+  //   if (document.getElementsByClassName('ds-dropdown-menu').length>1){
+  //     document.getElementsByClassName('ds-dropdown-menu')[0].remove();
+  //   }
+  // })
 
   return (
     <div className="relative w-full md:w-64 mr-2 docs-search">

@@ -1,0 +1,252 @@
+---
+title: SDK - Threads
+---
+
+import CommentBox from './../../../components/CommentBox'
+import Tabs from './../../../components/Tabs'
+
+# SDK - Threads
+
+## Create a new Thread (Group)
+
+```jsx
+convo.threads.create(
+    signerAddress: string, // Blockchain wallet address of the creator
+    token: string, // JWT Auth token
+    title: string, // Title of the Thread
+    url: string, // Origin URL
+    isReadPublic: boolean, // Allow anyone to Read or only members? (Public group)
+    isWritePublic: boolean, // Allow anyone to Write or only members? (Public group)
+    members: Array<string>, // A list of members
+    moderators: Array<string>, // A list of moderators
+    keywords: Array<string> // Keywards to identify
+)
+```
+
+Examples,
+```jsx
+let resp = await convo.threads.create(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "New Group",
+    "https://theconvo.space/",
+    true,
+    true,
+    [ "0x1f88ccc7f7A57Aa0A1C01E219654F13E93aD51ED", "0x707aC3937A9B31C225D8C240F5917Be97cab9F20" ],
+    [ "0x1f88ccc7f7A57Aa0A1C01E219654F13E93aD51ED" ],
+    ["one", "two", "three"]
+)
+```
+
+## Delete a Thread (Group)
+
+```jsx
+convo.threads.delete(
+    signerAddress: string, // Blockchain wallet address of the creator
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.threads.delete(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "tkhbnvkskjcn",
+)
+```
+
+## Query a Thread (Group)
+
+```jsx
+convo.threads.query({
+    threadId?: string, // filter by unique ThreadId
+    createdOn?: string, // filter by timestamp
+    creator?: string, // filter by Blockchain Wallet Address
+    title?: string, // filter by Title String
+    url?: string, // filter by Origin URL
+    isReadPublic?: string, // filter by Public Readable threads
+    isWritePublic?: string, // filter by Public Writable threads
+    member?: string, // filter by Memeber's Blockchain Wallet Address
+    moderator?: string, // filter by Moderators's Blockchain Wallet Address
+    keyword?: string, // filter by keywords
+    page?: string, // Paginate Request, Page Number
+    pageSize?: string, //Paginate Request, Page Size
+})
+```
+
+Example,
+```jsx
+// Get a user's threads.
+let resp = await convo.threads.query({
+    member:"0x707aC3937A9B31C225D8C240F5917Be97cab9F20"
+};
+```
+
+## Add Members to a Thread (Group)
+
+```jsx
+convo.threads.addMembers({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+    members: Array<string> //  Array of Blockchain Addresses to add.
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.addMembers(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+    ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
+);
+```
+
+## Remove Members from a Thread (Group)
+
+```jsx
+convo.threads.removeMembers({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+    members: Array<string> //  Array of Blockchain Addresses to add.
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.removeMembers(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+    ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
+);
+```
+
+## Add Moderators to a Thread (Group)
+
+```jsx
+convo.threads.addModerators({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+    members: Array<string> //  Array of Blockchain Addresses to add.
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.addModerators(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+    ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
+);
+```
+
+## Remove Moderators from a Thread (Group)
+
+```jsx
+convo.threads.removeModerators({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+    members: Array<string> //  Array of Blockchain Addresses to add.
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.removeModerators(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+    ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
+);
+```
+
+## Update title of a Thread (Group)
+
+```jsx
+convo.threads.updateTitle({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+    title: string // New title
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.updateTitle(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+    "This is a new Title"
+);
+```
+
+
+## Update description of a Thread (Group)
+
+```jsx
+convo.threads.updateDescription({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+    description: string // New description
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.updateDescription(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+    "This is a new Description"
+);
+```
+
+
+## Toggle Public Read Access of a Thread (Group)
+
+```jsx
+convo.threads.togglePublicRead({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.togglePublicRead(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+);
+```
+
+## Toggle Public Write Access of a Thread (Group)
+
+```jsx
+convo.threads.togglePublicWrite({
+    signerAddress: string, // Blockchain wallet address.
+    token: string, // JWT Auth token
+    threadId: string, // Unique ThreadID
+})
+```
+
+Example,
+```jsx
+let resp = await convo.threads.togglePublicWrite(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    "",
+    "hjbskjfvnkfsj",
+);
+```
+

@@ -1,0 +1,118 @@
+---
+title: SDK - Comments
+---
+
+import CommentBox from './../../../components/CommentBox'
+import Tabs from './../../../components/Tabs'
+
+# SDK - Comments
+
+## Create a Comment
+
+```jsx
+convo.comments.create(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    comment,  // Comment text
+    threadId,  // Unique threadId
+    url // Url of the page where the message is from.
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.create(
+    accounts[0],
+    "",
+    "New",
+    "KIGZUnR4RzXDFheXoOwo",
+    encodeURIComponent('https://theconvo.space/')
+);
+```
+
+## Delete a Comment
+
+```jsx
+convo.comments.delete(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    commentId // Comment ID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.delete(
+    accounts[0],
+    "",
+    "KIGZUnR4RzXDFheXoOwo"
+);
+```
+
+## Toggle Upvote
+```jsx
+convo.comments.toggleUpvote(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    commentId // Comment ID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.toggleUpvote(
+    accounts[0],
+    "",
+    "KIGZUnR4RzXDFheXoOwo"
+);
+```
+
+
+## Toggle Downvote
+```jsx
+convo.comments.toggleDownvote(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token,          // JWT Auth Token
+    commentId       // Comment ID
+)
+```
+
+Example,
+```jsx
+let resp = await convo.comments.toggleDownvote(
+    accounts[0],
+    "",
+    "KIGZUnR4RzXDFheXoOwo"
+);
+```
+
+## Query Comments
+
+```jsx
+convo.comments.query({
+    threadId,   // Unique ThreadId
+    url,        // Origin URL
+    author,     // Blockchain Wallet Address
+    tag1,       // Custom Tag
+    tag2,       // Custom Tag
+    replyTo,    // CommentId of the original Comment
+    latestFirst,// Return Newer on the top
+    page,       // Paginiate Response, Page Number: 0-n
+    pageSize,   // Paginiate Response, Page Size
+})
+```
+
+Examples,
+```jsx
+// query by website
+let resp = await convo.comments.toggleDownvote({
+    url:"https://theconvo.space/"
+});
+
+// query by NFT , ref: https://docs.theconvo.space/integrate/Convo-API/standards
+let resp = await convo.comments.toggleDownvote({
+    threadId:"0x492D7C407d78D170AF70Ce53578a4Ec839da0ebd:152:1",
+    url:"https://opensea.io/",
+});
+
+```
