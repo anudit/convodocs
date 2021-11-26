@@ -15,11 +15,11 @@ Current Integrations and Score Weightage.
 
 | # | Integration | Factors and Score |
 | - |---------------------	|----	|
-| 1 | Aave  | - totalCollateralETH <br/> - totalDebtETH <br/> - availableBorrowsETH <br/> - currentLiquidationThreshold<br/> - ltv<br/> - healthFactor	|
-| 2 | Age  | Age of Ethreum Address in months 	|
-| 3 | ArcX | - ArcX Loyalty Score <br/> -IndexCoop Loyalty Score |
+| 1 | Aave  | - totalCollateralETH <br/> - totalDebtETH <br/> - availableBorrowsETH <br/> - currentLiquidationThreshold<br/> - ltv<br/> - healthFactor <br/> Across: Main Market, AMM Market, Polygon Market, Avalanche Market	|
+| 2 | Age  | Age of Ethreum Address in days 	|
+| 3 | ArcX | - ArcX Loyalty Score <br/> - IndexCoop Loyalty Score |
 | 4 | Async Art | - NFTs Sold <br/>- Average Sale Value |
-| 5 | Boardroom     | Number of Governance Proposals Accepted|
+| 5 | Boardroom | - Number of Votes given <br/>- DAOs participated In <br/>- Voting History  |
 | 6 | BrightId | 37 Points for Verification |
 | 7 | Celo Verified Attestations | 1 Point for each valid Attestation |
 | 8 | Coinvise | - Tokens Created(a) : (a)^0.5 Points <br/>- NFTs Created(b) : (b)^0.5 Points  <br/>- Total NFTs Sold(c): c Points <br/>- Airdrops Sent(d): d Points <br/>- Multisends(e): e Points <br/>- Liquidity Pools Created(f): f Points 	|
@@ -27,7 +27,7 @@ Current Integrations and Score Weightage.
 | 10 | Coordinape    | Number of teammates. |
 | 12 | CryptoScamDB | -20 Points for being flagged |
 | 13 | Cyberconnect  | - Followers <br/>- Following  <br/>- Social  <br/>- Display Name 	|
-| 14 | DeepDAO | 1 Point for Each DAO you are a member of. (Deeper Integration coming soon.) |
+| 14 | DeepDAO | - score <br/>- rank <br/>- relativeScore <br/>- daos <br/>- proposals <br/>- votes |
 | 15 | ENS | 10 Points for Reverse Resolution to your Address. |
 | 16 | Foundation | - NFTs Sold <br/>- Average Sale Value <br/>- Followers <br/>- Following |
 | 17 | Gitcoin | 10 Points for funding a Grant. |
@@ -37,16 +37,20 @@ Current Integrations and Score Weightage.
 | 21 | POAP | 1 Point for Each POAP Received |
 | 22 | Polygon Ecosystem | Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention |
 | 23 | Proof of Humanity | 8 Points for Verification |
-| 24 | RabbitHole | Points equal to the Levels you cross on RabbitHole. |
-| 25 | Rarible | - NFTs Sold <br/>- Average Sale Value <br/>- Followers <br/>- Following	|
+| 24 | RabbitHole | - Points equal to the Levels you cross on RabbitHole.  <br/>- TaskIDs of the tasks Completed  |
+| 25 | Rarible | - Total NFTs Sold <br/>- Total NFTs Created <br/>- Total NFTs Owned <br/>- Average Sale Value <br/>- Followers <br/>- Following	|
 | 26 | RSS3  | - Profile <br/>- Backlinks  <br/>- Accounts  <br/>- Links 	|
-| 27 | Showtime | Followers, Following 	|
+| 27 | Showtime | - Followers <br/>- Following 	|
 | 28 | SuperRare     | - NFTs Sold <br/>- Average Sale Value<br/>- Followers<br/>- Following |
 | 29 | Uniswap Sybil | 10 Points for Verification |
 | 30 | Unstoppable Domains 	| 10 Points for Reverse Resolution to your Address. |
 | 31 | Zora | - Number of NFTs Sold <br/>- Average Sale Value |
 
 ## Integration
+
+<Callout emoji="ℹ️">
+	You can add a `noCache=true` query paramter to manually rebuild and cache the Social Graph anytime. Otherwise our indexers update your score every 8 hours.
+</Callout>
 
 ### Querying TrustScore
 
@@ -61,22 +65,29 @@ Example 1,
 https://theconvo.space/api/identity?address=vitalik.eth&apikey=CONVO
 ```
 
-Response,
+<details>
+<summary>View Response</summary>
 
 ```json
 {
-  "score": 59,
+  "score": 54,
   "success": true,
   "poh": false,
   "brightId": false,
-  "poap": 39,
+  "poap": 43,
   "ens": "vitalik.eth",
   "idena": false,
   "cryptoScamDb": false,
   "unstoppableDomains": false,
   "uniswapSybil": false,
   "deepdao": 0,
-  "rabbitHole": 0,
+  "rabbitHole": {
+    "level": 1,
+    "tasksCompleted": [
+      "UNI_V2_SWAP",
+      "GNOSIS_SAFE_OWNER"
+    ]
+  },
   "mirror": false,
   "foundation": {
     "totalCountSold": 0,
@@ -94,11 +105,11 @@ Response,
     "totalCountSold": 0,
     "totalAmountSold": 0,
     "ownershipsWithStock": 0,
-    "itemsCreated": 65,
-    "ownerships": 191,
+    "itemsCreated": 68,
+    "ownerships": 208,
     "hides": 0,
-    "followers": 28,
-    "followings": 0,
+    "followers": 29,
+    "following": 0,
     "likes": 0
   },
   "knownorigin": {
@@ -136,21 +147,67 @@ Response,
     "Score100": 0
   },
   "showtime": {},
-  "signature": "0x2823ab40b11674a329a32a4f865c40f8a379bbef76f75d81be9d231b771a34091429f2d446da2c392981ebd9a87c615c2b76c1f279bef2c1a4558362ee6683201b",
+  "cyberconnect": {
+    "displayName": "",
+    "address": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "followingCount": 0,
+    "followerCount": 201,
+    "social": {
+      "twitter": ""
+    }
+  },
+  "rss3": {
+    "profile": {},
+    "backlinks": [],
+    "accounts": [],
+    "links": []
+  },
+  "aave": {
+    "totalHf": 0,
+    "mainMarket": {
+      "healthFactor": false
+    },
+    "ammMarket": {
+      "healthFactor": false
+    },
+    "polygonMarket": {
+      "healthFactor": false
+    },
+    "avalancheMarket": {
+      "healthFactor": false
+    }
+  },
+  "context": {
+    "followerCount": 10,
+    "followingCount": null
+  },
+  "arcx": {
+    "totalScore": 0,
+    "details": {}
+  },
+  "age": 2251,
+  "boardroom": {
+    "totalVotes": 0,
+    "daos": [],
+    "votes": []
+  },
+  "signature": "0x304ab9a93eea560b64a5574d5f63782041350e069f15068cd5521ed953a48ca64bd2a12fdbca4a3b83e5af6fef08174d0fc535395a29f5e3b1ee64bc374908fc1b",
   "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06"
 }
 ```
+
+</details>
 
 Example 2,
 ```html
 https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257Ed62CF&apikey=CONVO
 ```
-
-Response,
+<details>
+<summary>View Response</summary>
 
 ```json
 {
-  "score": 11,
+  "score": 1,
   "success": true,
   "poh": false,
   "brightId": false,
@@ -161,34 +218,43 @@ Response,
   "unstoppableDomains": false,
   "uniswapSybil": false,
   "deepdao": 0,
-  "rabbitHole": 0,
+  "rabbitHole": {
+    "level": 1,
+    "tasksCompleted": [
+      "SEA1",
+      "SEA2",
+      "UNI_V3_SWAP",
+      "UNI_V2_SWAP",
+      "SNAPSHOT_VOTE"
+    ]
+  },
   "mirror": false,
   "foundation": {
     "totalCountSold": 18,
-    "totalAmountSold": 2457815.6069172,
-    "followerCount": 1493,
+    "totalAmountSold": 2254086.85725954,
+    "followerCount": 1540,
     "followingCount": 48
   },
   "superrare": {
     "totalCountSold": 2,
     "totalAmountSold": 28718.991565550437,
     "following": 36,
-    "followers": 70
+    "followers": 71
   },
   "rarible": {
     "totalCountSold": 22,
-    "totalAmountSold": 1579751.3247412,
+    "totalAmountSold": 1448805.47133634,
     "ownershipsWithStock": 1,
     "itemsCreated": 94,
     "ownerships": 52,
     "hides": 0,
-    "followers": 2095,
-    "followings": 108,
+    "followers": 2156,
+    "following": 108,
     "likes": 33
   },
   "knownorigin": {
     "totalCountSold": 3,
-    "totalAmountSold": 17812.1511
+    "totalAmountSold": 16335.698895
   },
   "asyncart": {
     "totalCountSold": 0,
@@ -221,10 +287,55 @@ Response,
     "Score100": 0
   },
   "showtime": {},
-  "signature": "0x7ea7f4d91e9cc8910416c08009f55d5c50d32ee594eafd373bc17ac2e97d3aa10e343224cee1346f9903826c241ea18a6efd4ce8ea209b387c0775ed85326d831c",
+  "cyberconnect": {
+    "displayName": "",
+    "address": "0xd665afb9a4019a8c482352aaa862567257ed62cf",
+    "followingCount": 0,
+    "followerCount": 0,
+    "social": {
+      "twitter": "TheArchangel22"
+    }
+  },
+  "rss3": {
+    "profile": {},
+    "backlinks": [],
+    "accounts": [],
+    "links": []
+  },
+  "aave": {
+    "totalHf": 0,
+    "mainMarket": {
+      "healthFactor": false
+    },
+    "ammMarket": {
+      "healthFactor": false
+    },
+    "polygonMarket": {
+      "healthFactor": false
+    },
+    "avalancheMarket": {
+      "healthFactor": false
+    }
+  },
+  "context": {
+    "followerCount": 3,
+    "followingCount": null
+  },
+  "arcx": {
+    "totalScore": 0,
+    "details": {}
+  },
+  "age": 325,
+  "boardroom": {
+    "totalVotes": 0,
+    "daos": [],
+    "votes": []
+  },
+  "signature": "0xcee5940348e132cd9de3fce0beff710f40a71f24a039c050ab77989a4db610da0a4ba73fe5ed9a75ea9866f3dfbff4a2cc0c4057da238a7236079e76f49454951b",
   "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06"
 }
 ```
+</details>
 
 ### Verifying Response Signature
 

@@ -69,7 +69,7 @@ export default function Nextra({ Component, pageProps }) {
           right: 30px;
         }
 
-        a, code, p {
+        a, code {
           line-break: anywhere !important;
         }
 
