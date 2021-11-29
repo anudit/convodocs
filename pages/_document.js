@@ -8,6 +8,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="preconnect" href="https://VT0SRL8DNS-dsn.algolia.net" crossOrigin="true" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha"  global="true"/>
         </Head>
         <body>
           <SkipNavLink />
@@ -18,7 +19,7 @@ class MyDocument extends Document {
             async
             defer
           />
-          <script src="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha"></script>
+
         </body>
       </Html>
     )
