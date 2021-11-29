@@ -25,13 +25,13 @@ const DocSearch = () => {
   useEffect(() => {
     if (window.docsearch) {
       window.docsearch({
+        container: '#algolia-doc-search',
         appId: 'VT0SRL8DNS',
         apiKey: 'c227cefd16ad744177b02419fc83a21b',
         indexName: 'data_convo',
-        container: 'input#algolia-doc-search',
-        debug: true,
         placeholder: "Search Docs",
       });
+      console.log('docsearch setup');
     }
   }, [])
 
