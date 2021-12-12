@@ -26,6 +26,16 @@ module.exports = withPlugins([
       i18n: {
         locales: ["en-US"],
         defaultLocale: "en-US",
+      },
+      redirects: () => {
+        return [
+          {
+            "source": "/docs/Convo-API/trust-score",
+            "destination": "/docs/Convo-API/omnid",
+            "statusCode": 301,
+            "permanent": true
+          }
+        ]
       }
     }]
 ], nextConfig)
