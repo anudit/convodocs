@@ -7,20 +7,35 @@ import Tabs from './../../../components/Tabs'
 
 # SDK - Auth
 
-## Authenticate Session
-```js
-let resp = await convo.auth.authenticate(
-    signerAddress, // Ethereum Address or NEAR Public Key
-    signature, // Signed Data in Hex
-    timestampm  // Signed Data in Hex
-    chain, // Name of the Chain
-    accountId: // Near Account Id
+## Generate Signature Data
+```javascript
+let resp = await convo.auth.getSignatureData(
+    signerAddress, // Address of the user signing the message
+    timestamp // Current Timestamp
 );
 ```
 
 Example Usage,
 
-```jsx
+```javascript
+let timestamp = Date.now();
+let data = convo.auth.getSignatureData(accounts[0], timestamp);
+```
+
+## Authenticate Session
+```javascript
+let resp = await convo.auth.authenticate(
+    signerAddress, // Ethereum Address or NEAR Public Key
+    signature, // Signed Data in Hex
+    timestampm  // Signed Data in Hex
+    chain, // Name of the Chain
+    accountId // Near Account Id
+);
+```
+
+Example Usage,
+
+```javascript
 let timestamp = Date.now();
 let data = convo.auth.getSignatureData(accounts[0], timestamp);
 let signature = await web3.send(
@@ -30,30 +45,65 @@ let signature = await web3.send(
 convo.auth.authenticate(accounts[0], signature, timestamp, "ethereum").then(console.log);
 ```
 
+
+## Generate Signature Data V2
+This is for EIP-4361: Sign In with Ethereum compliance.
+
+```javascript
+let resp = await convo.auth.getSignatureDataV2(
+    uri, // URI of your Website
+    signerAddress, // Address of the user signing the message
+    chainId, // ChainId , i.e 1 for Ethereum mainnet
+    resources // Optional, Add links to Pirvacy Policy, ToS etc.
+);
+```
+
+Example Usage,
+
+```javascript
+const convoInstance = new Convo("apikey");
+let signer = await provider.getSigner();
+let signerAddress = await signer.getAddress();
+
+let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', signerAddress, 1, resources);
+```
+
+
+## Authenticate Session V2
+This is for EIP-4361: Sign In with Ethereum compliance.
+
+```javascript
+let resp = await convo.auth.authenticateV2(
+    message, // Raw unsigned SIWE Message
+    signature // Signature of Message in Hex
+);
+```
+
+Example Usage,
+
+```javascript
+const convoInstance = new Convo("apikey");
+let signer = await provider.getSigner();
+let signerAddress = await signer.getAddress();
+
+let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', signerAddress, 1);
+
+let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)), signerAddress.toLowerCase() ]);
+
+let resp = await convo.auth.authenticateV2(message, signature);
+```
+
 ## Validate Authentication
-```jsx
+```javascript
 let resp = await convo.auth.validate(
     signerAddress, // Ethereum Address or NEAR Public Key
     token // JWT Auth Token
 );
 ```
 Example,
-```jsx
+```javascript
 convo.auth.validate(
     accounts[0],
-    ""
+    "your-token"
 ).then(console.log);
-```
-
-## Get Signature Data
-```jsx
-let resp = convo.auth.getSignatureData(
-    signerAddress, // Ethereum Address or NEAR Public Key
-    timestamp // timestamp
-);
-```
-Example,
-```jsx
-let timestamp = Date.now();
-console.log(convo.auth.getSignatureData(accounts[0], timestamp));
 ```

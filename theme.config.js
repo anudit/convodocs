@@ -9,7 +9,7 @@ export default {
   search: true,
   customSearch: <DocSearch />,
   // unstable_stork: true,
-  // floatTOC: true,
+  floatTOC: true,
   logo: (
     <>
       <Logo height={32} classes="mt-1 invert-on-dark" />

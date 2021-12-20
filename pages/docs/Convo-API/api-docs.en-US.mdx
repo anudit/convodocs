@@ -57,7 +57,7 @@ Send a `POST` request to the endpoint with the following example body,
 
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20. Timestamp:1623254904621'
 
-```jsx
+```javascript
 // Sample signature generation code using ethers.js
 let timestamp = Date.now();
 let signer = await provider.getSigner();
@@ -101,7 +101,7 @@ Send a `POST` request to the endpoint with the following example body,
 
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account convo.testnet. Timestamp:1623254904621'
 
-```jsx
+```javascript
 // Sample signature generation code using near-api-js.js
 let accountId = wallet.getAccountId();
 const timestamp = Date.now();
@@ -144,7 +144,7 @@ Send a `POST` request to the endpoint with the following example body,
 
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x4268f655cacd5436. Timestamp:1634402654144'
 
-```jsx
+```javascript
 // Sample signature generation code using "@onflow/fcl"
 import * as fcl from "@onflow/fcl"
 
@@ -210,7 +210,7 @@ Quick Links,
 
 Eg,
 
-```js
+```javascript
 const convoInstance = new Convo("apikey");
 // Variable `message` will contain the SIWE compatible message ready for Signing.
 let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', 1);
@@ -218,7 +218,7 @@ let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', '
 
 **Second**, Let's Sign the message.
 
-```jsx
+```javascript
 // Sample signature generation code using ethers.js
 const convoInstance = new Convo("apikey");
 let signer = await provider.getSigner();

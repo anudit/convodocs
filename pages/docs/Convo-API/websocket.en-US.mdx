@@ -21,7 +21,7 @@ yarn add ably
 
 Let's create a file that'll have our React hook named `Ably.js`.
 
-```js
+```javascript
 import Ably from "ably/promises";
 import { useEffect } from 'react'
 
@@ -51,7 +51,7 @@ export function useChannel(channelName, callbackOnMessage) {
 
 ## Step 3 - Subscribe to a Channel.
 
-```js
+```javascript
 import { useChannel } from "@/hooks/Ably";
 
 // the threadId you want to track.

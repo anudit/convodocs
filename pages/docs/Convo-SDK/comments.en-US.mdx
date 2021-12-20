@@ -9,7 +9,7 @@ import Tabs from './../../../components/Tabs'
 
 ## Create a Comment
 
-```jsx
+```javascript
 convo.comments.create(
     signerAddress,  // Ethereum Address or NEAR Public Key
     token, // JWT Auth Token
@@ -20,7 +20,7 @@ convo.comments.create(
 ```
 
 Example,
-```jsx
+```javascript
 let resp = await convo.comments.create(
     accounts[0],
     "",
@@ -32,7 +32,7 @@ let resp = await convo.comments.create(
 
 ## Delete a Comment
 
-```jsx
+```javascript
 convo.comments.delete(
     signerAddress,  // Ethereum Address or NEAR Public Key
     token, // JWT Auth Token
@@ -41,7 +41,7 @@ convo.comments.delete(
 ```
 
 Example,
-```jsx
+```javascript
 let resp = await convo.comments.delete(
     accounts[0],
     "",
@@ -50,7 +50,7 @@ let resp = await convo.comments.delete(
 ```
 
 ## Toggle Upvote
-```jsx
+```javascript
 convo.comments.toggleUpvote(
     signerAddress,  // Ethereum Address or NEAR Public Key
     token, // JWT Auth Token
@@ -59,7 +59,7 @@ convo.comments.toggleUpvote(
 ```
 
 Example,
-```jsx
+```javascript
 let resp = await convo.comments.toggleUpvote(
     accounts[0],
     "",
@@ -69,7 +69,7 @@ let resp = await convo.comments.toggleUpvote(
 
 
 ## Toggle Downvote
-```jsx
+```javascript
 convo.comments.toggleDownvote(
     signerAddress,  // Ethereum Address or NEAR Public Key
     token,          // JWT Auth Token
@@ -78,7 +78,7 @@ convo.comments.toggleDownvote(
 ```
 
 Example,
-```jsx
+```javascript
 let resp = await convo.comments.toggleDownvote(
     accounts[0],
     "",
@@ -88,7 +88,7 @@ let resp = await convo.comments.toggleDownvote(
 
 ## Query Comments
 
-```jsx
+```javascript
 convo.comments.query({
     threadId,   // Unique ThreadId
     url,        // Origin URL
@@ -103,7 +103,7 @@ convo.comments.query({
 ```
 
 Examples,
-```jsx
+```javascript
 // query by website
 let resp = await convo.comments.toggleDownvote({
     url:"https://theconvo.space/"
