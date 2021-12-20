@@ -26,7 +26,7 @@ OpenAPI 3 Config : [https://github.com/anudit/convodocs/tree/main/public/Convo.y
 
 **Auth Route : `/auth`**
 
-**Full Endpoint : `https://theconvo.space/api/auth?apikey=CONVO`**
+**Full Endpoint : `https://theconvo.space/api/auth?apikey=<apikey>`**
 
 <Callout emoji="ℹ️">
   You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
@@ -192,11 +192,86 @@ let isValid = await fcl.verifyUserSignatures(MSG, signature);
 | `message` 	| Contains either the JWT auth token if `success==true` or an error message `success==false` |
 
 
+### EIP-4361 : Sign In with Ethereum
+
+**Auth Route : `/authV2`**
+
+**Full Endpoint : `https://theconvo.space/api/authV2?apikey=<apikey>`**
+
+<Callout emoji="ℹ️">
+  You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
+</Callout>
+
+**First**, Let's generate the SIWE compatible message,
+
+Quick Links,
+- SIWE Spec : [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361)
+- Message Generation Library : [@theconvospace/sdk](/docs/Convo-SDK/installation)
+
+Eg,
+
+```js
+const convoInstance = new Convo("apikey");
+// Variable `message` will contain the SIWE compatible message ready for Signing.
+let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', 1);
+```
+
+**Second**, Let's Sign the message.
+
+```jsx
+// Sample signature generation code using ethers.js
+const convoInstance = new Convo("apikey");
+let signer = await provider.getSigner();
+let signerAddress = await signer.getAddress();
+
+let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', signerAddress, 1);
+
+let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)), signerAddress.toLowerCase() ]);
+
+let authV2Body = {
+  "message": message,
+  "signature": signature,
+  "chain": "ethereum"
+};
+```
+
+**Third**, Send a `POST` request to the endpoint with the following example body,
+
+```json
+{
+  "message": "theconvo.space wants you to sign in with your Ethereum account:\0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045\n\nI allow this site to access my data on The Convo Space.\n\nURI: https://theconvo.space/\nVersion: 1\nChain ID: 0\nNonce: 5BacWphMVDD9EKIPd\nIssued At: 2021-12-20T16:32:00.746Z\nExpiration Time: 2021-12-20T16:32:00.746Z\nResources:\n- https://theconvo.space/privacy-policy",
+  "signature": "0xf9c18aaf6fc61620494eda243f2af28d2835132ab97a41e273fbe43eb452e41600c30f0e02ae55e14b2a4ee9b9f4c8bcd9463a03bc517ccb95e4ecd32f37bbcc1c",
+  "chain":"ethereum"
+}
+```
+
+| Body Param 	| Description 	|
+|-	|:-	|
+| `message` 	| The Unsigned raw SIWE message |
+| `signature` 	|  Ethereum signature of `message` using the user's address	|
+| `chain` 	| `ethereum`	|
+
+
+**Response**
+
+```json
+{
+  "success":true,
+  "message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMHg3MDdhQzM5MzdBOUIzMUMyMjVEOEMyNDBGNTkxN0JlOTdjYWI5RjIwIiwiaWF0IjoxNjE3NzY1MzEzLCJleHAiOjE2MTc4NTE3MTN9.6sb6lnC5RIy_JWidsYyGYrHE2fGvajBEaVh5ybwsvqE"
+}
+```
+
+| Response Param 	| Description 	|
+|:-	|:-	|
+| `success` 	| `Boolean`, status of the request.	|
+| `message` 	| Contains either the JWT auth token if `success==true` or an error message `success==false` |
+
+
 ### Validating Authentication
 
 **Auth Route : `/validateAuth`**
 
-**Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=CONVO`**
+**Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=<apikey>`**
 
 
 <Tabs>
@@ -328,7 +403,7 @@ You can reorder the comments fetching the latest first using `latestFirst` query
 
 **Route : `/comments`**
 
-**Full Endpoint : `https://theconvo.space/api/comments?apikey=CONVO`**
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
 
 Send a `POST` request to the endpoint with the following request schema,
 ```json
@@ -367,7 +442,7 @@ Possible Response Error Messages,
 
 **Route : `/comments`**
 
-**Full Endpoint : `https://theconvo.space/api/comments?apikey=CONVO`**
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
 
 Send a `DELETE` request to the endpoint with the following request schema,
 ```json
@@ -396,7 +471,7 @@ Possible Response Error Messages,
 
 **Route : `/vote`**
 
-**Full Endpoint : `https://theconvo.space/api/vote?apikey=CONVO`**
+**Full Endpoint : `https://theconvo.space/api/vote?apikey=<apikey>`**
 
 Send a `POST` request to the endpoint with the following body schema,
 ```json

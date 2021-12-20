@@ -7,7 +7,7 @@ const tabs = props => {
     <Tabs>
       <div className="tablist-wrapper">
         <TabList>
-          {props.children.map(child => {
+          {Boolean(props.children.map) == true && props.children.map(child => {
             const label = child.props.label
             let icon
             if (label.toLowerCase() === 'ethereum') icon = Ethereum
@@ -25,7 +25,7 @@ const tabs = props => {
           })}
         </TabList>
       </div>
-      {props.children.map(child => (
+      {Boolean(props.children.map) == true && props.children.map(child => (
         <TabPanel key={`panel-${child.props.label}`}>{child}</TabPanel>
       ))}
     </Tabs>

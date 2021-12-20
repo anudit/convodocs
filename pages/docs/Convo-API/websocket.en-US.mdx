@@ -25,7 +25,7 @@ Let's create a file that'll have our React hook named `Ably.js`.
 import Ably from "ably/promises";
 import { useEffect } from 'react'
 
-const ably = new Ably.Realtime.Promise({ authUrl: 'https://theconvo.space/api/getAblyAuth?apikey=CONVO' });
+const ably = new Ably.Realtime.Promise({ authUrl: 'https://theconvo.space/api/getAblyAuth?apikey=<apikey>' });
 
 export function useChannel(channelName, callbackOnMessage) {
     const channel = ably.channels.get(channelName);

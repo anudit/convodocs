@@ -3,7 +3,7 @@ import "nextra-theme-docs/style.css";
 export default function Nextra({ Component, pageProps }) {
   return (
     <>
-      <style jsx global>{`
+      <style global>{`
 
         .docs-search > span {
           width: 100%;
@@ -100,6 +100,31 @@ export default function Nextra({ Component, pageProps }) {
 
         .dark .invert-on-dark {
           filter: invert(1) brightness(1.8);
+        }
+
+        .dark {
+          --docsearch-text-color: rgb(245, 246, 247);
+          --docsearch-container-background: rgba(9, 10, 17, 0.8);
+          --docsearch-modal-background: rgb(21, 23, 42);
+          --docsearch-modal-shadow: inset 1px 1px 0 0 rgb(44, 46, 64),
+            0 3px 8px 0 rgb(0, 3, 9);
+          --docsearch-searchbox-background: rgb(9, 10, 17);
+          --docsearch-searchbox-focus-background: #000;
+          --docsearch-hit-color: rgb(190, 195, 201);
+          --docsearch-hit-shadow: none;
+          --docsearch-hit-background: rgb(9, 10, 17);
+          --docsearch-key-gradient: linear-gradient(
+            -26.5deg,
+            rgb(86, 88, 114) 0%,
+            rgb(49, 53, 91) 100%
+          );
+          --docsearch-key-shadow: inset 0 -2px 0 0 rgb(40, 45, 85),
+            inset 0 0 1px 1px rgb(81, 87, 125), 0 2px 2px 0 rgba(3, 4, 9, 0.3);
+          --docsearch-footer-background: rgb(30, 33, 54);
+          --docsearch-footer-shadow: inset 0 1px 0 0 rgba(73, 76, 106, 0.5),
+            0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+          --docsearch-logo-color: rgb(255, 255, 255);
+          --docsearch-muted-color: rgb(127, 132, 151);
         }
 
         .react-tabs {
