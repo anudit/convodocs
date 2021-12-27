@@ -1,0 +1,25 @@
+---
+title: SDK - Changelog
+---
+import CommentBox from './../../../components/CommentBox';
+import Markdown from 'markdown-to-jsx';
+import { useSSG } from 'nextra/ssg';
+
+export const getStaticProps = ({ params }) => {
+  return fetch(`https://raw.githubusercontent.com/anudit/convosdk/main/CHANGELOG.md`)
+    .then(res => res.text())
+    .then(markdown => {
+        return ({ props: { ssg: markdown }, revalidate: 10 })
+    })
+}
+
+export const ChangelogRender = () => {
+  const markdown = useSSG();
+  return (<Markdown>{markdown}</Markdown>)
+}
+
+<ChangelogRender/>
+
+## Comments
+<CommentBox threadId="changelog"/>
+

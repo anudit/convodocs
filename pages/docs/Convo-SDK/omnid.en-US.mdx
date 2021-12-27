@@ -1,0 +1,82 @@
+---
+title: SDK - Omnid
+---
+
+import CommentBox from './../../../components/CommentBox'
+import Tabs from './../../../components/Tabs'
+
+# SDK - Omnid
+
+## Get TrustScore for Address
+
+Syntax
+```javascript
+convo.omnid.getTrustScore(
+    signerAddress,  // Ethereum Address
+)
+```
+
+Example,
+```javascript
+let resp = await convo.omnid.getTrustScore(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20"
+);
+```
+
+
+## Compute entire Trust Score
+
+Syntax
+```javascript
+convo.omnid.computeTrustScore(
+    signerAddress,  // Ethereum Address
+    computeConfig,
+)
+```
+
+ComputeConfig is used to pass private variables to adaptors. For eg - API keys, RPC URLs etc. Some adaptors need these, some do not.
+
+```typescript
+type ComputeConfig = {
+  maticMainnetRpc?: string;
+  etherumMainnetRpc?: string;
+  avalancheMainnetRpc?: string;
+  ethereumPriceApi?: string;
+  maticPriceApi?: string;
+  etherumAndMaticPriceApi?: string;
+  deepdaoApiKey: string;
+  CNVSEC_ID: string;
+  DEBUG: boolean;
+};
+```
+
+Example,
+```javascript
+const computeConfig = {
+    maticMainnetRpc: 'https://polygon-rpc.com/';
+}
+
+let resp = await convo.omnid.computeTrustScore(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    computeConfig
+);
+```
+
+## Execute individual Adaptors
+
+Syntax
+```javascript
+convo.omnid.adaptors.*(
+    signerAddress,  // Ethereum Address
+    computeConfig, // Optional, ComputeConfig
+)
+```
+
+Here * is the name of the Adaptor.
+
+```javascript
+let resp = await convo.omnid.adaptors.getZoraData(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    computeConfig,
+);
+```

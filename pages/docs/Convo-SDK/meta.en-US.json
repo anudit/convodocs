@@ -3,6 +3,7 @@
   "auth": "Authentication",
   "comments": "Comments",
   "threads": "Threads",
-  "identity": "Identity",
-  "utils": "Utils"
+  "omnid": "Omnid",
+  "utils": "Utils",
+  "changelog": "Changelog"
 }

@@ -6,6 +6,11 @@
       "source": "/docs/Convo-API/trust-score",
       "destination": "/docs/Convo-API/omnid",
       "permanent": true
+    },
+    {
+      "source": "/docs/Convo-SDK/identity",
+      "destination": "docs/Convo-SDK/omnid",
+      "permanent": true
     }
   ]
 }

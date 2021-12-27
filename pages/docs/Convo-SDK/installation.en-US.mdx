@@ -17,7 +17,7 @@ export const getStaticProps = ({ params }) => {
 export const BundleRender = () => {
   const releases = useSSG();
   return (<Markdown>
-  {"🤏 Just " + parseFloat(releases.size/1000).toFixed(2) + "kB Minified (" + parseFloat(releases.gzip/1000).toFixed(2) + "kB Minified+GZipped)"}
+  {"🤏 " + parseFloat(releases.size/1000).toFixed(2) + "kB Minified (" + parseFloat(releases.gzip/1000).toFixed(2) + "kB Minified+GZipped)"}
   </Markdown>)
 }
 
