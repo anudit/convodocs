@@ -4,11 +4,12 @@ title: SDK - Comments
 
 import CommentBox from './../../../components/CommentBox'
 import Tabs from './../../../components/Tabs'
+import CodeBox from './../../../components/CodeBox'
 
 # SDK - Comments
 
 ## Create a Comment
-
+<CodeBox>
 ```javascript
 convo.comments.create(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -18,8 +19,10 @@ convo.comments.create(
     url // Url of the page where the message is from.
 )
 ```
+</CodeBox>
 
 Example,
+<CodeBox>
 ```javascript
 let resp = await convo.comments.create(
     accounts[0],
@@ -29,9 +32,11 @@ let resp = await convo.comments.create(
     encodeURIComponent('https://theconvo.space/')
 );
 ```
+</CodeBox>
 
 ## Delete a Comment
 
+<CodeBox>
 ```javascript
 convo.comments.delete(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -39,8 +44,10 @@ convo.comments.delete(
     commentId // Comment ID
 )
 ```
+</CodeBox>
 
 Example,
+<CodeBox>
 ```javascript
 let resp = await convo.comments.delete(
     accounts[0],
@@ -48,8 +55,10 @@ let resp = await convo.comments.delete(
     "KIGZUnR4RzXDFheXoOwo"
 );
 ```
+</CodeBox>
 
 ## Toggle Upvote
+<CodeBox>
 ```javascript
 convo.comments.toggleUpvote(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -57,8 +66,10 @@ convo.comments.toggleUpvote(
     commentId // Comment ID
 )
 ```
+</CodeBox>
 
 Example,
+<CodeBox>
 ```javascript
 let resp = await convo.comments.toggleUpvote(
     accounts[0],
@@ -66,9 +77,10 @@ let resp = await convo.comments.toggleUpvote(
     "KIGZUnR4RzXDFheXoOwo"
 );
 ```
-
+</CodeBox>
 
 ## Toggle Downvote
+<CodeBox>
 ```javascript
 convo.comments.toggleDownvote(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -76,8 +88,10 @@ convo.comments.toggleDownvote(
     commentId       // Comment ID
 )
 ```
+</CodeBox>
 
 Example,
+<CodeBox>
 ```javascript
 let resp = await convo.comments.toggleDownvote(
     accounts[0],
@@ -85,9 +99,11 @@ let resp = await convo.comments.toggleDownvote(
     "KIGZUnR4RzXDFheXoOwo"
 );
 ```
+</CodeBox>
 
 ## Query Comments
 
+<CodeBox>
 ```javascript
 convo.comments.query({
     threadId,   // Unique ThreadId
@@ -101,8 +117,10 @@ convo.comments.query({
     pageSize,   // Paginiate Response, Page Size
 })
 ```
+</CodeBox>
 
 Examples,
+<CodeBox>
 ```javascript
 // query by website
 let resp = await convo.comments.toggleDownvote({
@@ -114,5 +132,5 @@ let resp = await convo.comments.toggleDownvote({
     threadId:"0x492D7C407d78D170AF70Ce53578a4Ec839da0ebd:152:1",
     url:"https://opensea.io/",
 });
-
 ```
+</CodeBox>

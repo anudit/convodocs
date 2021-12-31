@@ -4,6 +4,7 @@ title: Convo SDK
 import CommentBox from './../../../components/CommentBox';
 import Tabs from './../../../components/Tabs';
 import Markdown from 'markdown-to-jsx';
+import CodeBox from './../../../components/CodeBox'
 import { useSSG } from 'nextra/ssg';
 
 export const getStaticProps = ({ params }) => {
@@ -55,27 +56,56 @@ pnpm i --save @theconvospace/sdk
 </div>
 </Tabs>
 
-### Browser
+### Browser (UMD)
 
+<CodeBox>
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@theconvospace/sdk@latest/dist/bundle.min.js"></script>
 ```
+</CodeBox>
 
 ## Setup
 
 1. Generate and Copy an API key from [https://theconvo.space/dashboard/developer/](https://theconvo.space/dashboard/developer)
 2. Import Convo in your own project.
+
+    <Tabs>
+    <div label="ESM">
+    <CodeBox>
     ```javascript
     import { Convo } from '@theconvospace/sdk';
-    // or
-    import { Convo } from 'https://esm.run/@theconvospace/sdk';
-    // or
+    ```
+    </CodeBox>
+    </div>
+    <div label="CJS">
+    <CodeBox>
+    ```javascript
     const { Convo } = require('@theconvospace/sdk');
     ```
+    </CodeBox>
+    </div>
+    <div label="UMD">
+    <CodeBox>
+    ```javascript
+    const { Convo } = convo;
+    ```
+    </CodeBox>
+    </div>
+    <div label="ESM.run">
+    <CodeBox>
+    ```javascript
+    import { Convo } from 'https://esm.run/@theconvospace/sdk';
+    ```
+    </CodeBox>
+    </div>
+    </Tabs>
+
 3. Setup an new instance of Convo using
+    <CodeBox>
     ```javascript
     const convo = new Convo("apikey")
     ```
+    </CodeBox>
     Replace `apikey` with your newly generated key.
 
 

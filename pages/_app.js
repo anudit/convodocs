@@ -223,6 +223,21 @@ export default function Nextra({ Component, pageProps }) {
           border-bottom: 1px solid rgba(226, 232, 240, 0.5);
         }
 
+        .copybutton {
+          position: absolute;
+          display: block;
+          top: 10px;
+          right: 10px;
+          background-color: #e1e1e2;
+          font-weight: 600;
+          padding: 2px 10px;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+        .dark .copybutton {
+          background-color: #404959;
+          color: #fff;
+        }
       `}</style>
       <Component {...pageProps} />
     </>

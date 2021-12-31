@@ -9,7 +9,7 @@ const tabs = props => {
         <TabList>
           {Boolean(props.children.map) == true && props.children.map(child => {
             const label = child.props.label
-            let icon
+            let icon = false
             if (label.toLowerCase() === 'ethereum') icon = Ethereum
             if (label.toLowerCase() === 'near') icon = Near
             if (label.toLowerCase() === 'yarn') icon = Yarn
@@ -18,7 +18,7 @@ const tabs = props => {
             if (label.toLowerCase() === 'flow') icon = Flow
             return (
               <Tab key={`tab-${child.props.label}`}>
-                <div className="label-icon">{icon}</div>
+                {Boolean(icon) === true && (<div className="label-icon">{icon}</div>)}
                 <div className="label-text">{label}</div>
               </Tab>
             )

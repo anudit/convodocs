@@ -4,25 +4,29 @@ title: SDK - Auth
 
 import CommentBox from './../../../components/CommentBox'
 import Tabs from './../../../components/Tabs'
+import CodeBox from './../../../components/CodeBox'
 
 # SDK - Auth
 
 ## Generate Signature Data
+<CodeBox>
 ```javascript
 let resp = await convo.auth.getSignatureData(
     signerAddress, // Address of the user signing the message
     timestamp // Current Timestamp
 );
 ```
+</CodeBox>
 
 Example Usage,
-
+<CodeBox>
 ```javascript
 let timestamp = Date.now();
 let data = convo.auth.getSignatureData(accounts[0], timestamp);
 ```
-
+</CodeBox>
 ## Authenticate Session
+<CodeBox>
 ```javascript
 let resp = await convo.auth.authenticate(
     signerAddress, // Ethereum Address or NEAR Public Key
@@ -32,9 +36,9 @@ let resp = await convo.auth.authenticate(
     accountId // Near Account Id
 );
 ```
-
+</CodeBox>
 Example Usage,
-
+<CodeBox>
 ```javascript
 let timestamp = Date.now();
 let data = convo.auth.getSignatureData(accounts[0], timestamp);
@@ -44,11 +48,12 @@ let signature = await web3.send(
 );
 convo.auth.authenticate(accounts[0], signature, timestamp, "ethereum").then(console.log);
 ```
-
+</CodeBox>
 
 ## Generate Signature Data V2
 This is for EIP-4361: Sign In with Ethereum compliance.
 
+<CodeBox>
 ```javascript
 let resp = await convo.auth.getSignatureDataV2(
     uri, // URI of your Website
@@ -57,9 +62,9 @@ let resp = await convo.auth.getSignatureDataV2(
     resources // Optional, Add links to Pirvacy Policy, ToS etc.
 );
 ```
-
+</CodeBox>
 Example Usage,
-
+<CodeBox>
 ```javascript
 const convoInstance = new Convo("apikey");
 let signer = await provider.getSigner();
@@ -67,20 +72,23 @@ let signerAddress = await signer.getAddress();
 
 let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', signerAddress, 1, resources);
 ```
-
+</CodeBox>
 
 ## Authenticate Session V2
 This is for EIP-4361: Sign In with Ethereum compliance.
 
+<CodeBox>
 ```javascript
 let resp = await convo.auth.authenticateV2(
     message, // Raw unsigned SIWE Message
     signature // Signature of Message in Hex
 );
 ```
+</CodeBox>
 
 Example Usage,
 
+<CodeBox>
 ```javascript
 const convoInstance = new Convo("apikey");
 let signer = await provider.getSigner();
@@ -92,18 +100,23 @@ let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ether
 
 let resp = await convo.auth.authenticateV2(message, signature);
 ```
+</CodeBox>
 
 ## Validate Authentication
+<CodeBox>
 ```javascript
 let resp = await convo.auth.validate(
     signerAddress, // Ethereum Address or NEAR Public Key
     token // JWT Auth Token
 );
 ```
+</CodeBox>
 Example,
+<CodeBox>
 ```javascript
 convo.auth.validate(
     accounts[0],
     "your-token"
 ).then(console.log);
 ```
+</CodeBox>
