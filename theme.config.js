@@ -73,7 +73,4 @@ export default {
   branch: 'main',
   footerEditOnGitHubLink: true,
   footerText: `MIT ${new Date().getFullYear()} © The Convo Space.`,
-  i18n: [
-    { locale: "en-US", text: "English" }
-  ],
 };
