@@ -27,6 +27,10 @@ export default function Nextra({ Component, pageProps }) {
           background-color: #111;
         }
 
+        .sidebar li.active>a {
+          background-color: #4ba5ff21 !important;
+        }
+
         .dark .sidebar li.active>a {
           background-color: #0083ff5c !important;
         }
