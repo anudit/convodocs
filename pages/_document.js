@@ -19,7 +19,6 @@ class MyDocument extends Document {
             async
             defer
           />
-
         </body>
       </Html>
     )
