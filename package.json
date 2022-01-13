@@ -18,21 +18,21 @@
     "cross-env": "^7.0.3",
     "focus-visible": "^5.1.0",
     "markdown-to-jsx": "^7.1.5",
-    "next": "12.0.7",
+    "next": "12.0.8",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.4.4",
     "nextra": "^2.0.0-beta.5",
     "nextra-theme-docs": "^2.0.0-beta.5",
     "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.26.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-tabs": "^3.2.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.1",
+    "autoprefixer": "^10.4.2",
     "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.8"
+    "tailwindcss": "^3.0.13"
   },
   "prettier": {
     "embeddedLanguageFormatting": "off",
