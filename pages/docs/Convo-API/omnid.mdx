@@ -420,7 +420,7 @@ https://theconvo.space/api/zkidentity?address=<ethereum-address-or-ens>&apikey=<
 
 <CodeBox>
 ```javascript
-const { utils } = require('ethers');
+const { ethers } = require('ethers');
 
 let resp = await fetch('https://theconvo.space/api/zkidentity?address=vitalik.eth');
 let { inputs, proof } = await resp.json();

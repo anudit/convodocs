@@ -123,12 +123,12 @@ Examples,
 <CodeBox>
 ```javascript
 // query by website
-let resp = await convo.comments.toggleDownvote({
+let resp = await convo.comments.query({
     url:"https://theconvo.space/"
 });
 
 // query by NFT , ref: https://docs.theconvo.space/integrate/Convo-API/standards
-let resp = await convo.comments.toggleDownvote({
+let resp = await convo.comments.query({
     threadId:"0x492D7C407d78D170AF70Ce53578a4Ec839da0ebd:152:1",
     url:"https://opensea.io/",
 });
