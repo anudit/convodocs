@@ -36,8 +36,8 @@ module.exports = withPlugins([
             "permanent": true
           },
           {
-            "source": "/docs/Convo-SDK/identity",
-            "destination": "/docs/Convo-SDK/omnid",
+            "source": "/docs/Convo-Extensions/(.*)",
+            "destination": "/docs/ConvoX/(.*)",
             "statusCode": 301,
             "permanent": true
           }

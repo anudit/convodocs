@@ -13,9 +13,8 @@
       "permanent": true
     },
     {
-      "source": "/docs/Convo-Extensions",
-      "destination": "/docs/ConvoX",
-      "statusCode": 301,
+      "source": "/docs/Convo-Extensions/(.*)",
+      "destination": "/docs/ConvoX/(.*)",
       "permanent": true
     }
   ]
