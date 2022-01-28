@@ -13,8 +13,8 @@
       "permanent": true
     },
     {
-      "source": "/docs/Convo-Extensions/(.*)",
-      "destination": "/docs/ConvoX/",
+      "source": "/docs/Convo-Extensions/:path",
+      "destination": "/docs/ConvoX/:path",
       "permanent": true
     }
   ]
