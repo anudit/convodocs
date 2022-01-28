@@ -14,7 +14,7 @@
     },
     {
       "source": "/docs/Convo-Extensions/(.*)",
-      "destination": "/docs/ConvoX/(.*)",
+      "destination": "/docs/ConvoX/",
       "permanent": true
     }
   ]
