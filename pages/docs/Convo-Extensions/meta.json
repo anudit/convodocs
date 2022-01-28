@@ -1,7 +1,8 @@
 {
+  "brightid": "Convo x BrightID",
   "browser-extension": "Convo x Browsers",
   "convo-on-decentraland": "Convo x Decentraland",
-  "brightid": "Convo x BrightID",
   "convo-figma": "Convo x Figma",
-  "omnid-forta": "Omnid x Forta"
+  "omnid-forta": "Omnid x Forta",
+  "omnid-metamask": "Omnid x MetaMask"
 }
