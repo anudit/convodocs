@@ -1,5 +1,6 @@
 {
-  "nextjs": "Next.js Example",
   "browser": "Browser Example",
-  "decentraland": "Decentraland Example"
+  "decentraland": "Decentraland Example",
+  "snap": "MetaMask Snap Example",
+  "nextjs": "Next.js Example"
 }
