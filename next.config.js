@@ -40,6 +40,12 @@ module.exports = withPlugins([
             "destination": "/docs/ConvoX/:path",
             "statusCode": 301,
             "permanent": true
+          },
+          {
+            "source": "/integrate/:path",
+            "destination": "/docs/:path",
+            "statusCode": 301,
+            "permanent": true
           }
         ]
       }

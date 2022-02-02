@@ -16,6 +16,11 @@
       "source": "/docs/Convo-Extensions/:path",
       "destination": "/docs/ConvoX/:path",
       "permanent": true
+    },
+    {
+      "source": "/integrate/:path",
+      "destination": "/docs/:path",
+      "permanent": true
     }
   ]
 }

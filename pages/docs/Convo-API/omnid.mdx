@@ -14,44 +14,45 @@ Omnid aggregates multiple on/off-chain ***sources of reputation*** into an overa
 
 Current Integrations and Score Weightage.
 
-| # | Integration | Factors and Score |
-| - |---------------------	|----	|
-| 1 | Aave  | - totalCollateralETH <br/> - totalDebtETH <br/> - availableBorrowsETH <br/> - currentLiquidationThreshold<br/> - ltv<br/> - healthFactor <br/> Across: Main Market, AMM Market, Polygon Market, Avalanche Market	|
-| 2 | Age  | Age of Ethereum Address in days 	|
-| 3 | ArcX | - Points for each indexed ArcX Score |
-| 4 | Async Art | - NFTs Sold <br/>- Average Sale Value |
-| 5 | Boardroom | - Number of Votes given <br/>- DAOs participated In <br/>- Voting History  |
-| 6 | BrightId | 37 Points for Verification |
-| 7 | Celo Verified Attestations | 1 Point for each valid Attestation |
-| 8 | Coinvise | - Tokens Created(a) : (a)^0.5 Points <br/>- NFTs Created(b) : (b)^0.5 Points  <br/>- Total NFTs Sold(c): c Points <br/>- Airdrops Sent(d): d Points <br/>- Multisends(e): e Points <br/>- Liquidity Pools Created(f): f Points 	|
-| 9 | Context  | - Followers <br/>- Folowing	|
-| 10 | Coordinape    | Number of teammates. |
-| 11 | CryptoScamDB | -20 Points for being flagged |
-| 12 | Cyberconnect  | - Followers <br/>- Following  <br/>- Social  <br/>- Display Name 	|
-| 13 | Dapplist  | - Dapps Hunted <br/>- XP 	|
-| 14 | DeepDAO | - score <br/>- rank <br/>- relativeScore <br/>- daos <br/>- proposals <br/>- votes |
-| 15 | ENS | 10 Points for Reverse Resolution to your Address. |
-| 16 | Etherscan | Flagged Labels like Akropolis Hacker |
-| 17 | Forta | - Number of 'HIGH', 'MEDIUM', 'CRITICAL' Alerts  |
-| 18 | Foundation | - NFTs Sold <br/>- Average Sale Value <br/>- Followers <br/>- Following |
-| 19 | Gitcoin | 10 Points for funding a Grant. |
-| 20 | Idena | 1 Point for Verification |
-| 21 | Hive.one | Points for, <br/>- Attention Score <br/>-Insider Score |
-| 22 | KnownOrigin | - NFTs Sold <br/>- Average Sale Value |
-| 23 | Metagame | Season XP ** 0.5 |
-| 24 | Mirror | 10 Points for being a writer on Mirror |
-| 25 | POAP | 1 Point for Each POAP Received |
-| 26 | Polygon Ecosystem | Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention |
-| 27 | Project Galaxy | 1 Point for each Eligible Credential |
-| 28 | Proof of Humanity | 8 Points for Verification |
-| 29 | RabbitHole | - Points equal to the Levels you cross on RabbitHole.  <br/>- TaskIDs of the tasks Completed  |
-| 30 | Rarible | - Total NFTs Sold <br/>- Total NFTs Created <br/>- Total NFTs Owned <br/>- Average Sale Value <br/>- Followers <br/>- Following	|
-| 31 | RSS3  | - Profile <br/>- Backlinks  <br/>- Accounts  <br/>- Links 	|
-| 32 | Showtime | - Followers <br/>- Following 	|
-| 33 | SuperRare     | - NFTs Sold <br/>- Average Sale Value<br/>- Followers<br/>- Following |
-| 34 | Uniswap Sybil | 10 Points for Verification |
-| 35 | Unstoppable Domains 	| 10 Points for Reverse Reslution to your Address. |
-| 36 | Zora | - Number of NFTs Sold <br/>- Average Sale Value |
+| # | Integration | Key | Factors and Score |
+| - |---------------------	|----	| --- |
+| 1 | [Aave](https://aave.com)  | `aave` | - totalCollateralETH <br/> - totalDebtETH <br/> - availableBorrowsETH <br/> - currentLiquidationThreshold<br/> - ltv<br/> - healthFactor <br/> Across: Main Market, AMM Market, Polygon Market, Avalanche Market	|
+| 2 | Age  | `age` | Age of Ethereum Address in days 	|
+| 3 | [ArcX](http://arcx.money/) | `arcx` | - Points for each indexed ArcX Score |
+| 4 | [Async Art](https://async.art/) |  `asyncart` | - NFTs Sold <br/>- Average Sale Value |
+| 5 | [Boardroom](https://boardroom.info/) |  `boardroom` |- Number of Votes given <br/>- DAOs participated In <br/>- Voting History  |
+| 6 | [BrightId](https://www.brightid.org/) | `brightid` | 37 Points for Verification |
+| 7 | [Celo Verified Attestations](https://docs.celo.org/validator-guide/attestation-service#:~:text=What%20is%20an%20Attestation%20Service,Celo%20account%2C%20securely%20and%20privately.) | `celo` | 1 Point for each valid Attestation |
+| 8 | [Coinvise](http://coinvise.co/) |  `coinvise` |- Tokens Created(a) : (a)^0.5 Points <br/>- NFTs Created(b) : (b)^0.5 Points  <br/>- Total NFTs Sold(c): c Points <br/>- Airdrops Sent(d): d Points <br/>- Multisends(e): e Points <br/>- Liquidity Pools Created(f): f Points 	|
+| 9 | [Context](http://context.app/)  | `context` |- Followers <br/>- Folowing	|
+| 10 | [Coordinape](http://coordinape.com/) |  `coordinape` | Number of teammates. |
+| 11 | [CryptoScamDB](https://cryptoscamdb.org/) |  `cryptoscamdb` | -20 Points for being flagged |
+| 12 | [Cyberconnect](https://cyberconnect.me/)  |  `cyberconnect` | - Followers <br/>- Following  <br/>- Social  <br/>- Display Name 	|
+| 13 | [Dapplist](https://thedapplist.com/)  | `dapplist` |- Dapps Hunted <br/>- XP 	|
+| 14 | [DeepDAO](https://deepdao.io/) | `deepdao` | - score <br/>- rank <br/>- relativeScore <br/>- daos <br/>- proposals <br/>- votes |
+| 15 | [ENS](https://ens.domains/) | `ens` |10 Points for Reverse Resolution to your Address. |
+| 16 | [Etherscan](http://etherscan.io/) | `etherscan` |Flagged Labels like Akropolis Hacker |
+| 17 | [Forta](forta.network) | `forta` |- Number of 'HIGH', 'MEDIUM', 'CRITICAL' Alerts  |
+| 18 | [Foundation](https://foundation.app/) | `foundation` | - NFTs Sold <br/>- Average Sale Value <br/>- Followers <br/>- Following |
+| 19 | [Gitcoin](https://gitcoin.co/) | `gitcoin` |10 Points for funding a Grant. |
+| 20 | [Hive.one](https://hive.one/) | `hiveone` |Points for, <br/>- Attention Score <br/>-Insider Score |
+| 21 | [Idena](https://www.idena.io/) | `idena` |1 Point for Verification |
+| 22 | [KnownOrigin](https://knownorigin.io/) | `knownorigin` |- NFTs Sold <br/>- Average Sale Value |
+| 23 | [Metagame](https://wiki.metagame.wtf/) | `metagame` |Season XP ** 0.5 |
+| 24 | [Mirror](https://mirror.xyz/) | `mirror` |10 Points for being a writer on Mirror |
+| 25 | [POAP](https://poap.xyz/) | `poap` |1 Point for Each POAP Received |
+| 26 | [Proof of Humanity](https://proofofhumanity.id/) | `poh` |8 Points for Verification |
+| 27 | [Proof of Personhood](https://proofofpersonhood.com/) | `pop` | - Price of Forgery <br/>- Personhood Score |
+| 28 | [Polygon Ecosystem](https://analytics.polygon.technology/score/docs) | `polygon` |Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention |
+| 29 | [Project Galaxy](https://galaxy.eco/) | `projectgalaxy` |1 Point for each Eligible Credential |
+| 30 | [RabbitHole](https://rabbithole.gg/) | `rabbithole` |- Points equal to the Levels you cross on RabbitHole.  <br/>- TaskIDs of the tasks Completed  |
+| 31 | [Rarible](https://rarible.com/) | `rarible` |- Total NFTs Sold <br/>- Total NFTs Created <br/>- Total NFTs Owned <br/>- Average Sale Value <br/>- Followers <br/>- Following	|
+| 32 | [RSS3](https://rss3.io/)  |`rss3` | - Profile <br/>- Backlinks  <br/>- Accounts  <br/>- Links 	|
+| 33 | [Showtime](https://showtime.io) |`showtime` | - Followers <br/>- Following 	|
+| 34 | [SuperRare](https://superrare.com/)     |`superrare` | - NFTs Sold <br/>- Average Sale Value<br/>- Followers<br/>- Following |
+| 35 | [Uniswap Sybil](https://sybil.org/) | `uniswap` |10 Points for Verification |
+| 36 | [Unstoppable Domains](https://unstoppabledomains.com/) 	| `unstoppable` |10 Points for Reverse Reslution to your Address. |
+| 37 | [Zora](https://zora.co/) | `zora` |- Number of NFTs Sold <br/>- Average Sale Value |
 
 ## Integration
 
@@ -435,6 +436,10 @@ let resp = verifier.verifyTx(proof, inputs);
 console.log( resp === true );
 ```
 </CodeBox>
+
+## Learn More
+- [https://gov.gitcoin.co/t/the-gitcoin-anti-sybil-flywheel/9417](https://gov.gitcoin.co/t/the-gitcoin-anti-sybil-flywheel/9417)
+ - [https://gitcoin.co/blog/a-community-based-roadmap-for-sybil-detection-across-web-3/](https://gitcoin.co/blog/a-community-based-roadmap-for-sybil-detection-across-web-3/)
 
 ## Comments
 <CommentBox threadId="trust-score"/>

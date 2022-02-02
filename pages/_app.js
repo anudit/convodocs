@@ -11,7 +11,7 @@ import "nextra-theme-docs/style.css";
 export default function Nextra({ Component, pageProps }) {
   return (
     <>
-      <style global>{`
+      <style global="true">{`
 
         .docs-search > span {
           width: 100%;
