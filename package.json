@@ -12,7 +12,7 @@
   "author": "Anudit Nagar",
   "license": "MIT",
   "dependencies": {
-    "@docsearch/react": "^3.0.0-alpha.42",
+    "@docsearch/react": "^3.0.0-alpha.50",
     "@emotion/react": "^11.7.1",
     "@reach/skip-nav": "^0.16.0",
     "cross-env": "^7.0.3",
