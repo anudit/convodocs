@@ -4,35 +4,33 @@
   "description": "Documentation for building on The Convo Space.",
   "main": "index.js",
   "scripts": {
-    "dev": "next --port 8000",
+    "dev": "next",
+    "debug": "NODE_OPTIONS='--inspect' next",
     "start": "next start",
-    "build": "next build",
-    "export": "next export"
+    "build": "next build"
   },
-  "author": "Anudit Nagar",
-  "license": "MIT",
+  "author": "Shu Ding",
+  "license": "Apache-2.0",
   "dependencies": {
     "@docsearch/react": "^3.0.0-alpha.50",
-    "@emotion/react": "^11.7.1",
     "@reach/skip-nav": "^0.16.0",
-    "cross-env": "^7.0.3",
     "focus-visible": "^5.1.0",
-    "markdown-to-jsx": "^7.1.6",
-    "next": "12.0.10",
+    "intersection-observer": "^0.10.0",
+    "markdown-to-jsx": "^6.11.4",
+    "next": "^12.0.8",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.4.4",
-    "nextra": "^2.0.0-beta.5",
-    "nextra-theme-docs": "^2.0.0-beta.5",
-    "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.26.0",
+    "nextra": "^2.0.0-alpha.23",
+    "nextra-theme-docs": "^2.0.0-alpha.23",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-intersection-observer": "^8.26.2",
     "react-tabs": "^3.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.19"
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.16"
   },
   "prettier": {
     "embeddedLanguageFormatting": "off",

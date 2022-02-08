@@ -1,0 +1,163 @@
+@tailwind utilities;
+
+html {
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1 !important;
+}
+
+[data-reach-skip-link] {
+  @apply sr-only;
+}
+
+[data-reach-skip-link]:focus {
+  @apply not-sr-only fixed ml-6 top-0 bg-white text-lg px-6 py-2 mt-2 outline-none focus:ring z-50;
+}
+
+.dark .invert-on-dark {
+  filter: invert(1) brightness(1.8);
+}
+
+body {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 300px
+    ),
+    fixed 0 0 / 20px 20px radial-gradient(#d1d1d1 1px, transparent 0),
+    fixed 10px 10px / 20px 20px radial-gradient(#d1d1d1 1px, transparent 0);
+}
+
+.dark body {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #111 300px),
+    fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+    fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+}
+
+.dark {
+  --docsearch-text-color: rgb(245, 246, 247) !important;
+  --docsearch-container-background: rgba(9, 10, 17, 0.8) !important;
+  --docsearch-modal-background: rgb(21, 23, 42) !important;
+  --docsearch-modal-shadow: inset 1px 1px 0 0 rgb(44, 46, 64),
+    0 3px 8px 0 rgb(0, 3, 9) !important;
+  --docsearch-searchbox-background: rgb(9, 10, 17) !important;
+  --docsearch-searchbox-focus-background: #000 !important;
+  --docsearch-hit-color: rgb(190, 195, 201) !important;
+  --docsearch-hit-shadow: none !important;
+  --docsearch-hit-background: rgb(9, 10, 17) !important;
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    rgb(86, 88, 114) 0%,
+    rgb(49, 53, 91) 100%
+  ) !important;
+  --docsearch-key-shadow: inset 0 -2px 0 0 rgb(40, 45, 85),
+    inset 0 0 1px 1px rgb(81, 87, 125), 0 2px 2px 0 rgba(3, 4, 9, 0.3) !important;
+  --docsearch-footer-background: rgb(30, 33, 54) !important;
+  --docsearch-footer-shadow: inset 0 1px 0 0 rgba(73, 76, 106, 0.5),
+    0 -4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+  --docsearch-logo-color: rgb(255, 255, 255) !important;
+  --docsearch-muted-color: rgb(127, 132, 151) !important;
+}
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 20px;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgba(226, 232, 240);
+  border-width: 1px;
+}
+.react-tabs__tab-list {
+  padding: 0 20px 0 15px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom: 1px solid rgba(226, 232, 240);
+  margin: 0;
+  min-width: 500px;
+}
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 0;
+}
+.react-tabs__tab--selected {
+  border-radius: 5px 5px 0 0;
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom: 4px solid #3dbff5 !important;
+  top: 6px;
+}
+.react-tabs__tab--disabled {
+  color: GrayText;
+  cursor: default;
+}
+.react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+.react-tabs__tab:focus:after {
+  content: '';
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+}
+.react-tabs__tab-panel {
+  display: none;
+}
+.react-tabs__tab-panel--selected {
+  display: block;
+  padding: 20px;
+}
+.react-tabs__tab .label-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 15px;
+  margin-top: 2px;
+}
+.react-tabs__tab .label-icon svg {
+  height: 100%;
+  margin: 0 auto;
+}
+.react-tabs__tab .label-text,
+.react-tabs__tab .label-icon {
+  float:left;
+}
+.react-tabs__tab--selected .label-text,
+.react-tabs__tab--selected .label-icon {
+  position: relative;
+  top: -2px;
+}
+.tablist-wrapper {
+  overflow-x: auto;
+}
+/* Dark */
+.dark .react-tabs {
+  border-color: rgba(226, 232, 240, 0.5);
+}
+.dark .react-tabs__tab-list {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.copybutton {
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 10px;
+  background-color: #e1e1e2;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.dark .copybutton {
+  background-color: #404959;
+  color: #fff;
+  z-index: 100;
+}
