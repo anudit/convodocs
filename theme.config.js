@@ -4,7 +4,7 @@ import Logo from './components/Logo'
 export default {
   projectLink: 'https://github.com/anudit/convo',
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
-  titleSuffix: " – SWR",
+  titleSuffix: " – Convo Space",
   search: true,
   customSearch: <DocSearch />,
   // unstable_flexsearch: true,
@@ -21,7 +21,7 @@ export default {
         <Logo height={32} classes="mt-1 invert-on-dark" />
         <span
           className="mx-2 font-extrabold hidden md:inline select-none"
-          title={"SWR: "}
+          title="Convo Space"
         >
           Convo Space
         </span>
@@ -35,13 +35,13 @@ export default {
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
-        <meta name="description" content={title ? title + " - Convo Space" : "Convo : The Decentralized Conversation Space of Internet"} />
-        <meta name="og:description" content={meta.description || "Convo : The Decentralized Conversation Space of Internet"} />
+        <meta name="description" content={title ? title + " - Convo Space" : "Convo Space : The Decentralized Conversation Space of Internet"} />
+        <meta name="og:description" content={meta.description || "Convo Space : The Decentralized Conversation Space of Internet"} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={meta.image || "https://docs.theconvo.space/poster.png"} />
         <meta name="twitter:site:domain" content="docs.theconvo.space" />
         <meta name="twitter:url" content="https://docs.theconvo.space" />
-        <meta name="og:title" content={title ? title + " - Convo Space" : "Convo : The Decentralized Conversation Space of Internet"} />
+        <meta name="og:title" content={title ? title + " - Convo Space" : "Convo Space : The Decentralized Conversation Space of Internet"} />
         <meta name="og:image" content={meta.image || "https://docs.theconvo.space/poster.png"} />
         <meta name="apple-mobile-web-app-title" content="Convo Space" />
         <link rel='manifest' href='/manifest.json' />
