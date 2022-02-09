@@ -10,10 +10,34 @@ import CommentBox from './../../../components/CommentBox'
 
 Here we document the cross-platform standards for setting up your url & threadid schema for storing and querying conversational data.
 
-### NFTs
+### Spec
 
 - URL: Your Website Address like `https://huddln.io/`
-- ThreadId: `<tokenContractAddress>:<tokenId>:<chainId>`
+
+- ThreadId for NFTs: `eip155:<chainId>/<tokenType>:<tokenContractAddress>/<tokenId>`
+
+    Examples,
+    ```bash
+    # https://opensea.io/assets/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/3490
+    eip155:1/erc721:0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/3490
+
+    # https://opensea.io/assets/0x503ac85cfab61a1e33df33c8b26ae81e3c6e3ef2/2
+    eip155:137/erc1155:0x503ac85cfab61a1e33df33c8b26ae81e3c6e3ef2/2
+
+    ```
+- ThreadId for Addresses: `eip155:<chainId>/<tokenType>:<tokenContractAddress>/<tokenId>`,
+
+    Examples,
+    ```bash
+    # Ethereum mainnet
+    eip155:1:0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
+
+    # Bitcoin mainnet
+    bip122:000000000019d6689c085ae165831e93:128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6
+    ```
+
+### Read More on Chain Agnostic Standards
+- [CAIP-10 Account ID Specification](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
 
 
 ## Comments

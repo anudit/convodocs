@@ -12,7 +12,9 @@ import CodeBox from './../../../components/CodeBox'
 
 Websockets allow you to subscribe to a `threadId` and receive updates for new messsages. Here is how you can add them to your application.
 
-## Step 1 - Install Dependencies.
+## Manual Setup
+
+### Step 1 - Install Dependencies
 
 <CodeBox>
 ```bash
@@ -20,7 +22,7 @@ yarn add ably
 ```
 </CodeBox>
 
-## Step 2 - Setup your code.
+### Step 2 - Setup your code
 
 Let's create a file that'll have our React hook named `Ably.js`.
 
@@ -54,7 +56,7 @@ export function useChannel(channelName, callbackOnMessage) {
 ```
 </CodeBox>
 
-## Step 3 - Subscribe to a Channel.
+### Step 3 - Subscribe to a Channel.
 
 <CodeBox>
 ```javascript
@@ -68,6 +70,39 @@ const [channel, ably] = useChannel(threadId, (newMessage) => {
 });
 ```
 </CodeBox>
+
+## Using the SDK
+
+### Step 1 - Install & Setup the SDK
+
+<CodeBox>
+```bash
+yarn add @theconvospace/sdk
+import { Convo } from "@theconvospace/sdk"
+```
+</CodeBox>
+
+Read more details on installing and Setting up the SDK [here](/docs/Convo-SDK/installation)
+
+### Step 2 - Use the `subscribe` React Hook.
+
+Syntax,
+<CodeBox>
+```javascript
+const [channelDetails, ablyInstance] = convo.threads.subscribe('threadId', callback);
+```
+</CodeBox>
+
+Example,
+
+<CodeBox>
+```javascript
+const [channelDetails, ablyInstance] = convo.threads.subscribe('KIGZUnR4RzXDFheXoOwo', (newMessage)=>{
+    alert('Got a new Message', newMessage.text);
+});
+```
+</CodeBox>
+
 
 ## Comments
 <CommentBox threadId="websocket"/>

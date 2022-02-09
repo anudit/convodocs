@@ -1,6 +1,6 @@
 {
   "api-docs": "API Docs",
-  "websockets": "WebSocket",
   "omnid": "Omnid",
-  "standards": "Standards"
+  "standards": "Standards",
+  "websocket": "WebSocket"
 }
