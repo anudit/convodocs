@@ -3,10 +3,61 @@ title: Omnid x Metamask
 ---
 
 import CommentBox from './../../../components/CommentBox'
+import CodeBox from './../../../components/CodeBox'
 
 # Omnid x Metamask
 
 ## Introduction
 Omnid securing your Web3 Experience using Metamask.
 
-🏗️ Coming Soon
+### Step 1 : Install MetaMask Flask
+Snaps are currently available only on the Developer Version of MetaMask called MetaMask Flask. Get it on [metamask.io/flask](https://metamask.io/flask/)
+
+
+### Step 2 : Install Omnid's Snap on Flask
+- Head to your [Omnid Dashboard](https://theconvo.space/dashboard/omnid).
+- Click the <img src="/addtom.png" style={{display:"inline-flex", width:"200px"}}/> Button.
+
+All done.
+
+## Add Snap Installer to your Site
+NPM: https://www.npmjs.com/package/@omnid/snap
+
+<CodeBox>
+```js
+await ethereum.request({
+    method: 'wallet_enable',
+    params: [{
+        wallet_snap: { [`npm:@omnid/snap`]: {} },
+    }]
+})
+```
+</CodeBox>
+
+
+## RPC API
+
+### `omnid_getTrustScoreData`
+
+You can use `omnid_getTrustScoreData` to get an arbitary user's TrustScore and Omnid Data.
+
+Example,
+<CodeBox>
+```js
+const snapId = `npm:@omnid/snap`;
+const response = await ethereum.request({
+    method: 'wallet_invokeSnap',
+    params: [snapId, {
+        method: 'omnid_getTrustScoreData',
+        address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
+        apikey: '<convo-api-key>',
+    }]
+})
+console.log('response', response);
+```
+</CodeBox>
+
+
+## Playground
+
+Checkout the [Snaps Playground](https://omnidsnap.vercel.app/) : [Source Code](https://github.com/anudit/omnidsnap/blob/main/index.html)
