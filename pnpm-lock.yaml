@@ -11,8 +11,8 @@ specifiers:
   next: ^12.1.0
   next-compose-plugins: ^2.2.1
   next-pwa: ^5.4.4
-  nextra: 2.0.0-alpha.28
-  nextra-theme-docs: 2.0.0-alpha.28
+  nextra: 2.0.0-alpha.24
+  nextra-theme-docs: 2.0.0-alpha.24
   postcss: ^8.4.5
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -30,8 +30,8 @@ dependencies:
   next: 12.1.0_react-dom@17.0.2+react@17.0.2
   next-compose-plugins: 2.2.1
   next-pwa: 5.4.4_next@12.1.0
-  nextra: 2.0.0-alpha.28_react@17.0.2
-  nextra-theme-docs: 2.0.0-alpha.28_caa633a00319350dbda42996613fe26c
+  nextra: 2.0.0-alpha.24_react@17.0.2
+  nextra-theme-docs: 2.0.0-alpha.24_caa633a00319350dbda42996613fe26c
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-intersection-observer: 8.33.1_react@17.0.2
@@ -3945,8 +3945,8 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/2.0.0-alpha.28_caa633a00319350dbda42996613fe26c:
-    resolution: {integrity: sha512-oB21kr0LloFdC+m2xbSl2jOs2mFQSbOLa7GmR5kY0IWM5J0wp5beg6I7XTzTHQ9DjBs5Q+WNA7FV+RFkJK5chw==}
+  /nextra-theme-docs/2.0.0-alpha.24_caa633a00319350dbda42996613fe26c:
+    resolution: {integrity: sha512-yAUPC1WKezamNWkL9gXHWNxoKINOmTxA2II/nSzDvfpHYsurzvQQFPdihsYpuErqot9DOrr+lQt5l5vcsf8xEA==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
@@ -3972,8 +3972,8 @@ packages:
       - '@types/react'
     dev: false
 
-  /nextra/2.0.0-alpha.28_react@17.0.2:
-    resolution: {integrity: sha512-Ph0n9y1EVaTrrDfAMGL37VYzruH1yeXBuq3nWSgv1LNycqmI7s0z/io/lb9yMUPuSJwfSmFs45xpXlzsb2T7Jw==}
+  /nextra/2.0.0-alpha.24_react@17.0.2:
+    resolution: {integrity: sha512-Vt98hlyTEWQguRnkALq9aXhUcxDVwNN3LND/NXvXCSYxZjEY6f2Ujdew1HxBn78xa3k0WCmne1Xzb39Yy9dbNg==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
