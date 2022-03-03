@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@docsearch/react': ^3.0.0-alpha.50
+  '@docsearch/react': 3.0.0
   '@reach/skip-nav': ^0.16.0
   autoprefixer: ^10.4.2
   d3: ^7.3.0
@@ -10,18 +10,18 @@ specifiers:
   markdown-to-jsx: ^6.11.4
   next: ^12.1.0
   next-compose-plugins: ^2.2.1
-  next-pwa: ^5.4.4
-  nextra: 2.0.0-alpha.24
-  nextra-theme-docs: 2.0.0-alpha.24
+  next-pwa: ^5.4.5
+  nextra: 2.0.0-alpha.30
+  nextra-theme-docs: 2.0.0-alpha.30
   postcss: ^8.4.5
   react: ^17.0.2
   react-dom: ^17.0.2
   react-intersection-observer: ^8.26.2
-  react-tabs: ^3.2.3
+  react-tabs: ^4.0.1
   tailwindcss: ^3.0.16
 
 dependencies:
-  '@docsearch/react': 3.0.0-alpha.50_react-dom@17.0.2+react@17.0.2
+  '@docsearch/react': 3.0.0_react-dom@17.0.2+react@17.0.2
   '@reach/skip-nav': 0.16.0_react-dom@17.0.2+react@17.0.2
   d3: 7.3.0
   focus-visible: 5.2.0
@@ -29,13 +29,13 @@ dependencies:
   markdown-to-jsx: 6.11.4_react@17.0.2
   next: 12.1.0_react-dom@17.0.2+react@17.0.2
   next-compose-plugins: 2.2.1
-  next-pwa: 5.4.4_next@12.1.0
-  nextra: 2.0.0-alpha.24_react@17.0.2
-  nextra-theme-docs: 2.0.0-alpha.24_caa633a00319350dbda42996613fe26c
+  next-pwa: 5.4.5_next@12.1.0
+  nextra: 2.0.0-alpha.30_react@17.0.2
+  nextra-theme-docs: 2.0.0-alpha.30_caa633a00319350dbda42996613fe26c
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-intersection-observer: 8.33.1_react@17.0.2
-  react-tabs: 3.2.3_react@17.0.2
+  react-tabs: 4.0.1_react@17.0.2
 
 devDependencies:
   autoprefixer: 10.4.2_postcss@8.4.5
@@ -1295,12 +1295,12 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@docsearch/css/3.0.0-alpha.50:
-    resolution: {integrity: sha512-QeWFCQOtS9D+Fi20liKsPXF2j/xWKh52e+P2Z1UATIdPMqmH6zoB2lcUz+cgv6PPVgWUtECeR6VSSUm71LT94w==}
+  /@docsearch/css/3.0.0:
+    resolution: {integrity: sha512-1kkV7tkAsiuEd0shunYRByKJe3xQDG2q7wYg24SOw1nV9/2lwEd4WrUYRJC/ukGTl2/kHeFxsaUvtiOy0y6fFA==}
     dev: false
 
-  /@docsearch/react/3.0.0-alpha.50_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-oDGV1zZCRYv7MWsh6CyQVthYTRc3b4q+6kKwNYb1/g/Wf/4nJHutpxolFLHdEUDhrJ4Xi8wxwQG+lEwAVBTHPg==}
+  /@docsearch/react/3.0.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-yhMacqS6TVQYoBh/o603zszIb5Bl8MIXuOc6Vy617I74pirisDzzcNh0NEaYQt50fVVR3khUbeEhUEWEWipESg==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 18.0.0'
       react: '>= 16.8.0 < 18.0.0'
@@ -1308,7 +1308,7 @@ packages:
     dependencies:
       '@algolia/autocomplete-core': 1.5.2
       '@algolia/autocomplete-preset-algolia': 1.5.2_algoliasearch@4.12.1
-      '@docsearch/css': 3.0.0-alpha.50
+      '@docsearch/css': 3.0.0
       algoliasearch: 4.12.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -1316,8 +1316,8 @@ packages:
       - '@algolia/client-search'
     dev: false
 
-  /@headlessui/react/1.4.2_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-N8tv7kLhg9qGKBkVdtg572BvKvWhmiudmeEpOCyNwzOsZHCXBtl8AazGikIfUS+vBoub20Fse3BjawXDVPPdug==}
+  /@headlessui/react/1.5.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-aaRnYxBb3MU2FNJf3Ut9RMTUqqU3as0aI1lQhgo2n9Fa67wRu14iOGqx93xB+uMNVfNwZ5B3y/Ndm7qZGuFeMQ==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16 || ^17 || ^18
@@ -3868,8 +3868,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: false
 
-  /next-pwa/5.4.4_next@12.1.0:
-    resolution: {integrity: sha512-Wo7DctXO9ZZzMCuRK/q2U3x5k49LBRv7p31woJIUfiR6tJChSMoojHUvvgeCY72gSo4mtovS5KRm6iHIs/kxeg==}
+  /next-pwa/5.4.5_next@12.1.0:
+    resolution: {integrity: sha512-XmMbUDoBYdo4Ib2vOau4p42+6+ClZqUCFEGuVj4iuyM2C+JCqcVa2BYXcyFitjsKVBfECeIwaUqKgMB8Qm9cDQ==}
     peerDependencies:
       next: '>=9.0.0'
     dependencies:
@@ -3945,14 +3945,14 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/2.0.0-alpha.24_caa633a00319350dbda42996613fe26c:
-    resolution: {integrity: sha512-yAUPC1WKezamNWkL9gXHWNxoKINOmTxA2II/nSzDvfpHYsurzvQQFPdihsYpuErqot9DOrr+lQt5l5vcsf8xEA==}
+  /nextra-theme-docs/2.0.0-alpha.30_caa633a00319350dbda42996613fe26c:
+    resolution: {integrity: sha512-t2q01YddMPxQ4wfzR4sbXLbnJFvd3YRu6/2WjUX0t0qjPE2raDAOuEgAvMBG8AQ4glIyZri9u+xVk6Rxuqgl4Q==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
-      '@headlessui/react': 1.4.2_react-dom@17.0.2+react@17.0.2
+      '@headlessui/react': 1.5.0_react-dom@17.0.2+react@17.0.2
       '@mdx-js/react': 2.0.0-rc.2_react@17.0.2
       '@reach/skip-nav': 0.16.0_react-dom@17.0.2+react@17.0.2
       classnames: 2.3.1
@@ -3972,8 +3972,8 @@ packages:
       - '@types/react'
     dev: false
 
-  /nextra/2.0.0-alpha.24_react@17.0.2:
-    resolution: {integrity: sha512-Vt98hlyTEWQguRnkALq9aXhUcxDVwNN3LND/NXvXCSYxZjEY6f2Ujdew1HxBn78xa3k0WCmne1Xzb39Yy9dbNg==}
+  /nextra/2.0.0-alpha.30_react@17.0.2:
+    resolution: {integrity: sha512-gCBz0EvJWeWotJ/6j+l/zwTb7N7rvMdCP+zQxoTahIVCrkwH1HJfs8kQMtHvvCBPgTMNj4mDEKwHzo3/9G5pvg==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
@@ -4306,10 +4306,10 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
 
-  /react-tabs/3.2.3_react@17.0.2:
-    resolution: {integrity: sha512-jx325RhRVnS9DdFbeF511z0T0WEqEoMl1uCE3LoZ6VaZZm7ytatxbum0B8bCTmaiV0KsU+4TtLGTGevCic7SWg==}
+  /react-tabs/4.0.1_react@17.0.2:
+    resolution: {integrity: sha512-Xldj56RHhaRd37iftOwnnjsFEemHY2R07EQ9x5EqOApGauxhdLi7fc/sEKJrtFANHnasNXzSnCWdJ0ulEamMoQ==}
     peerDependencies:
-      react: ^16.3.0 || ^17.0.0-0
+      react: ^16.8.0 || ^17.0.0-0
     dependencies:
       clsx: 1.1.1
       prop-types: 15.8.1

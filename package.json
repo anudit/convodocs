@@ -12,7 +12,7 @@
   "author": "Anudit Nagar",
   "license": "Apache-2.0",
   "dependencies": {
-    "@docsearch/react": "^3.0.0-alpha.50",
+    "@docsearch/react": "3.0.0",
     "@reach/skip-nav": "^0.16.0",
     "d3": "^7.3.0",
     "focus-visible": "^5.1.0",
@@ -20,13 +20,13 @@
     "markdown-to-jsx": "^6.11.4",
     "next": "^12.1.0",
     "next-compose-plugins": "^2.2.1",
-    "next-pwa": "^5.4.4",
-    "nextra": "2.0.0-alpha.24",
-    "nextra-theme-docs": "2.0.0-alpha.24",
+    "next-pwa": "^5.4.5",
+    "nextra": "2.0.0-alpha.30",
+    "nextra-theme-docs": "2.0.0-alpha.30",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.26.2",
-    "react-tabs": "^3.2.3"
+    "react-tabs": "^4.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
