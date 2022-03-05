@@ -1,14 +1,35 @@
 ---
-title: Omnid x Metamask
+title: Omnid x MetaMask
 ---
 
 import CommentBox from './../../../components/CommentBox'
 import CodeBox from './../../../components/CodeBox'
+import Markdown from 'markdown-to-jsx';
+import { useSSG } from 'nextra/ssg';
 
-# Omnid x Metamask
+export const getStaticProps = ({ params }) => {
+  return fetch(`https://raw.githubusercontent.com/anudit/omnidsnap/main/CHANGELOG.md`)
+    .then(res => res.text())
+    .then(markdown => {
+        return ({ props: { ssg: markdown }, revalidate: 10 })
+    })
+}
+
+export const ChangelogRender = () => {
+  const markdown = useSSG();
+  return (<Markdown>{markdown.replace(`# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+`, "")}</Markdown>)
+}
+
+# Omnid x MetaMask
 
 ## Introduction
-Omnid securing your Web3 Experience using Metamask.
+Omnid securing your Web3 Experience using MetaMask.
 
 ### Step 1 : Install MetaMask Flask
 Snaps are currently available only on the Developer Version of MetaMask called MetaMask Flask. Get it on [metamask.io/flask](https://metamask.io/flask/)
@@ -57,7 +78,41 @@ console.log('response', response);
 ```
 </CodeBox>
 
+### `omnid_getFortaData`
 
-## Playground
+You can use `omnid_getFortaData` to get an arbitary user's Forta Alerts.
 
-Checkout the [Snaps Playground](https://omnidsnap.vercel.app/) : [Source Code](https://github.com/anudit/omnidsnap/blob/main/index.html)
+Example,
+<CodeBox>
+```js
+const snapId = `npm:@omnid/snap`;
+const response = await ethereum.request({
+    method: 'wallet_invokeSnap',
+    params: [snapId, {
+        method: 'omnid_getFortaData',
+        address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
+        customVariables: null, // Optional Param to override default GraphQL variable values.
+    }]
+})
+console.log('response', response);
+```
+</CodeBox>
+
+
+
+## Links
+
+- Checkout the [Snaps Playground](https://omnidsnap.vercel.app/) : [Source Code](https://github.com/anudit/omnidsnap/blob/main/index.html)
+
+- Find the Snap Release on [NPM](https://www.npmjs.com/package/@omnid/snap/)
+
+- Snap Source Code on [GitHub](https://github.com/anudit/omnidsnap/)
+
+<br/>
+
+## Changelog
+
+<ChangelogRender/>
+
+## Comments
+<CommentBox threadId="omnid-snap-changelog"/>

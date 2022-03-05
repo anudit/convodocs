@@ -40,7 +40,7 @@ const SecondChart = () => {
                                 "name": "ConvoX",
                                 "children": [
                                     {
-                                        "tooltip": "Metamask",
+                                        "tooltip": "MetaMask",
                                         "img": "/ecosystem/convo/convox/metamask.png"
                                     },
                                     {
