@@ -3,6 +3,7 @@ import Logo from './components/Logo'
 
 export default {
   projectLink: 'https://github.com/anudit/convo',
+  projectChatLink: "https://discord.gg/MFtmrng9J7",
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: " – Convo Space",
   search: true,
