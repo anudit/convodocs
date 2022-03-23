@@ -57,6 +57,31 @@ let resp = await convo.comments.delete(
 ```
 </CodeBox>
 
+## Update a Comment
+
+<CodeBox>
+```javascript
+convo.comments.update(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+    commentId, // Comment ID
+    comment // New Comment Text.
+)
+```
+</CodeBox>
+
+Example,
+<CodeBox>
+```javascript
+let resp = await convo.comments.update(
+    accounts[0],
+    "",
+    "01fyv0qsprperxt1y63zrgyqfq",
+    "Hey"
+);
+```
+</CodeBox>
+
 ## Toggle Upvote
 <CodeBox>
 ```javascript

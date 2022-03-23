@@ -456,7 +456,39 @@ Send a `DELETE` request to the endpoint with the following request schema,
 ```json
 {
   'token': <JWT-Auth-token>,
+  'signerAddress': <address>,
   'commentId': <unique-id-of-comment>
+}
+```
+
+**Response**
+
+```json
+{
+  'success': true,
+}
+```
+
+Possible Response Error Messages,
+
+- `400`: Invalid/Incomplete params
+- `503`: Invalid Auth
+- `500`: Internal Error.
+
+
+## Step 5 - Updating a comment
+
+**Route : `/comments`**
+
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
+
+Send a `PATCH` request to the endpoint with the following request schema,
+```json
+{
+  'token': <JWT-Auth-token>,
+  'signerAddress': <address>,
+  'commentId': <unique-id-of-comment>,
+  'comment': comment>
 }
 ```
 
