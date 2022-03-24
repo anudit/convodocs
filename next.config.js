@@ -12,6 +12,9 @@ const withNextra = require("nextra")({
   unstable_staticImage: true,
 });
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig = {
   poweredByHeader: false,
@@ -66,5 +69,6 @@ module.exports = withPlugins([
           }
         ]
       }
-    }]
+    }],
+    [withBundleAnalyzer]
 ], nextConfig)
