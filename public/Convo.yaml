@@ -20,6 +20,8 @@ paths:
     parameters: []
     get:
       summary: GET Threads
+      tags:
+        - threads
       operationId: get-api-threads-threadId
       responses:
         '200':
@@ -43,10 +45,39 @@ paths:
           description: API Key obtained from the The Convo Space Dashboard
           required: true
       description: Fetch Metadata for Threads.
+    delete:
+      summary: Delete a Thread
+      description: Delete a Thread
+      tags:
+        - threads
+      operationId: delete-threads
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                signerAddress:
+                  type: string
+                token:
+                  type: string
+                threadId:
+                  type: string
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: apikey
+          description: API Key obtained from the The Convo Space Dashboard
+          required: true
   /comments:
     get:
       summary: GET Comments
-      tags: []
+      tags:
+        - comments
       responses:
         '200':
           description: OK
@@ -98,6 +129,8 @@ paths:
       description: 'Get comments filtered for a specific Website, Author or Thread.'
     post:
       summary: Create a New Comment
+      tags:
+        - comments
       operationId: post-comments
       responses:
         '200':
@@ -144,6 +177,8 @@ paths:
         description: ''
     delete:
       summary: Delete a Comment
+      tags:
+        - comments
       operationId: delete-comments
       responses:
         '200':
@@ -175,10 +210,55 @@ paths:
                   type: string
                 commentId:
                   type: string
+    patch:
+      summary: Update a Comment
+      tags:
+        - comments
+      operationId: patch-comments
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid/Incomplete params
+        '404':
+          description: Comment not found.
+        '500':
+          description: Internal Server Error
+        '503':
+          description: Invalid Auth
+      description: Update a Commnet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+                commentId:
+                  type: string
+                signerAddress:
+                  type: string
+                token:
+                  type: string
+              required:
+                - comment
+                - commentId
+                - signerAddress
+                - token
+            examples: {}
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: apikey
+          description: API Key obtained from the The Convo Space Dashboard
+          required: true
   /identity:
     get:
       summary: GET Trust Store for an Identity
-      tags: []
+      tags:
+        - identity
       responses:
         '200':
           description: OK
@@ -273,9 +353,10 @@ paths:
           required: true
       description: Get the Trust Score for any Ethereum Address.
   /auth:
-    get:
-      summary: GET Authentication Token
-      tags: []
+    post:
+      summary: Get an Authentication Token
+      tags:
+        - auth
       responses:
         '200':
           description: OK
@@ -344,7 +425,8 @@ paths:
   /validateAuth:
     get:
       summary: Validate an Authentication Token
-      tags: []
+      tags:
+        - auth
       responses:
         '200':
           description: 'OK, Valid Auth Token'
@@ -408,6 +490,8 @@ paths:
   /vote:
     post:
       summary: Likes & Dislikes
+      tags:
+        - comments
       operationId: post-vote
       responses:
         '200':
@@ -457,12 +541,82 @@ paths:
           name: apikey
           description: CONVO
           required: true
+  /authV2:
+    post:
+      summary: AuthV2
+      tags:
+        - auth
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Recovered address from signature doesn't match signerAddress or Invalid Chain
+        '500':
+          description: Internal Server Error
+      operationId: post-authV2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                signature:
+                  type: string
+                chain:
+                  type: string
+              required:
+                - message
+                - signature
+                - chain
+      description: Authentication
+      parameters:
+        - schema:
+            type: string
+          in: query
+          description: API Key obtained from the The Convo Space Dashboard
+          name: apikey
+  /zkidentity:
+    get:
+      summary: Get ZK Proof
+      description: Get ZK Proof
+      tags:
+        - identity
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+      operationId: get-zkidentity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+              required:
+                - address
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: apikey
+          description: API Key obtained from the The Convo Space Dashboard
+          required: true
 components:
   schemas: {}
   securitySchemes:
     apikey:
-      name: CONVO
       type: apiKey
       in: query
+      name: CONVO
 tags:
-  - name: thread
+  - name: threads
+  - name: comments
+  - name: identity
+  - name: auth
