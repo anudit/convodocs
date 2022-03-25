@@ -12,8 +12,8 @@ specifiers:
   next: ^12.1.0
   next-compose-plugins: ^2.2.1
   next-pwa: ^5.4.6
-  nextra: 2.0.0-alpha.44
-  nextra-theme-docs: 2.0.0-alpha.44
+  nextra: 2.0.0-alpha.46
+  nextra-theme-docs: 2.0.0-alpha.46
   postcss: ^8.4.12
   preact: ^10.6.6
   react: ^17.0.2
@@ -33,8 +33,8 @@ dependencies:
   next: 12.1.0_react-dom@17.0.2+react@17.0.2
   next-compose-plugins: 2.2.1
   next-pwa: 5.4.6_next@12.1.0
-  nextra: 2.0.0-alpha.44_react@17.0.2
-  nextra-theme-docs: 2.0.0-alpha.44_caa633a00319350dbda42996613fe26c
+  nextra: 2.0.0-alpha.46_react@17.0.2
+  nextra-theme-docs: 2.0.0-alpha.46_caa633a00319350dbda42996613fe26c
   preact: 10.6.6
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -3984,8 +3984,8 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/2.0.0-alpha.44_caa633a00319350dbda42996613fe26c:
-    resolution: {integrity: sha512-KeLaaQNOgkS4TWr38T7CQ7CXP5A8zgJuadmzl/uMNkq9YWS5XPIzicvmd0ltr+fCdxzBqVFAIeIX54XB/qUlYA==}
+  /nextra-theme-docs/2.0.0-alpha.46_caa633a00319350dbda42996613fe26c:
+    resolution: {integrity: sha512-I7JK/YggII841z2X//qLrrqZ+ji2I23xOg++2+lkKjb0T+ib9QIVYYdaSwGqEOcU0epNK/qev0VwA8sVCLqVYg==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
@@ -4008,8 +4008,8 @@ packages:
       title: 3.4.3
     dev: false
 
-  /nextra/2.0.0-alpha.44_react@17.0.2:
-    resolution: {integrity: sha512-PZBQAHlrZbf4sg2XEUvqe+SoI5XU/Ui4Z/9ENmGFRCrtKd3oy9Ea9uMrS6V0s8e+cwOjlKCW4TRoG24aORefog==}
+  /nextra/2.0.0-alpha.46_react@17.0.2:
+    resolution: {integrity: sha512-hmTejOqNhNWJWw/lsC4nytgxTYfuCmVo8fm4slN9FVYJY49SdwlqqBOZvy/6yUmpaN1DsNAyyZwtWZatbdx07Q==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
@@ -4018,9 +4018,9 @@ packages:
       graceful-fs: 4.2.9
       gray-matter: 4.0.3
       react: 17.0.2
-      rehype-pretty-code: 0.1.0_shiki@0.10.0
+      rehype-pretty-code: 0.1.0_shiki@0.10.1
       remark-gfm: 3.0.1
-      shiki: 0.10.0
+      shiki: 0.10.1
       slash: 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4429,14 +4429,14 @@ packages:
       jsesc: 0.5.0
     dev: false
 
-  /rehype-pretty-code/0.1.0_shiki@0.10.0:
+  /rehype-pretty-code/0.1.0_shiki@0.10.1:
     resolution: {integrity: sha512-7SaedCOn5VcDGdllQeu3kBWC+/zbkD6ZE7iOALJzK79+v0K0qQpa1WqBwoxetTbCLwBTY9wC4CabEsDS3qj55g==}
     engines: {node: ^12.16.0 || >=13.2.0}
     peerDependencies:
       shiki: '*'
     dependencies:
       parse-numeric-range: 1.3.0
-      shiki: 0.10.0
+      shiki: 0.10.1
     dev: false
 
   /remark-gfm/3.0.1:
@@ -4630,8 +4630,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /shiki/0.10.0:
-    resolution: {integrity: sha512-iczxaIYeBFHTFrQPb9DVy2SKgYxC4Wo7Iucm7C17cCh2Ge/refnvHscUOxM85u57MfLoNOtjoEFUWt9gBexblA==}
+  /shiki/0.10.1:
+    resolution: {integrity: sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==}
     dependencies:
       jsonc-parser: 3.0.0
       vscode-oniguruma: 1.6.1
