@@ -4,7 +4,7 @@ import copyToClipboard from '../utils/clipboard'
 const CodeBox = ({children}) => {
 
   return (
-      <div style={{position:"relative", display: "block"}}>
+      <div style={{position:"relative", display: "block"}} className="codebox">
         <button
             className='copybutton'
             onClick={(e)=>{ copyToClipboard(e.currentTarget.nextElementSibling.innerText, e.currentTarget) }}

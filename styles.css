@@ -161,3 +161,14 @@ body {
   color: #fff;
   z-index: 100;
 }
+
+.codebox .copybutton{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.codebox:hover .copybutton{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
