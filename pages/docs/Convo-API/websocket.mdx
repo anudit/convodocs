@@ -103,6 +103,31 @@ const [channelDetails, ablyInstance] = convo.threads.subscribe('KIGZUnR4RzXDFheX
 ```
 </CodeBox>
 
+## Tracking Events
+
+1. **Channel**: Defines the root Id you are tracking the changes of.
+2. **Action**: A key in the payload that defines the kind of update.
+3. **Data**: The Payload data that is retured on the WS Trigger.
+
+### New Comment
+- Channel: Thread Id
+- Action: `commentCreate`
+- Data: New Comment Data.
+
+### Update Comment
+- Channel: Thread Id
+- Action: `commentUpdate`
+- Data: Updated Comment Data.
+
+### Delete Comment
+- Channel: Comment Id
+- Action: `commentDelete`
+- Data: Id of the Comment Deleted.
+
+### Toggle Votes
+- Channel: Thread Id
+- Action: `toggleUpvote`, `toggleDownvote`
+- Data: Updated Comment Data (inc Vote Data).
 
 ## Comments
 <CommentBox threadId="websocket"/>
