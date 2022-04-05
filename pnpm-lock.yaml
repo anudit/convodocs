@@ -11,7 +11,7 @@ specifiers:
   markdown-to-jsx: ^7.1.7
   next: ^12.1.4
   next-compose-plugins: ^2.2.1
-  next-pwa: ^5.4.6
+  next-pwa: ^5.4.7
   nextra: 2.0.0-alpha.48
   nextra-theme-docs: 2.0.0-alpha.48
   postcss: ^8.4.12
@@ -32,7 +32,7 @@ dependencies:
   markdown-to-jsx: 7.1.7_react@17.0.2
   next: 12.1.4_react-dom@17.0.2+react@17.0.2
   next-compose-plugins: 2.2.1
-  next-pwa: 5.4.6_next@12.1.4
+  next-pwa: 5.4.7_next@12.1.4
   nextra: 2.0.0-alpha.48_react@17.0.2
   nextra-theme-docs: 2.0.0-alpha.48_f3299b186fe279e9e6c95022815bb28f
   preact: 10.7.0
@@ -3927,8 +3927,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: false
 
-  /next-pwa/5.4.6_next@12.1.4:
-    resolution: {integrity: sha512-cJVxfn4a1DqwKGP+zhqE9QikqFuUhCYi7wiaucxhFLeShC6DVX1Gy5Qh3HAs1i6VHQcEOnaOwfk0Q9Z08yRkCg==}
+  /next-pwa/5.4.7_next@12.1.4:
+    resolution: {integrity: sha512-Uc1pOYJ/7tORbi2LoIEbaHz/hEbq06jiGbVuhr+nzHJHjPGFkmF6JfcDKVdbaXbJa1gJass0utPOI+Wrce06Qw==}
     peerDependencies:
       next: '>=9.0.0'
     dependencies:
