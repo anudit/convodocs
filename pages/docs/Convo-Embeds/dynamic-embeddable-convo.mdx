@@ -4,6 +4,7 @@ title: Embed a Convo
 
 import Callout from 'nextra-theme-docs/callout'
 import CommentBox from './../../../components/CommentBox'
+import CodeBox from './../../../components/CodeBox'
 
 # Embed a Convo
 
@@ -33,11 +34,13 @@ Here are the details on the *required* query parameters for a dynamic embeddable
 </Callout>
 
 Example,
+<CodeBox>
 ```jsx
-<iframe src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdeepdao.io%2F&threadId=fJPU8mZiQwVXV6K1xXlw" allowtransparency="true" width="100%" height="600px" style="border: none;">
+<iframe id="frm" src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdeepdao.io%2F&threadId=fJPU8mZiQwVXV6K1xXlw" allowtransparency="true" width="100%" height="600px" style="border: none;">
   Comments
 </iframe>
 ```
+</CodeBox>
 
 Now you can use this snippet on any website by simply inserting this HTML wherever you want the comments page to appear.
 
@@ -53,6 +56,35 @@ Now you can use this snippet on any website by simply inserting this HTML wherev
 | theme 	|     Set the default theme of the Convo. `dark` or `light` 	| `dark` 	|
 | height 	|     Set the default height of the Chat Element.	| `300` |
 
+## Communicating with the Embed
+
+We use [`window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) with the `target` key in the message data as `convo-embed`.
+
+### Update Theme
+
+<CodeBox>
+```js
+const msg = {
+  target: "convo-embed",
+  action: "setTheme",
+  data:{
+    theme:"light"
+  }
+};
+const frm = document.getElementById('frm').contentWindow;
+frm.postMessage(msg, "https://theconvo.space/");
+```
+</CodeBox>
+
+Allowed values for `theme` are: `dark` & `light`.
+
+### Use Custom Auth
+
+Coming Soon.
+
+### Use Custom Avatars
+
+Coming Soon.
 
 ## Comments
 <CommentBox threadId="dynamic-embeddable-convo"/>
