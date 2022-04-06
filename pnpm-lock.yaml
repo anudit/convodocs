@@ -15,7 +15,7 @@ specifiers:
   nextra: 2.0.0-alpha.48
   nextra-theme-docs: 2.0.0-alpha.48
   postcss: ^8.4.12
-  preact: ^10.6.6
+  preact: ^10.7.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-intersection-observer: ^8.33.1
@@ -35,7 +35,7 @@ dependencies:
   next-pwa: 5.4.7_next@12.1.4
   nextra: 2.0.0-alpha.48_react@17.0.2
   nextra-theme-docs: 2.0.0-alpha.48_f3299b186fe279e9e6c95022815bb28f
-  preact: 10.7.0
+  preact: 10.7.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-intersection-observer: 8.33.1_react@17.0.2
@@ -4309,8 +4309,8 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
-  /preact/10.7.0:
-    resolution: {integrity: sha512-9MEURwzNMKpAil/t6+wabDIJI6oG6GnwypYxiJDvQnW+fHDTt51PYuLZ1QUM31hFr7sDaj9qTaShAF9VIxuxGQ==}
+  /preact/10.7.1:
+    resolution: {integrity: sha512-MufnRFz39aIhs9AMFisonjzTud1PK1bY+jcJLo6m2T9Uh8AqjD77w11eAAawmjUogoGOnipECq7e/1RClIKsxg==}
     dev: false
 
   /pretty-bytes/5.6.0:
