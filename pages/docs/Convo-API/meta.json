@@ -2,5 +2,6 @@
   "api-docs": "API Docs",
   "omnid": "Omnid",
   "standards": "Standards",
-  "websocket": "WebSocket"
+  "websocket": "WebSocket",
+  "node-tests": "Node Tests"
 }
