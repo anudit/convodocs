@@ -23,6 +23,7 @@ export default {
         <span
           className="mx-2 font-extrabold hidden md:inline select-none"
           title="Convo Space"
+          style={{width: "max-content"}}
         >
           Convo Space
         </span>
@@ -82,5 +83,16 @@ export default {
   footerEditLink: () => {
     return "Edit this page on GitHub →";
   },
-  footerText:  `MIT ${new Date().getFullYear()} © The Convo Space.`
+  footerText:  `MIT ${new Date().getFullYear()} © CUPOC, Inc.`,
+  bannerKey: "isBannerOpen",
+  banner: () => {
+    return (
+    <>
+      ✨ Learn more about <a href="https://blog.cupoc.space/" target="_blank"> Convo Space & Omnid →</a>
+    </>);
+  },
+  // Put hiring here
+  // tocExtraContent: () => {
+  //   return <img src="http://placekitten.com/g/300/200" />;
+  // },
 };
