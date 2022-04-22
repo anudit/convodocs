@@ -6,10 +6,20 @@ import TestNode from './../../../components/TestNode'
 
 # Node Tests
 
-| Endpoint 	| Status 	|
-|-	|:-	|
-| `https://theconvo.space/api` 	| <TestNode testUrl="https://theconvo.space/api"/> 	|
-| `https://node1.theconvo.space/api` 	| <TestNode testUrl="https://node1.theconvo.space/api"/> 	|
-| `https://node2.theconvo.space/api` 	| <TestNode testUrl="https://node2.theconvo.space/api"/> 	|
-| `https://backup.theconvo.space/api` 	| <TestNode testUrl="https://backup.theconvo.space/api"/> 	|
-| `https://d1c1io99nqy760.cloudfront.net/api` 	| <TestNode testUrl="https://d1c1io99nqy760.cloudfront.net/api"/> 	|
+| Endpoint 	| Status (Avg Resp Time)  | Provider	|
+|-	|:-	|:-	|
+| `https://theconvo.space/api` 	| <TestNode testUrl="https://theconvo.space/api"/> 	| `heroku` |
+| `https://backup.theconvo.space/api` 	| <TestNode testUrl="https://backup.theconvo.space/api"/> 	| `railway` |
+| `https://node1.theconvo.space/api` 	| <TestNode testUrl="https://node1.theconvo.space/api"/> 	| `netlify` |
+| `https://node2.theconvo.space/api`     	| <TestNode testUrl="https://node2.theconvo.space/api"/> 	| `heroku` |
+| `https://node3.theconvo.space/api` 	| <TestNode testUrl="https://node2.theconvo.space/api"/> 	| `AWS` |
+| `https://node4.theconvo.space/api` 	| <TestNode testUrl="https://node2.theconvo.space/api"/> 	| `render` |
+| `https://d1c1io99nqy760.cloudfront.net/api` 	| <TestNode testUrl="https://d1c1io99nqy760.cloudfront.net/api"/> 	| `AWS` |
+
+<!-- MAIN = Heroku -->
+<!-- Backup = Railway -->
+
+<!-- Node1 = Netlify -->
+<!-- Node2 = Heroku -->
+<!-- Node3 = AWS -->
+<!-- Node4 = Render -->
