@@ -9,6 +9,7 @@ specifiers:
   focus-visible: ^5.2.0
   intersection-observer: ^0.12.0
   markdown-to-jsx: ^7.1.7
+  nettime: ^4.0.0
   next: ^12.1.5
   next-compose-plugins: ^2.2.1
   next-pwa: ^5.5.2
@@ -30,6 +31,7 @@ dependencies:
   focus-visible: 5.2.0
   intersection-observer: 0.12.0
   markdown-to-jsx: 7.1.7_react@17.0.2
+  nettime: 4.0.0
   next: 12.1.5_react-dom@17.0.2+react@17.0.2
   next-compose-plugins: 2.2.1
   next-pwa: 5.5.2_next@12.1.5
@@ -2276,6 +2278,11 @@ packages:
     engines: {node: '>= 10'}
     dev: false
 
+  /commander/8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
+    dev: false
+
   /common-tags/1.8.2:
     resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
     engines: {node: '>=4.0.0'}
@@ -4031,6 +4038,16 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  /nettime/4.0.0:
+    resolution: {integrity: sha512-yoDn/TBTAaLmUgLycqrbh8WgDYCjLlSic9tyZw1m20K3tDjWjAKS9C9zBwF1Nv2xH1Pv8wD3koZPpO+mznmHFw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+      readline-sync: 1.4.10
+      sprintf-js: 1.1.2
+    dev: false
+
   /next-compose-plugins/2.2.1:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: false
@@ -4502,6 +4519,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /readline-sync/1.4.10:
+    resolution: {integrity: sha512-gNva8/6UAe8QYepIQH/jQ2qn91Qj0B9sYjMBBs3QOB8F2CXcKgLxQaJRP76sWVRQt+QU+8fAkCbCvjjMFu7Ycw==}
+    engines: {node: '>= 0.8.0'}
+    dev: false
+
   /regenerate-unicode-properties/10.0.1:
     resolution: {integrity: sha512-vn5DU6yg6h8hP/2OkQo3K7uVILvY4iu0oI4t3HFa81UPkhGJwkRwM10JEc3upjdhHjs/k8GJY1sRBhk5sr69Bw==}
     engines: {node: '>=4'}
@@ -4837,6 +4859,10 @@ packages:
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
+    dev: false
+
+  /sprintf-js/1.1.2:
+    resolution: {integrity: sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==}
     dev: false
 
   /string.prototype.matchall/4.0.7:

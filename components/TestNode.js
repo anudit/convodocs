@@ -3,16 +3,23 @@ import React, { useEffect, useState } from 'react'
 const TestNode = ({testUrl}) => {
 
     let [fstate, setFstate] = useState(null);
-    let [time, setTime] = useState(0);
+    let [time, setTime] = useState(null);
 
     useEffect(async ()=>{
 
-        let timeOld = Date.now();
+        let timeMetrics;
         try {
 
-            let resp = await fetch(testUrl + "/comments?page=0&pageSize=10&latestFirst=true&apikey=CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO&threadId=KIGZUnR4RzXDFheXoOwo");
+            const reqUrl = testUrl + "/comments?page=0&pageSize=10&latestFirst=true&apikey=CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO&threadId=KIGZUnR4RzXDFheXoOwo";
+
+            let resp = await fetch(reqUrl);
             let data = await resp.json();
-            console.log(testUrl, resp.status, data);
+
+            timeMetrics = window.performance.getEntriesByType("resource")
+                                            .filter(n => n.initiatorType === "fetch")
+                                            .filter(n => n.name === reqUrl)[0];
+
+            console.log(testUrl, timeMetrics, resp.status, data);
             if (resp.status >= 200){ setFstate(true); }
             else { setFstate(false); }
 
@@ -20,18 +27,17 @@ const TestNode = ({testUrl}) => {
             console.error(testUrl, fstate, error);
             setFstate(false);
         }
-        let timeDiff = Date.now() - timeOld;
-        setTime(timeDiff);
+        setTime(timeMetrics);
     },[]);
 
-    if (fstate === null){
+    if (fstate === null || time === null){
         return ("...")
     }
     else if (fstate === true){
-        return (`🟢 ${time}ms`)
+        return (`🟢 ${(time?.duration).toFixed(0)}ms`)
     }
     else if(fstate === false){
-        return (`🔴 ${time}ms`)
+        return (`🔴 ${(time?.duration).toFixed(0)}ms`)
     }
 }
 

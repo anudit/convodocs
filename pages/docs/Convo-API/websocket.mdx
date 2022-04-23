@@ -77,8 +77,8 @@ const [channel, ably] = useChannel(threadId, (newMessage) => {
 
 <CodeBox>
 ```bash
-yarn add @theconvospace/sdk
-import { Convo } from "@theconvospace/sdk"
+yarn add @theconvospace/react
+import { subscribe } from "@theconvospace/react"
 ```
 </CodeBox>
 
@@ -89,7 +89,7 @@ Read more details on installing and Setting up the SDK [here](/docs/Convo-SDK/in
 Syntax,
 <CodeBox>
 ```javascript
-const [channelDetails, ablyInstance] = convo.threads.subscribe('threadId', callback);
+const [channelDetails, ablyInstance] = subscribe('api-key','threadId', callback);
 ```
 </CodeBox>
 
@@ -97,7 +97,7 @@ Example,
 
 <CodeBox>
 ```javascript
-const [channelDetails, ablyInstance] = convo.threads.subscribe('KIGZUnR4RzXDFheXoOwo', (newMessage)=>{
+const [channelDetails, ablyInstance] = subscribe('CONVO', 'KIGZUnR4RzXDFheXoOwo', (newMessage)=>{
     alert('Got a new Message', newMessage.text);
 });
 ```
