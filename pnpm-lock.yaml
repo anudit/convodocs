@@ -4,7 +4,7 @@ specifiers:
   '@docsearch/react': 3.0.0
   '@next/bundle-analyzer': ^12.1.5
   '@reach/skip-nav': ^0.17.0
-  autoprefixer: ^10.4.4
+  autoprefixer: ^10.4.5
   d3: ^7.4.4
   focus-visible: ^5.2.0
   intersection-observer: ^0.12.0
@@ -44,7 +44,7 @@ dependencies:
   react-tabs: 4.2.0_react@17.0.2
 
 devDependencies:
-  autoprefixer: 10.4.4_postcss@8.4.12
+  autoprefixer: 10.4.5_postcss@8.4.12
   postcss: 8.4.12
   tailwindcss: 3.0.24
 
@@ -2017,15 +2017,15 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: false
 
-  /autoprefixer/10.4.4_postcss@8.4.12:
-    resolution: {integrity: sha512-Tm8JxsB286VweiZ5F0anmbyGiNI3v3wGv3mz9W+cxEDYB/6jbnj6GM9H9mK3wIL8ftgl+C07Lcwb8PG5PCCPzA==}
+  /autoprefixer/10.4.5_postcss@8.4.12:
+    resolution: {integrity: sha512-Fvd8yCoA7lNX/OUllvS+aS1I7WRBclGXsepbvT8ZaPgrH24rgXpZzF0/6Hh3ZEkwg+0AES/Osd196VZmYoEFtw==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.20.2
-      caniuse-lite: 1.0.30001323
+      caniuse-lite: 1.0.30001332
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2123,7 +2123,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001323
+      caniuse-lite: 1.0.30001332
       electron-to-chromium: 1.4.103
       escalade: 3.1.1
       node-releases: 2.0.2
@@ -2152,6 +2152,10 @@ packages:
 
   /caniuse-lite/1.0.30001323:
     resolution: {integrity: sha512-e4BF2RlCVELKx8+RmklSEIVub1TWrmdhvA5kEUueummz1XyySW0DVk+3x9HyhU9MuWTa2BhqLgEuEmUwASAdCA==}
+    dev: false
+
+  /caniuse-lite/1.0.30001332:
+    resolution: {integrity: sha512-10T30NYOEQtN6C11YGg411yebhvpnC6Z102+B95eAsN0oB6KUs01ivE8u+G6FMIRtIrVlYXhL+LUwQ3/hXwDWw==}
 
   /ccount/2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
