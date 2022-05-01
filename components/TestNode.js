@@ -63,7 +63,7 @@ const TestNode = ({testUrl, host}) => {
 
     useEffect(async ()=>{
 
-        let timeMetrics;
+        let timeMetrics = false;
         try {
 
             const reqUrl = testUrl + "/comments?page=0&pageSize=10&latestFirst=true&apikey=CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO&threadId=KIGZUnR4RzXDFheXoOwo";
@@ -134,7 +134,7 @@ const TestNode = ({testUrl, host}) => {
                     borderBottomRightRadius: "14px",
                     opacity: 1
                 }}  title="Response Failed">
-                    {`${(time?.duration/1000).toFixed(2)}s 🔴`}
+                    {`${Boolean(time?.duration) === true ? (time?.duration/1000).toFixed(2) : "0"}s 🔴`}
                 </div>
             </TestShell>
         )
