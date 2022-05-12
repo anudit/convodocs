@@ -6,22 +6,55 @@ import { useSSG } from 'nextra/ssg';
 import glossary from "../../public/glossary/glossary.json";
 
 export const GlossaryRender = () => {
-    const mdData = Object.entries(glossary).map(([word, meaning])=>{
-        return `### ${word} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}`;
-    }).join('\n');
+    return Object.entries(glossary).map(([word, meaning])=>{
+        return {word, md:`### ${word} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}`};
+    }).map(li=>{
+        return(
+            <Markdown className='word' data-word={li.word}>
+                { li.md }
+            </Markdown>
+        )
+    });
+}
+
+export const GlossaryComp = () => {
+
+    function data(e){
+        let searchVal = e.target.value;
+        let words = document.getElementsByClassName('word');
+
+        if (searchVal.trim() != ""){
+            for (var i=0; i < words.length; i++){
+                let word = words[i]
+                let wordVal = word.getAttribute('data-word');
+
+                if (wordVal.toLowerCase().includes(searchVal.trim().toLowerCase()) == true){
+                    word.style.display = 'block';
+                }
+                else {
+                    word.style.display = 'none';
+                }
+            }
+        }
+
+    }
 
     return(
-        <Markdown id="glossary">
-            { mdData }
-        </Markdown>
+        <>
+            <input type="text" onChange={data} className="gloassarySearchBox" placeholder="Search" />
+            <div id="glossary">
+                <GlossaryRender />
+            </div>
+        </>
     )
 }
 
 # Web3 Glossary
 
-<GlossaryRender />
+<GlossaryComp />
 
 ## References
 - [https://www.blocknative.com/glossary](https://www.blocknative.com/glossary)
 - [https://unstoppabledomains.com/blog/the-web3-glossary](https://unstoppabledomains.com/blog/the-web3-glossary)
 - [https://cypherpunks-core.github.io/ethereumbook/glossary.html#quick-glossary](https://cypherpunks-core.github.io/ethereumbook/glossary.html#quick-glossary)
+- [https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/](https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/)

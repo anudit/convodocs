@@ -192,3 +192,13 @@ body {
   border-color:rgba(190, 195, 201, 0.692);
   border-style: solid;
 }
+
+
+.gloassarySearchBox {
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
