@@ -6,8 +6,18 @@ import { useSSG } from 'nextra/ssg';
 import glossary from "../../public/glossary/glossary.json";
 
 export const GlossaryRender = () => {
+
+    function toTitleCase(str) {
+        return str.replace(
+            /\w\S*/g,
+            function(txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1);
+            }
+        );
+    }
+
     return Object.entries(glossary).map(([word, meaning])=>{
-        return {word, md:`### ${word} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}`};
+        return {word, md:`### ${toTitleCase(word)} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}`};
     }).map(li=>{
         return(
             <Markdown className='word' data-word={li.word}>
@@ -21,6 +31,7 @@ export const GlossaryComp = () => {
 
     function data(e){
         let searchVal = e.target.value;
+        console.log(`firing with '${searchVal}'`)
         let words = document.getElementsByClassName('word');
 
         if (searchVal.trim() != ""){
@@ -36,12 +47,21 @@ export const GlossaryComp = () => {
                 }
             }
         }
+        else{
+            for (var i=0; i < words.length; i++){
+                let word = words[i]
+                word.style.display = 'block';
+            }
+        }
 
     }
 
     return(
         <>
-            <input type="text" onChange={data} className="gloassarySearchBox" placeholder="Search" />
+            <input type="text"
+                onChange={data}
+                className="gloassarySearchBox" placeholder="Search"
+            />
             <div id="glossary">
                 <GlossaryRender />
             </div>
