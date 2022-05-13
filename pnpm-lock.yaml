@@ -15,8 +15,8 @@ specifiers:
   next: ^12.1.6
   next-compose-plugins: ^2.2.1
   next-pwa: ^5.5.2
-  nextra: 2.0.0-alpha.50
-  nextra-theme-docs: 2.0.0-alpha.53
+  nextra: 2.0.0-alpha.54
+  nextra-theme-docs: 2.0.0-alpha.54
   postcss: ^8.4.13
   preact: ^10.7.2
   react: ^17.0.2
@@ -39,8 +39,8 @@ dependencies:
   next: 12.1.6_react-dom@17.0.2+react@17.0.2
   next-compose-plugins: 2.2.1
   next-pwa: 5.5.2_next@12.1.6
-  nextra: 2.0.0-alpha.50_react@17.0.2
-  nextra-theme-docs: 2.0.0-alpha.53_c9e78c1ef548b95661158f8b65ef5848
+  nextra: 2.0.0-alpha.54_react@17.0.2
+  nextra-theme-docs: 2.0.0-alpha.54_c9e78c1ef548b95661158f8b65ef5848
   preact: 10.7.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -4136,8 +4136,8 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/2.0.0-alpha.53_c9e78c1ef548b95661158f8b65ef5848:
-    resolution: {integrity: sha512-ZmsuwjFecd49Lv3MgDJbfsLo1FRxjulJKm4fkccLD1BKPlJljDGmAo88fvgxwpXp60ttt7FqstQV4oLbTjGsDQ==}
+  /nextra-theme-docs/2.0.0-alpha.54_c9e78c1ef548b95661158f8b65ef5848:
+    resolution: {integrity: sha512-CPpEL9WNXBI+gOZze2582h4y5+/NyVVycRb31CCjBYNcCNhSULCIJ5P6lS79lU2E2w9xgSAigY8sa5+EydMe0g==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
@@ -4161,8 +4161,8 @@ packages:
       title: 3.4.4
     dev: false
 
-  /nextra/2.0.0-alpha.50_react@17.0.2:
-    resolution: {integrity: sha512-j+hhaPYDFCsPasXDdNtuKE4+eMozcnHWazoJK3b6YE7aJ844sKWBuon2XCLYx91K6TdsSiBK7uakEDvMcVamrA==}
+  /nextra/2.0.0-alpha.54_react@17.0.2:
+    resolution: {integrity: sha512-8BmCgk12a5i6hsHeWNtLSntCg9NR3TMroA+bBI/RwAXGfPfWybnHg0/xdITJBoN4E8Yu9ImvvA+vzmrCVc7UFQ==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
