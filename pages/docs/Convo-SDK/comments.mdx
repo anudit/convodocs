@@ -57,6 +57,27 @@ let resp = await convo.comments.delete(
 ```
 </CodeBox>
 
+## Nuke All Comments
+
+<CodeBox>
+```javascript
+convo.comments.nuke(
+    signerAddress,  // Ethereum Address or NEAR Public Key
+    token, // JWT Auth Token
+)
+```
+</CodeBox>
+
+Example,
+<CodeBox>
+```javascript
+let resp = await convo.comments.nuke(
+    accounts[0],
+    ""
+);
+```
+</CodeBox>
+
 ## Update a Comment
 
 <CodeBox>
