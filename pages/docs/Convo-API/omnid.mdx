@@ -18,56 +18,56 @@ Omnid aggregates multiple on/off-chain ***sources of reputation*** into a singul
 | # | Integration | Key | Factors and Score |
 | - |---------------------	|----	| --- |
 | 1 | [Aave](https://aave.com)  | `aave` | <ul><li>totalCollateralETH</li> <li> totalDebtETH </li> <li>availableBorrowsETH </li> <li>currentLiquidationThreshold </li> <li> ltv </li> <li>healthFactor </li> </ul> Across: Main Market, AMM Market, Polygon Market, Avalanche Market	|
-| 2 | Age  | `age` | Age of Ethereum Address in days on, <ul> <li> Ethereum Mainnet </li> <li> Polygon Mainnet </li></ul> |
-| 3 | [ArcX](http://arcx.money/) | `arcx` | Points for each indexed ArcX Score |
-| 4 | [Async Art](https://async.art/) |  `asyncart` | <ul><li> NFTs Sold </li> <li> Average Sale Value </li></ul> |
-| 5 | [Bird](https://bird.money/) |  `bird` | Bird Rating |
-| 6 | [Boardroom](https://boardroom.info/) |  `boardroom` |<ul><li key="1"> Number of Votes given </li> <li key="2"> DAOs participated In </li> <li key="3"> Voting History </li></ul> |
-| 7 | [BrightId](https://www.brightid.org/) | `brightid` | 37 Points for Verification |
-| 8 | [Celo Verified Attestations](https://docs.celo.org/validator-guide/attestation-service#:~:text=What%20is%20an%20Attestation%20Service,Celo%20account%2C%20securely%20and%20privately.) | `celo` | 1 Point for each valid Attestation |
-| 9 | [Coinvise](http://coinvise.co/) |  `coinvise` |<ul> <li key="1">Tokens Created(a) : (a)^0.5 Points </li> <li key="2"> NFTs Created(b) : (b)^0.5 Points  </li> <li key="3"> Total NFTs Sold(c): c Points </li> <li key="4"> Airdrops Sent(d): d Points </li> <li key="5"> Multisends(e): e Points </li> <li key="6"> Liquidity Pools Created(f): f Points </li> </ul>	|
-| 10 | [Commons Stack](https://commonsstack.org/) |  `commonstack` | $TRUST Score |
-| 11 | [Context](http://context.app/)  | `context` | <ul><li> Followers </li> <li key="3"> Folowing </li> </ul>	|
-| 12 | [Coordinape](https://coordinape.com/) |  `coordinape` | Number of teammates |
-| 13 | [CryptoRelief](https://cryptorelief.in/) |  `cryptorelief` | Donations |
-| 14 | [CryptoScamDB](https://cryptoscamdb.org/) |  `cryptoscamdb` | -20 Points for being flagged |
-| 15 | [Cyberconnect](https://cyberconnect.me/)  |  `cyberconnect` | <ul><li> Followers </li> <li> Following  </li> <li> Social  </li> <li> Display Name </li></ul>	|
-| 16 | [Dapplist](https://thedapplist.com/)  | `dapplist` |<ul><li> Dapps Hunted </li> <li> XP </li> </ul> 	|
-| 17 | [DeBank](https://debank.com/ranking)  | `debank` | <ul> <li> base_score </li> <li> rank </li> <li> social_coefficient </li> <li> social_score </li> <li> total_score </li> </ul>|
-| 18 | [DeepDAO](https://deepdao.io/) | `deepdao` | <ul><li> score </li><li> rank </li><li> relativeScore </li><li> daos </li><li> proposals </li><li> votes </li></ul> |
-| 19 | [EmblemDAO](https://emblemdao.com/) | `emblem` | <ul><li> Soul Score </li><li> Rank </li></ul> |
-| 20 | [ENS](https://ens.domains/) | `ens` |10 Points for Reverse Resolution to your Address. |
-| 21 | [Etherscan](http://etherscan.io/) | `etherscan` | Flagged Labels like `Akropolis Hacker` |
-| 22 | [Forta](forta.network) | `forta` |- Number of 'HIGH', 'MEDIUM', 'CRITICAL' Alerts  |
-| 23 | [Foundation](https://foundation.app/) | `foundation` | - NFTs Sold <br/>- Average Sale Value <br/>- Followers <br/>- Following |
-| 24 | [Gitcoin](https://gitcoin.co/) | `gitcoin` | 10 Points for funding a Grant. |
-| 25 | [Goldfinch](https://goldfinch.finance/) | `goldfinch` | Goldfinch UID  |
-| 26 | [GovernorDAO](https://governordao.org/) | `governordao` |  Proof of Existence  |
-| 27 | [Hive.one](https://hive.one/) | `hiveone` | Points for,6 <br/>- Attention Score <br/>- Insider Score |
-| 28 | [Idena](https://www.idena.io/) | `idena` | 1 Point for Verification |
-| 29 | [Karma Protocol](https://showkarma.xyz/) | `karma` | Karma Score |
-| 30 | [KlimaDAO](https://klimadao.finance) | `klima` | Amount of Carbon Offset |
-| 31 | [Known Origin](https://knownorigin.io/) | `knownorigin` |- NFTs Sold <br/>- Average Sale Value |
-| 32 | [Layer3](https://layer.xyz/) | `layer3` | - XP <br/>- Level  |
-| 33 | [LearnWeb3](https://www.learnweb3.io/) | `learnweb3` | - Graduation Badges  |
-| 34 | [Lens Protocol](https://lens.dev/) | `lens` | Lens Profile |
-| 35 | [Metagame](https://wiki.metagame.wtf/) | `metagame` |Season XP ** 0.5 |
-| 36 | [MyEtherWallet](https://github.com/MyEtherWallet/ethereum-lists/blob/master/src/addresses/addresses-darklist.json) | `mew` | -20 on being Blacklisted |
-| 37 | [Mirror](https://mirror.xyz/) | `mirror` |10 Points for being a writer on Mirror |
-| 38 | [POAP](https://poap.xyz/) | `poap` |1 Point for Each POAP Received |
-| 39 | [Proof of Humanity](https://proofofhumanity.id/) | `poh` |8 Points for Verification |
-| 40 | [Proof of Personhood](https://proofofpersonhood.com/) | `pop` | - Price of Forgery <br/>- Personhood Score |
-| 41 | [Polygon Ecosystem](https://analytics.polygon.technology/score/docs) | `polygon` |Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention |
-| 42 | [Project Galaxy](https://galaxy.eco/) | `projectgalaxy` |1 Point for each Eligible Credential |
-| 43 | [Quadrata](https://quadrata.io/) | `quadrata` | Quadrata Passport |
-| 44 | [Questbook](https://questbook.app/) | `questbook` | - Valid Grants <br/>- Sucessful Applications.  |
-| 45 | [RabbitHole](https://rabbithole.gg/) | `rabbithole` |- Points equal to the Levels you cross on RabbitHole.  <br/>- TaskIDs of the tasks Completed  |
-| 46 | [Rarible](https://rarible.com/) | `rarible` |- Total NFTs Sold <br/>- Total NFTs Created <br/>- Total NFT Owned <br/>- Average Sale Value <br/>- Followers <br/>- Following	|
-| 47 | [RSS3](https://rss3.io/)  | `rss3` | - Profile <br/>- Backlinks  <br/>- Accounts  <br/>- Links 	|
-| 48 | [SDN](https://home.treasury.gov/policy-issues/financial-sanctions/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists)  | `sdn` | Specially Designated Nationals 	|
-| 49 | [Showtime](https://showtime.io) |`showtime` | - Followers <br/>- Following 	|
-| 50 | [SuperRare](https://superrare.com/)     |`superrare` | - NFTs Sold <br/>- Average Sale Value<br/>- Followers<br/>- Following |
-| 51 | [Token Blacklists](https://thegraph.com/hosted-service/subgraph/anudit/tokenblacklists)     |`tokenblacklists` | <ul><li>USDC </li><li>USDT </li><li>BUSD </li></ul> |
+| 2 | [ArcX](http://arcx.money/) | `arcx` | Points for each indexed ArcX Score |
+| 3 | [Async Art](https://async.art/) |  `asyncart` | <ul><li> NFTs Sold </li> <li> Average Sale Value </li></ul> |
+| 4 | [Bird](https://bird.money/) |  `bird` | Bird Rating |
+| 5 | [Boardroom](https://boardroom.info/) |  `boardroom` |<ul><li key="1"> Number of Votes given </li> <li key="2"> DAOs participated In </li> <li key="3"> Voting History </li></ul> |
+| 6 | [BrightId](https://www.brightid.org/) | `brightid` | 37 Points for Verification |
+| 7 | [Celo Verified Attestations](https://docs.celo.org/validator-guide/attestation-service#:~:text=What%20is%20an%20Attestation%20Service,Celo%20account%2C%20securely%20and%20privately.) | `celo` | 1 Point for each valid Attestation |
+| 8 | [Coinvise](http://coinvise.co/) |  `coinvise` |<ul> <li key="1">Tokens Created(a) : (a)^0.5 Points </li> <li key="2"> NFTs Created(b) : (b)^0.5 Points  </li> <li key="3"> Total NFTs Sold(c): c Points </li> <li key="4"> Airdrops Sent(d): d Points </li> <li key="5"> Multisends(e): e Points </li> <li key="6"> Liquidity Pools Created(f): f Points </li> </ul>	|
+| 9 | [Commons Stack](https://commonsstack.org/) |  `commonstack` | $TRUST Score |
+| 10 | [Context](http://context.app/)  | `context` | <ul><li> Followers </li> <li key="3"> Folowing </li> </ul>	|
+| 11 | [Coordinape](https://coordinape.com/) |  `coordinape` | Number of teammates |
+| 12 | [CryptoRelief](https://cryptorelief.in/) |  `cryptorelief` | Donations |
+| 13 | [CryptoScamDB](https://cryptoscamdb.org/) |  `cryptoscamdb` | -20 Points for being flagged |
+| 14 | [Cyberconnect](https://cyberconnect.me/)  |  `cyberconnect` | <ul><li> Followers </li> <li> Following  </li> <li> Social  </li> <li> Display Name </li></ul>	|
+| 15 | [Dapplist](https://thedapplist.com/)  | `dapplist` |<ul><li> Dapps Hunted </li> <li> XP </li> </ul> 	|
+| 16 | [DeBank](https://debank.com/ranking)  | `debank` | <ul> <li> base_score </li> <li> rank </li> <li> social_coefficient </li> <li> social_score </li> <li> total_score </li> </ul>|
+| 17 | [DeepDAO](https://deepdao.io/) | `deepdao` | <ul><li> score </li><li> rank </li><li> relativeScore </li><li> daos </li><li> proposals </li><li> votes </li></ul> |
+| 18 | [EmblemDAO](https://emblemdao.com/) | `emblem` | <ul><li> Soul Score </li><li> Rank </li></ul> |
+| 19 | [ENS](https://ens.domains/) | `ens` |10 Points for Reverse Resolution to your Address. |
+| 20 | [Etherscan](http://etherscan.io/) | `etherscan` | Flagged Labels like `Akropolis Hacker` |
+| 21 | [Forta](forta.network) | `forta` |- Number of 'HIGH', 'MEDIUM', 'CRITICAL' Alerts  |
+| 22 | [Foundation](https://foundation.app/) | `foundation` | - NFTs Sold <br/>- Average Sale Value <br/>- Followers <br/>- Following |
+| 23 | [Gitcoin](https://gitcoin.co/) | `gitcoin` | 10 Points for funding a Grant. |
+| 24 | [Goldfinch](https://goldfinch.finance/) | `goldfinch` | Goldfinch UID  |
+| 25 | [GovernorDAO](https://governordao.org/) | `governordao` |  Proof of Existence  |
+| 26 | [Hive.one](https://hive.one/) | `hiveone` | Points for,6 <br/>- Attention Score <br/>- Insider Score |
+| 27 | [Idena](https://www.idena.io/) | `idena` | 1 Point for Verification |
+| 28 | [Karma Protocol](https://showkarma.xyz/) | `karma` | Karma Score |
+| 29 | [KlimaDAO](https://klimadao.finance) | `klima` | Amount of Carbon Offset |
+| 30 | [Known Origin](https://knownorigin.io/) | `knownorigin` |- NFTs Sold <br/>- Average Sale Value |
+| 31 | [Layer3](https://layer.xyz/) | `layer3` | - XP <br/>- Level  |
+| 32 | [LearnWeb3](https://www.learnweb3.io/) | `learnweb3` | - Graduation Badges  |
+| 33 | [Lens Protocol](https://lens.dev/) | `lens` | Lens Profile |
+| 34 | [Metagame](https://wiki.metagame.wtf/) | `metagame` |Season XP ** 0.5 |
+| 35 | [MyEtherWallet](https://github.com/MyEtherWallet/ethereum-lists/blob/master/src/addresses/addresses-darklist.json) | `mew` | -20 on being Blacklisted |
+| 36 | [Mirror](https://mirror.xyz/) | `mirror` |10 Points for being a writer on Mirror |
+| 37 | [POAP](https://poap.xyz/) | `poap` |1 Point for Each POAP Received |
+| 38 | [Proof of Humanity](https://proofofhumanity.id/) | `poh` |8 Points for Verification |
+| 39 | [Proof of Personhood](https://proofofpersonhood.com/) | `pop` | - Price of Forgery <br/>- Personhood Score |
+| 40 | [Polygon Ecosystem](https://analytics.polygon.technology/score/docs) | `polygon` |Relative Score out of 100 based on, <br/>- Number of Transactions <br/>- Net Volume Transacted <br/> - Retention |
+| 41 | [Project Galaxy](https://galaxy.eco/) | `projectgalaxy` |1 Point for each Eligible Credential |
+| 42 | [Quadrata](https://quadrata.io/) | `quadrata` | Quadrata Passport |
+| 43 | [Questbook](https://questbook.app/) | `questbook` | - Valid Grants <br/>- Sucessful Applications.  |
+| 44 | [RabbitHole](https://rabbithole.gg/) | `rabbithole` |- Points equal to the Levels you cross on RabbitHole.  <br/>- TaskIDs of the tasks Completed  |
+| 45 | [Rarible](https://rarible.com/) | `rarible` |- Total NFTs Sold <br/>- Total NFTs Created <br/>- Total NFT Owned <br/>- Average Sale Value <br/>- Followers <br/>- Following	|
+| 46 | [RSS3](https://rss3.io/)  | `rss3` | - Profile <br/>- Backlinks  <br/>- Accounts  <br/>- Links 	|
+| 47 | [SDN](https://home.treasury.gov/policy-issues/financial-sanctions/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists)  | `sdn` | Specially Designated Nationals 	|
+| 48 | [Showtime](https://showtime.io) |`showtime` | - Followers <br/>- Following 	|
+| 49 | [SuperRare](https://superrare.com/)     |`superrare` | - NFTs Sold <br/>- Average Sale Value<br/>- Followers<br/>- Following |
+| 50 | [Token Blacklists](https://thegraph.com/hosted-service/subgraph/anudit/tokenblacklists)     |`tokenblacklists` | <ul><li>USDC </li><li>USDT </li><li>BUSD </li></ul> |
+| 51 | Transaction Data  | `txn` | <ul> <li> Age of Ethereum Address </li> <li> Age of Polygon Address </li> <li> Gas Spend on Ethereum </li><li> Gas Spend on Polygon </li></ul> |
 | 52 | [Unipass](https://unipass.id/) | `unipass` | Points for Level |
 | 53 | [Uniswap Sybil](https://sybil.org/) | `uniswap` |10 Points for Verification |
 | 54 | [Unstoppable Domains](https://unstoppabledomains.com/) 	| `unstoppable` |10 Points for Reverse Reslution to your Address. |
@@ -99,129 +99,280 @@ https://theconvo.space/api/identity?address=vitalik.eth&apikey=<apikey>
 
 ```json
 {
-   "_id":"0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
-   "_mod":1637202971089432300,
-   "asyncart":{
-      "totalCountSold":0,
-      "totalAmountSold":0
-   },
-   "brightId":false,
-   "celo":{
-      "attestations":0
-   },
-   "coinvise":{
-      "tokensCreated":0,
-      "nftsCreated":0,
-      "totalCountSold":0,
-      "totalAmountSold":0,
-      "totalPoolTvl":0,
-      "totalPoolCount":0,
-      "multisendCount":0,
-      "airdropCount":0
-   },
-   "coordinape":{},
-   "cryptoScamDb":false,
-   "cyberconnect":{
-      "displayName":"",
-      "address":"0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-      "followingCount":0,
-      "followerCount":610,
-      "social":{
-         "twitter":""
+  "aave": {
+    "totalHf": 0,
+    "mainMarket": {
+      "healthFactor": false
+    },
+    "ammMarket": {
+      "healthFactor": false
+    },
+    "polygonMarket": {
+      "healthFactor": false
+    },
+    "avalancheMarket": {
+      "healthFactor": false
+    }
+  },
+  "arcx": {
+    "disabled": true
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "bird": {
+    "bird_rating": 10,
+    "eth_balance": 4217.327617249959,
+    "nbr_account_age_days": 2367,
+    "nbr_transaction_count": 1000
+  },
+  "boardroom": {
+    "totalVotes": 0,
+    "daos": [],
+    "votes": []
+  },
+  "brightid": false,
+  "celo": {
+    "attestations": 0
+  },
+  "coinvise": {
+    "tokensCreated": 0,
+    "nftsCreated": 0,
+    "totalPoolCount": 0,
+    "totalPoolTvl": 0,
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "multisendCount": 0,
+    "airdropCount": 0,
+    "following": 0,
+    "followers": 0
+  },
+  "context": {},
+  "commonsstack": {},
+  "coordinape": {
+    "disabled": true
+  },
+  "cryptorelief": {
+    "amount": 0
+  },
+  "cryptoscamdb": false,
+  "cyberconnect": {
+    "errors": [
+      {
+        "message": "Server Internal Error"
       }
-   },
-   "deepdao":0,
-   "ens":"vitalik.eth",
-   "foundation":{
-      "totalCountSold":0,
-      "totalAmountSold":0,
-      "followerCount":0,
-      "followingCount":0
-   },
-   "gitcoin":{
-      "funder":true
-   },
-   "idena":false,
-   "knownorigin":{
-      "totalCountSold":0,
-      "totalAmountSold":0
-   },
-   "mirror":false,
-   "poap":46,
-   "poh":false,
-   "polygon":{
-      "Score100":0
-   },
-   "rabbitHole":{
-      "level":1,
-      "tasksCompleted":[
-         "UNI_V2_SWAP",
-         "GNOSIS_SAFE_OWNER"
-      ]
-   },
-   "rarible":{
-      "totalCountSold":0,
-      "totalAmountSold":0,
-      "ownershipsWithStock":0,
-      "itemsCreated":68,
-      "ownerships":246,
-      "hides":0,
-      "followers":29,
-      "following":0,
-      "likes":0
-   },
-   "score":56,
-   "showtime":{},
-   "signature":"0x2957611d54f484111b74122da81c419cb3524fdba35ac93286cc919d5585e6de2e6d225e681033837527a006c2464062f44b20b138fc516cc227f0868dfd786a1c",
-   "signatureAddress":"0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06",
-   "success":true,
-   "superrare":{
-      "totalCountSold":0,
-      "totalAmountSold":0,
-      "following":0,
-      "followers":0
-   },
-   "uniswapSybil":false,
-   "unstoppableDomains":false,
-   "zora":{
-      "totalCountSold":0,
-      "totalAmountSold":0
-   },
-   "rss3":{
-      "profile":{},
-      "backlinks":[],
-      "accounts":[],
-      "links":[]
-   },
-   "aave":{
-      "totalHf":0,
-      "mainMarket":{
-         "healthFactor":false
-      },
-      "ammMarket":{
-         "healthFactor":false
-      },
-      "polygonMarket":{
-         "healthFactor":false
-      },
-      "avalancheMarket":{
-         "healthFactor":false
+    ]
+  },
+  "dapplist": {
+    "score": 0,
+    "dapps": []
+  },
+  "debank": {},
+  "deepdao": {},
+  "ens": "vitalik.eth",
+  "etherscan": {
+    "labels": []
+  },
+  "forta": [
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x293608d8305f53ad5c2d8b584a4d473639e1e7e0a438e4237d902606c6ff9e5f",
+        "block": {
+          "number": 14809612,
+          "timestamp": "2022-05-20T06:46:04Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x20d0cd9432c7e15cb625097a718c15cc07f463b5252e3c36ae23acb7ef98d54e"
+        }
       }
-   },
-   "context":{
-      "followerCount":13,
-      "followingCount":null
-   },
-   "age":2266,
-   "arcx":{
-      "totalScore":0,
-      "details":{}
-   },
-   "boardroom":{
-      "totalVotes":0,
-      "daos":[],
-      "votes":[]
-   }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x293608d8305f53ad5c2d8b584a4d473639e1e7e0a438e4237d902606c6ff9e5f",
+        "block": {
+          "number": 14809612,
+          "timestamp": "2022-05-20T06:46:04Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x46ce98e921e2766a922840a56e89f24409001052c284e0bd6cbaa4fecd95e9b6"
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x80eda1c997c9db1441b2dd85636ab4d4aaf2e2e6d60912d259a8f228393e58cd",
+        "block": {
+          "number": 14809284,
+          "timestamp": "2022-05-20T05:24:46Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x3858be37e155f84e8e0d6212db1b47d4e83b1d41e8a2bebecb902651ed1125d6"
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x7587c7d9f575d5cd69222468f390c2603419577063ba4c66da7c72e6ce6d9c93",
+        "block": {
+          "number": 14802417,
+          "timestamp": "2022-05-19T02:27:32Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0xd0c4ed06a38e2048bf04f251778463a096348ea55ec64487f858922ccec73d02"
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x3685deba9798c948352db24f1e04119f7d770a2e2b5e2fb4d5b2de368d92169c",
+        "block": {
+          "number": 14800940,
+          "timestamp": "2022-05-18T20:39:57Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0xd0c4ed06a38e2048bf04f251778463a096348ea55ec64487f858922ccec73d02"
+        }
+      }
+    }
+  ],
+  "foundation": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "followerCount": 0,
+    "followingCount": 0
+  },
+  "gitcoin": {
+    "funder": false
+  },
+  "goldfinch": {},
+  "governordao": {
+    "enrollmentStatus": "Unenrolled"
+  },
+  "hiveone": false,
+  "idena": false,
+  "karma": {
+    "disabled": true
+  },
+  "klima": {
+    "totalRetirements": 0,
+    "totalCarbonRetired": 0,
+    "totalClaimed": 0
+  },
+  "knownorigin": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "layer3": {},
+  "learnweb3": {},
+  "lens": {},
+  "metagame": {},
+  "mew": {},
+  "poap": 66,
+  "poh": {
+    "submissions": []
+  },
+  "pop": {},
+  "polygon": {
+    "Score100": 0
+  },
+  "projectgalaxy": {
+    "id": "WoKVUVH2WabnkqAcGcReTL",
+    "username": "",
+    "eligibleCredentials": {
+      "list": []
+    }
+  },
+  "quadrata": {
+    "quadrataPassports": []
+  },
+  "questbook": {
+    "grantApplications": 0,
+    "grants": 0
+  },
+  "rabbithole": {
+    "level": 3,
+    "score": 551,
+    "tasksCompleted": [
+      "UNI_V2_POOL",
+      "GNOSIS_SAFE_OWNER",
+      "UNI_V2_SWAP",
+      "ENS_REGISTER"
+    ],
+    "credentials": []
+  },
+  "rarible": {
+    "totalAmountSold": 0,
+    "error": {
+      "message": "Invalid Request",
+      "response": {
+        "size": 0,
+        "timeout": 0
+      }
+    }
+  },
+  "rss3": {
+    "profile": {},
+    "backlinks": [],
+    "accounts": [],
+    "links": []
+  },
+  "sdn": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "showtime": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "superrare": {
+    "disabled": true
+  },
+  "txn": {
+    "polygonAge": 305,
+    "ethereumAge": 2426,
+    "ethereumGasSpend": 21.02953524116167,
+    "polygonGasSpend": 0
+  },
+  "unipass": {},
+  "uniswap": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "unstoppable": false,
+  "yup": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "zapper": {
+    "followers": 5076,
+    "following": 0,
+    "xp": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "zp": 0
+  },
+  "zora": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "score": 78,
+  "signature": "0x07411fa751c02702e3af7e12fe8fa1aab93d220958efdec225ced2e2149fbca334363c55cfd50c34019e7fa7ea52cbce2bd199022fd58e7a33c91d35886fd6b11b",
+  "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06",
+  "success": true
 }
 ```
 </details>
@@ -235,142 +386,280 @@ https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257
 
 ```json
 {
-   "_id":"0xD665afb9A4019a8c482352aaa862567257Ed62CF",
-   "_mod":1636426686535476700,
-   "asyncart":{
-      "totalCountSold":0,
-      "totalAmountSold":0
-   },
-   "brightId":false,
-   "celo":{
-      "attestations":0
-   },
-   "coinvise":{
-      "tokensCreated":0,
-      "nftsCreated":0,
-      "totalCountSold":0,
-      "totalAmountSold":0,
-      "totalPoolTvl":0,
-      "totalPoolCount":0,
-      "multisendCount":0,
-      "airdropCount":0,
-      "following":0,
-      "followers":0
-   },
-   "coordinape":null,
-   "cryptoScamDb":false,
-   "deepdao":{
-      "score":0,
-      "rank":0,
-      "relativeScore":0,
-      "daos":0,
-      "proposals":0,
-      "votes":0
-   },
-   "ens":false,
-   "foundation":{
-      "totalCountSold":18,
-      "totalAmountSold":2350717.40778,
-      "followers":1604,
-      "following":48
-   },
-   "gitcoin":{
-      "funder":false
-   },
-   "idena":false,
-   "knownorigin":{
-      "totalCountSold":3,
-      "totalAmountSold":16306.515
-   },
-   "mirror":false,
-   "poap":1,
-   "poh":false,
-   "polygon":{
-      "Score100":0
-   },
-   "rabbitHole":{
-      "level":1,
-      "tasksCompleted":[
-         "SEA1",
-         "SEA2",
-         "UNI_V3_SWAP",
-         "UNI_V2_SWAP",
-         "SNAPSHOT_VOTE"
-      ]
-   },
-   "rarible":{
-      "totalCountSold":15,
-      "totalAmountSold":728891.55738,
-      "ownershipsWithStock":1,
-      "itemsCreated":94,
-      "ownerships":52,
-      "hides":0,
-      "followers":2219,
-      "following":108,
-      "likes":33
-   },
-   "score":1,
-   "showtime":{
-
-   },
-   "signature":"0xcdadeac74b4fd888edb17edc5bf6c2f10f039f141f74280f93b69014942bc9783babb1d6f8c456c38c581a52876d8b69640710a58ab253210a2ee73d3a83a7e81c",
-   "signatureAddress":"0xccccA960A949eaa4d963f0cE29170AD55D4F5E49",
-   "success":true,
-   "superrare":{
-      "totalCountSold":2,
-      "totalAmountSold":28718.991565550437,
-      "following":36,
-      "followers":72
-   },
-   "uniswapSybil":false,
-   "unstoppableDomains":false,
-   "zora":{
-      "totalCountSold":0,
-      "totalAmountSold":0
-   },
-   "aave":{
-      "totalHf":0,
-      "mainMarket":{
-         "healthFactor":false
-      },
-      "ammMarket":{
-         "healthFactor":false
-      },
-      "polygonMarket":{
-         "healthFactor":false
-      },
-      "avalancheMarket":{
-         "healthFactor":false
+  "aave": {
+    "totalHf": 0,
+    "mainMarket": {
+      "healthFactor": false
+    },
+    "ammMarket": {
+      "healthFactor": false
+    },
+    "polygonMarket": {
+      "healthFactor": false
+    },
+    "avalancheMarket": {
+      "healthFactor": false
+    }
+  },
+  "arcx": {
+    "disabled": true
+  },
+  "asyncart": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "bird": {
+    "bird_rating": 1.18,
+    "eth_balance": 1.8148611882957437,
+    "nbr_account_age_days": 500,
+    "nbr_transaction_count": 657
+  },
+  "boardroom": {
+    "totalVotes": 0,
+    "daos": [],
+    "votes": []
+  },
+  "brightid": false,
+  "celo": {
+    "attestations": 0
+  },
+  "coinvise": {
+    "tokensCreated": 0,
+    "nftsCreated": 0,
+    "totalPoolCount": 0,
+    "totalPoolTvl": 0,
+    "totalCountSold": 0,
+    "totalAmountSold": 0,
+    "multisendCount": 0,
+    "airdropCount": 0,
+    "following": 0,
+    "followers": 0
+  },
+  "context": {},
+  "commonsstack": {},
+  "coordinape": {
+    "disabled": true
+  },
+  "cryptorelief": {
+    "amount": 0
+  },
+  "cryptoscamdb": false,
+  "cyberconnect": {
+    "data": {
+      "identity": {
+        "address": "0xd665afb9a4019a8c482352aaa862567257ed62cf",
+        "followingCount": 0,
+        "followerCount": 0,
+        "social": {
+          "twitter": "TheArchangel22"
+        }
       }
-   },
-   "age":340,
-   "context":{
-      "followerCount":4,
-      "followingCount":null
-   },
-   "cyberconnect":{
-      "displayName":"",
-      "followingCount":0,
-      "followerCount":0,
-      "social":{
-         "twitter":"TheArchangel22"
+    }
+  },
+  "dapplist": {
+    "score": 0,
+    "dapps": []
+  },
+  "debank": {},
+  "deepdao": {},
+  "ens": "thearchangel.eth",
+  "etherscan": {
+    "labels": []
+  },
+  "forta": [
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x7ca65022bd94d83d8a3467a963ff19271e58d1e6a8482aea1aa5652ac4382f56",
+        "block": {
+          "number": 14568299,
+          "timestamp": "2022-04-12T03:19:55Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x4c2105069bbf9f4ed488edeee1b6e96c75966d8f2dc530d8e29802ddc71f7cd5"
+        }
       }
-   },
-   "rss3":{
-      "profile":{},
-      "backlinks":[],
-      "accounts":[],
-      "links":[]
-   },
-   "arcx":{
-      "totalScore":0,
-      "details":{}
-   },
-   "boardroom":{
-      "totalVotes":0,
-      "daos":[],
-      "votes":[]
-   }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0xf4e0a6c433ba3e99687b4b7f6bf4d430c72c6c2c147b85869921c4ad76bfe7cd",
+        "block": {
+          "number": 14565438,
+          "timestamp": "2022-04-11T16:26:17Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x4c2105069bbf9f4ed488edeee1b6e96c75966d8f2dc530d8e29802ddc71f7cd5"
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x7889474986c17a45b31c3eb28d013a3da32086eae0e48061fedcfc79d7afb5e7",
+        "block": {
+          "number": 14558260,
+          "timestamp": "2022-04-10T13:42:22Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x4c2105069bbf9f4ed488edeee1b6e96c75966d8f2dc530d8e29802ddc71f7cd5"
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0xff02112f63e96032328147b23e185596777294e094ac7e61da870bffce1be2e4",
+        "block": {
+          "number": 14514025,
+          "timestamp": "2022-04-03T15:53:19Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x4c2105069bbf9f4ed488edeee1b6e96c75966d8f2dc530d8e29802ddc71f7cd5"
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "protocol": "ethereum",
+      "source": {
+        "transactionHash": "0x3da562e5280da781c1c01adf371acb2b717423f704411e4c33e4c69374951bb2",
+        "block": {
+          "number": 14472475,
+          "timestamp": "2022-03-28T04:10:29Z",
+          "chainId": 1
+        },
+        "agent": {
+          "id": "0x4c2105069bbf9f4ed488edeee1b6e96c75966d8f2dc530d8e29802ddc71f7cd5"
+        }
+      }
+    }
+  ],
+  "foundation": {
+    "totalCountSold": 9,
+    "totalAmountSold": 499424.31000000006,
+    "followerCount": 2099,
+    "followingCount": 52
+  },
+  "gitcoin": {
+    "funder": false
+  },
+  "goldfinch": {},
+  "governordao": {
+    "enrollmentStatus": "Unenrolled"
+  },
+  "hiveone": false,
+  "idena": false,
+  "karma": {
+    "disabled": true
+  },
+  "klima": {
+    "totalRetirements": 0,
+    "totalCarbonRetired": 0,
+    "totalClaimed": 0
+  },
+  "knownorigin": {
+    "totalCountSold": 3,
+    "totalAmountSold": 13365
+  },
+  "layer3": {},
+  "learnweb3": {},
+  "lens": {},
+  "metagame": {},
+  "mew": {},
+  "poap": 1,
+  "poh": {
+    "submissions": []
+  },
+  "pop": {},
+  "polygon": {
+    "Score100": 0
+  },
+  "projectgalaxy": {
+    "id": "heYJq328iZkPHU89BUoVrP",
+    "username": "",
+    "eligibleCredentials": {
+      "list": []
+    }
+  },
+  "quadrata": {
+    "quadrataPassports": []
+  },
+  "questbook": {
+    "grantApplications": 0,
+    "grants": 0
+  },
+  "rabbithole": {
+    "level": 1,
+    "score": 0,
+    "tasksCompleted": [],
+    "credentials": []
+  },
+  "rarible": {
+    "totalAmountSold": 0,
+    "error": {
+      "message": "Invalid Request",
+      "response": {
+        "size": 0,
+        "timeout": 0
+      }
+    }
+  },
+  "rss3": {
+    "profile": {},
+    "backlinks": [],
+    "accounts": [],
+    "links": []
+  },
+  "sdn": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "showtime": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "superrare": {
+    "disabled": true
+  },
+  "txn": {
+    "polygonAge": 0,
+    "ethereumAge": 500,
+    "ethereumGasSpend": 5.974942715421393,
+    "polygonGasSpend": 0
+  },
+  "unipass": {},
+  "uniswap": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "unstoppable": false,
+  "yup": {
+    "success": false,
+    "error": "Not in DB."
+  },
+  "zapper": {
+    "followers": 0,
+    "following": 0,
+    "xp": "0xd665afb9a4019a8c482352aaa862567257ed62cf",
+    "zp": 0
+  },
+  "zora": {
+    "totalCountSold": 0,
+    "totalAmountSold": 0
+  },
+  "score": 11,
+  "signature": "0x4854872d56010c0b036e902d1946575d1aa0197188370b3b1d8109b29549ba83438566ac36e00900d5df89ffb629a7ba2c8d72f838e159d0deb5ea87bf9f783a1b",
+  "signatureAddress": "0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06",
+  "success": true
 }
 ```
 </details>
