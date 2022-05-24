@@ -91,8 +91,7 @@ export default {
       ✨ Learn more about <a href="https://blog.cupoc.space/" target="_blank"> Convo Space & Omnid →</a>
     </>);
   },
-  // Put hiring here
-  // tocExtraContent: () => {
-  //   return <img src="http://placekitten.com/g/300/200" />;
-  // },
+  tocExtraContent: () => {
+    return <a href="https://cupoc.space/careers" target="_blank"><img src="/hiring.webp" width="150px"/></a>;
+  },
 };
