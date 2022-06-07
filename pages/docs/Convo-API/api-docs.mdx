@@ -15,7 +15,7 @@ import CodeBox from './../../../components/CodeBox'
 - API Playground : [https://playground.theconvo.space/](https://playground.theconvo.space)
 - OpenAPI 3 Config : [https://github.com/anudit/convodocs/tree/main/public/Convo.yaml/](https://github.com/anudit/convodocs/tree/main/public/Convo.yaml)
 
-<Callout emoji="ℹ️">
+<Callout type="info" emoji="ℹ️">
   Use `apikey=<apikey>` added as a query parameter or a `x-api-key` header for all requests. Returns a `401` Unauthorized Error otherwise.
   Breaking changes might be introduced to the endpoints as Convo is still in Early-access. All such changes will be informed well in advance.
 </Callout>
@@ -28,7 +28,7 @@ import CodeBox from './../../../components/CodeBox'
 
 **Full Endpoint : `https://theconvo.space/api/auth?apikey=<apikey>`**
 
-<Callout emoji="ℹ️">
+<Callout type="info" emoji="ℹ️">
   You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
 </Callout>
 
@@ -201,7 +201,7 @@ let isValid = await fcl.verifyUserSignatures(MSG, signature);
 
 **Full Endpoint : `https://theconvo.space/api/authV2?apikey=<apikey>`**
 
-<Callout emoji="ℹ️">
+<Callout type="info" emoji="ℹ️">
   You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
 </Callout>
 
@@ -358,7 +358,7 @@ Possible Error Messages,
 
 ## Querying Data
 
-<Callout emoji="ℹ️">
+<Callout type="info" emoji="ℹ️">
   URLs passed as query parameters must be URL encoded using `encodeURIComponent()`
 </Callout>
 

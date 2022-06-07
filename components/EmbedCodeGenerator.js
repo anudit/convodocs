@@ -34,8 +34,6 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
                 let url = urlObj.origin;
                 let pathData = urlObj.pathname.split('/');
                 let threadId = pathData[pathData.length-2];
-
-                console.log(url, threadId);
                 setError(false);
                 setData(`<iframe src="https://theconvo.space/embed/dt?${url ? 'url=' + encodeURIComponent(url) : ""}${threadId ? '&threadId='+threadId : ""}" id="convo" allowtransparency="true" width="100%" height="600px" style="border: none;">Comments</iframe>`)
             } catch (error) {
@@ -54,7 +52,7 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
             <div style={{position:"relative", display: "block"}} className="codebox">
                 {
                     error && (
-                        <Callout emoji="🚨">
+                        <Callout type="error" emoji="🚨">
                             {error}
                         </Callout>
                     )
@@ -80,7 +78,7 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
             <div style={{position:"relative", display: "block"}} className="codebox">
                 {
                     error && (
-                        <Callout emoji="🚨">
+                        <Callout type="error" emoji="🚨">
                             {error}
                         </Callout>
                     )
