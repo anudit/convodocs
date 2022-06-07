@@ -4,7 +4,6 @@ title: Convo API
 
 import Callout from 'nextra-theme-docs/callout'
 import CommentBox from './../../../components/CommentBox'
-import Tabs from './../../../components/Tabs'
 import CodeBox from './../../../components/CodeBox'
 
 # Convo API
@@ -33,8 +32,10 @@ import CodeBox from './../../../components/CodeBox'
 </Callout>
 
 
-<Tabs>
-<div label="Ethereum">
+
+<Nextra.Tabs items={['Ethereum', 'Near', 'Flow']} defaultIndex={1}>
+  <Nextra.Tab>
+  <br/>
 Send a `POST` request to the endpoint with the following example body,
 
 ```json
@@ -74,10 +75,10 @@ let authBody = {
 };
 ```
 </CodeBox>
-</div>
+</Nextra.Tab>
 
-<div label="NEAR">
-
+<Nextra.Tab>
+<br/>
 Send a `POST` request to the endpoint with the following example body,
 
 ```json
@@ -120,10 +121,10 @@ let authBody = {
 
 ```
 </CodeBox>
-</div>
+</Nextra.Tab>
 
-<div label="Flow">
-
+<Nextra.Tab>
+<br/>
 Send a `POST` request to the endpoint with the following example body,
 
 ```json
@@ -177,8 +178,8 @@ let authBody = {
 let isValid = await fcl.verifyUserSignatures(MSG, signature);
 ```
 </CodeBox>
-</div>
-</Tabs>
+</Nextra.Tab>
+</Nextra.Tabs>
 
 **Response**
 
@@ -281,8 +282,8 @@ let authV2Body = {
 **Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=<apikey>`**
 
 
-<Tabs>
-<div label="Ethereum">
+<Nextra.Tabs items={['Ethereum', 'Near', 'Flow']} defaultIndex={1}>
+<Nextra.Tab>
 
 Send a `POST` request to the endpoint with the following example body,
 ```json
@@ -297,9 +298,9 @@ Send a `POST` request to the endpoint with the following example body,
 | `signerAddress` 	| The address of the account to authenticate. 	|
 | `token` 	|  The JWT Authentication Token to validate.	|
 
-</div>
+</Nextra.Tab>
 
-<div label="NEAR">
+<Nextra.Tab>
 
 Send a `POST` request to the endpoint with the following example body,
 ```json
@@ -314,9 +315,9 @@ Send a `POST` request to the endpoint with the following example body,
 | `signerAddress` 	| The NEAR accountId of user. 	|
 | `token` 	|  The JWT Authentication Token to validate.	|
 
-</div>
+</Nextra.Tab>
 
-<div label="Flow">
+<Nextra.Tab>
 
 Send a `POST` request to the endpoint with the following example body,
 ```json
@@ -331,8 +332,8 @@ Send a `POST` request to the endpoint with the following example body,
 | `signerAddress` 	| The address of the account to authenticate. 	|
 | `token` 	|  The JWT Authentication Token to validate.	|
 
-</div>
-</Tabs>
+</Nextra.Tab>
+</Nextra.Tabs>
 
 
 **Response**

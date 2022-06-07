@@ -2,7 +2,6 @@
 title: Convo SDK
 ---
 import CommentBox from './../../../components/CommentBox';
-import Tabs from './../../../components/Tabs';
 import Markdown from 'markdown-to-jsx';
 import CodeBox from './../../../components/CodeBox'
 
@@ -20,23 +19,23 @@ SDK containing all the functions you'll need to build on [theconvo.space](thecon
 ## Installation
 
 ### NodeJs
-<Tabs>
-<div label="Yarn">
+<Nextra.Tabs items={['Yarn', 'NPM', 'PNPM']} defaultIndex={1}>
+<Nextra.Tab>
 ```bash
 yarn add @theconvospace/sdk @theconvospace/react
 ```
-</div>
-<div label="NPM">
+</Nextra.Tab>
+<Nextra.Tab>
 ```bash
 npm i --save @theconvospace/sdk @theconvospace/react
 ```
-</div>
-<div label="PNPM">
+</Nextra.Tab>
+<Nextra.Tab>
 ```bash
 pnpm i --save @theconvospace/sdk @theconvospace/react
 ```
-</div>
-</Tabs>
+</Nextra.Tab>
+</Nextra.Tabs>
 
 ### Browser (UMD)
 
@@ -56,36 +55,36 @@ Grab and install the latest realease from [@theconvospace/sdk](https://app.valis
 1. Generate and Copy your API key from [https://theconvo.space/dashboard/developer/](https://theconvo.space/dashboard/developer)
 2. Import Convo Space in your own project.
 
-    <Tabs>
-    <div label="ESM">
+    <Nextra.Tabs items={['ESM', 'CJS', 'UMD', 'ESM.run']} defaultIndex={1}>
+    <Nextra.Tab>
     <CodeBox>
     ```javascript
     import { Convo } from '@theconvospace/sdk';
     ```
     </CodeBox>
-    </div>
-    <div label="CJS">
+    </Nextra.Tab>
+    <Nextra.Tab>
     <CodeBox>
     ```javascript
     const { Convo } = require('@theconvospace/sdk');
     ```
     </CodeBox>
-    </div>
-    <div label="UMD">
+    </Nextra.Tab>
+    <Nextra.Tab>
     <CodeBox>
     ```javascript
     const { Convo } = convo;
     ```
     </CodeBox>
-    </div>
-    <div label="ESM.run">
+    </Nextra.Tab>
+    <Nextra.Tab>
     <CodeBox>
     ```javascript
     import { Convo } from 'https://esm.run/@theconvospace/sdk';
     ```
     </CodeBox>
-    </div>
-    </Tabs>
+    </Nextra.Tab>
+    </Nextra.Tabs>
 
 3. Setup an new instance of Convo using
     <CodeBox>
