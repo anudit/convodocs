@@ -1,0 +1,5 @@
+{
+  "@theconvospace-sdk": "@theconvospace/sdk",
+  "@theconvospace-react": "@theconvospace/react",
+  "sdk-deno": "Deno SDK"
+}

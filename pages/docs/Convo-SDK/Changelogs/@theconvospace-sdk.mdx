@@ -1,0 +1,31 @@
+---
+title: theconvospace/SDK - Changelog
+---
+import CommentBox from './../../../../components/CommentBox';
+import Markdown from 'markdown-to-jsx';
+import { useSSG } from 'nextra/ssg';
+
+export const getStaticProps = async ({ params }) => {
+
+  let log = await fetch(`https://raw.githubusercontent.com/anudit/convosdk/main/packages/sdk/CHANGELOG.md`).then(response => response.text());
+  log = log.split('\n').slice(1).join('\n');
+
+  return ({ props: { ssg: {log} }, revalidate: 10 })
+
+}
+
+export const LogRender = () => {
+  const {log} = useSSG();
+  return (
+      <Markdown>
+        {log}
+      </Markdown>
+  )
+}
+
+# @theconvospace/sdk Changelog
+<LogRender/>
+
+## Comments
+<CommentBox threadId="changelog"/>
+
