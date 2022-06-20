@@ -17,7 +17,7 @@ export const GlossaryRender = () => {
     }
 
     return Object.entries(glossary).map(([word, meaning])=>{
-        return {word, md:`### ${toTitleCase(word)} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}`};
+        return {word, md:`## ${toTitleCase(word)} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}\n`};
     }).map(li=>{
         return(
             <Markdown className='word' data-word={li.word}>

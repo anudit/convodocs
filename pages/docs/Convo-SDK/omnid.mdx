@@ -40,17 +40,19 @@ convo.omnid.computeTrustScore(
 ```
 </CodeBox>
 
-ComputeConfig is used to pass private variables to adaptors. For eg - API keys, RPC URLs etc. Some adaptors need these, some do not.
+`ComputeConfig` is used to pass private variables to adaptors. For eg - API keys, RPC URLs etc. Some adaptors need these, some do not.
 
 ```typescript
 type ComputeConfig = {
-  maticMainnetRpc?: string;
-  etherumMainnetRpc?: string;
-  avalancheMainnetRpc?: string;
-  ethereumPriceApi?: string;
-  maticPriceApi?: string;
-  etherumAndMaticPriceApi?: string;
+  polygonMainnetRpc: string;
+  etherumMainnetRpc: string;
+  avalancheMainnetRpc: string;
+  maticPriceInUsd: number;
+  etherumPriceInUsd: number;
   deepdaoApiKey: string;
+  etherscanApiKey: string;
+  polygonscanApiKey: string;
+  optimismscanApiKey: string;
   CNVSEC_ID: string;
   DEBUG: boolean;
 };

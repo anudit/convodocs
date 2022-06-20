@@ -58,12 +58,20 @@ const TestShell = ({children, testUrl, host}) => {
 
 const TestNode = ({testUrl, host}) => {
 
-    let [fstate, setFstate] = useState(null);
-    let [time, setTime] = useState(null);
+    // null(loading)-yellow, true(online)-green, false(offline)-red
+    let [testResult, setTestResult] = useState(null);
+
+    let [time, setTime] = useState(0); // ms
 
     useEffect(async ()=>{
 
         let timeMetrics = false;
+
+        console.log('starting clock', testUrl);
+        let countUp = setInterval(()=>{
+            setTime((current)=>current+100)
+        }, 100);
+
         try {
 
             const reqUrl = testUrl + "/comments?page=0&pageSize=10&latestFirst=true&apikey=CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO&threadId=KIGZUnR4RzXDFheXoOwo";
@@ -76,69 +84,43 @@ const TestNode = ({testUrl, host}) => {
                                             .filter(n => n.name === reqUrl)[0];
 
             console.log(testUrl, timeMetrics, resp.status, data);
-            if (resp.status >= 200 && data.length === 10){ setFstate(true); }
-            else { setFstate(false); }
+            if (resp.status >= 200 && data.length === 10){
+                setTestResult(true);
+            }
+            else {
+                setTestResult(false);
+            }
+            clearInterval(countUp);
+            setTime(timeMetrics?.duration);
+
 
         } catch (error) {
-            console.error(testUrl, fstate, error);
-            setFstate(false);
+            console.error(testUrl, error);
+            clearInterval(countUp);
+            setTestResult(false);
+
         }
-        setTime(timeMetrics);
+
+
+
     },[]);
 
-    if (fstate === null || time === null){
-        return (
-            <TestShell testUrl={testUrl} host={host}>
-                <div style={{
-                    minHeight: "100%",
-                    alignItems: "center",
-                    display: "flex",
-                    paddingRight: "20px",
-                    borderTopRightRadius: "14px",
-                    borderBottomRightRadius: "14px",
-                    opacity: 1
-                }}>
-                    ...
-                </div>
-            </TestShell>
-        )
-    }
-    else if (fstate === true){
-        return (
-            <TestShell testUrl={testUrl} host={host}>
-                <div style={{
-                    minHeight: "100%",
-                    background: "linear-gradient(270deg, rgba(15, 211, 114, 0.38) 0%, rgb(119 172 130 / 5%) 70%, rgb(255 255 255 / 0%) 100%)",
-                    alignItems: "center",
-                    display: "flex",
-                    paddingRight: "15px",
-                    borderTopRightRadius: "14px",
-                    borderBottomRightRadius: "14px",
-                    opacity: 1
-                }}  title="Response Success">
-                    {`${(time?.duration/1000).toFixed(2)}s 🟢`}
-                </div>
-            </TestShell>
-        )
-    }
-    else if(fstate === false){
-        return (
-            <TestShell testUrl={testUrl} host={host}>
-                <div style={{
-                    minHeight: "100%",
-                    background: "linear-gradient(270deg, rgba(211, 15, 15, 0.38) 0%, rgb(119 172 130 / 1%) 70%, rgba(255, 255, 255, 0) 100%)",
-                    alignItems: "center",
-                    display: "flex",
-                    paddingRight: "15px",
-                    borderTopRightRadius: "14px",
-                    borderBottomRightRadius: "14px",
-                    opacity: 1
-                }}  title="Response Failed">
-                    {`${Boolean(time?.duration) === true ? (time?.duration/1000).toFixed(2) : "0"}s 🔴`}
-                </div>
-            </TestShell>
-        )
-    }
+    return (
+        <TestShell testUrl={testUrl} host={host}>
+            <div style={{
+                minHeight: "100%",
+                alignItems: "center",
+                display: "flex",
+                paddingRight: "20px",
+                borderTopRightRadius: "14px",
+                borderBottomRightRadius: "14px",
+                opacity: 1,
+                background: testResult === null ? 'linear-gradient(270deg, rgba(255, 235, 0, 0.38) 0%, rgba(119, 172, 130, 0.05) 70%, rgba(255, 255, 255, 0) 100%)': testResult === true ? "linear-gradient(270deg, rgba(15, 211, 114, 0.38) 0%, rgb(119 172 130 / 5%) 70%, rgb(255 255 255 / 0%) 100%)": "linear-gradient(270deg, rgba(211, 15, 15, 0.38) 0%, rgb(119 172 130 / 1%) 70%, rgba(255, 255, 255, 0) 100%)",
+            }}>
+                {`${(time/1000).toFixed(2)}s`} {testResult === true && "🟢"}{testResult === false && "🔴"}
+            </div>
+        </TestShell>
+    )
 }
 
 export default TestNode

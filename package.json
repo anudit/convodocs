@@ -14,7 +14,7 @@
   "dependencies": {
     "@docsearch/css": "^3.1.0",
     "@docsearch/react": "3.1.0",
-    "@mdx-js/react": "^2.1.1",
+    "@mdx-js/react": "^2.1.2",
     "@next/bundle-analyzer": "^12.1.6",
     "@reach/skip-nav": "^0.17.0",
     "d3": "^7.4.4",
@@ -26,7 +26,7 @@
     "next-pwa": "^5.5.4",
     "nextra": "2.0.0-alpha.56",
     "nextra-theme-docs": "2.0.0-alpha.58",
-    "preact": "^10.8.0",
+    "preact": "^10.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.34.0"

@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@docsearch/css': ^3.1.0
   '@docsearch/react': 3.1.0
-  '@mdx-js/react': ^2.1.1
+  '@mdx-js/react': ^2.1.2
   '@next/bundle-analyzer': ^12.1.6
   '@reach/skip-nav': ^0.17.0
   autoprefixer: ^10.4.7
@@ -17,7 +17,7 @@ specifiers:
   nextra: 2.0.0-alpha.56
   nextra-theme-docs: 2.0.0-alpha.58
   postcss: ^8.4.14
-  preact: ^10.8.0
+  preact: ^10.8.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-intersection-observer: ^8.34.0
@@ -26,7 +26,7 @@ specifiers:
 dependencies:
   '@docsearch/css': 3.1.0
   '@docsearch/react': 3.1.0_sfoxds7t5ydpegc3knd667wn6m
-  '@mdx-js/react': 2.1.1_react@17.0.2
+  '@mdx-js/react': 2.1.2_react@17.0.2
   '@next/bundle-analyzer': 12.1.6
   '@reach/skip-nav': 0.17.0_sfoxds7t5ydpegc3knd667wn6m
   d3: 7.4.4
@@ -38,7 +38,7 @@ dependencies:
   next-pwa: 5.5.4_next@12.1.6
   nextra: 2.0.0-alpha.56_react@17.0.2
   nextra-theme-docs: 2.0.0-alpha.58_zhtyyhxvjc4vmyivr6fwl32yja
-  preact: 10.8.0
+  preact: 10.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-intersection-observer: 8.34.0_react@17.0.2
@@ -1365,8 +1365,8 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/react/2.1.1_react@17.0.2:
-    resolution: {integrity: sha512-7zlZDf5xmWH8I0kFE4DG91COOkxjaW9DX5f1HWztZpFcVua2gJgMYfIkFaDpO/DH/tWi6Mz+OheW4194r15igg==}
+  /@mdx-js/react/2.1.2_react@17.0.2:
+    resolution: {integrity: sha512-52e3DTJBrjsw3U51ZCdZ3N1IBaqnbzLIngCSXpKtiYiGr7PIqp3/P/+kym0MPTwBL/y9ZBmCieD8FyrXuEDrRw==}
     peerDependencies:
       react: '>=16'
     dependencies:
@@ -4109,7 +4109,7 @@ packages:
       react-dom: '>=16.13.1'
     dependencies:
       '@headlessui/react': 1.6.4_sfoxds7t5ydpegc3knd667wn6m
-      '@mdx-js/react': 2.1.1_react@17.0.2
+      '@mdx-js/react': 2.1.2_react@17.0.2
       '@reach/skip-nav': 0.16.0_sfoxds7t5ydpegc3knd667wn6m
       classnames: 2.3.1
       flexsearch: 0.7.21
@@ -4411,8 +4411,8 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
-  /preact/10.8.0:
-    resolution: {integrity: sha512-2yXIS/h/UP5go0rBKesZqx0LuScqjECtH5pq8SQu3t6X2XNUWjCY4pcViUttDu3qX6NMxGiA/RuxOZd00QLCzg==}
+  /preact/10.8.1:
+    resolution: {integrity: sha512-p5CKQ0MCEXTGKGOHiFaNE2V2nDq2hvDHykXvIlz+4lbfJ9umLZr8JS/fa1bXUwRcHXK+Ljk8zqmDhr25n0LtVg==}
     dev: false
 
   /pretty-bytes/5.6.0:
