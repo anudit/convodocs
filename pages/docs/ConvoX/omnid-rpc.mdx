@@ -8,9 +8,11 @@ import CodeBox from './../../../components/CodeBox'
 # Omnid RPC
 
 ## Introduction
-Omnid's RPC is an [open-source](https://github.com/anudit/omnid-proxy-rpc), thin, self-hostable RPC Proxy that scans the transactions for malicious/phishing addresses using static analysis and transaction simulation before you send them and reverts if a match is found before sending the transaction.
+Omnid's RPC is an [open-source](https://github.com/anudit/omnid-proxy-rpc), self-hostable RPC Proxy that scans the transactions for malicious/phishing addresses using static analysis and transaction simulation before you send them. If malicious activity is detected, the transaction is reverted before its execution.
 
 ## Supported Networks
+
+### Ethereum
 
 - Ethereum Mainnet RPC
     <CodeBox>
@@ -40,6 +42,54 @@ Omnid's RPC is an [open-source](https://github.com/anudit/omnid-proxy-rpc), thin
     <CodeBox>
     ```
     https://omnid-proxy.herokuapp.com/rinkeby
+    ```
+    </CodeBox>
+
+### Polygon
+- Polygon Mainnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/polygon
+    ```
+    </CodeBox>
+- Polygon Mumbai Testnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/polygon-mumbai
+    ```
+    </CodeBox>
+
+### Optimism
+- Optimism Mainnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/optimism
+    ```
+    </CodeBox>
+- Optimism Testnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/optimism-testnet
+    ```
+    </CodeBox>
+
+### Arbitrum
+- Arbitrum Mainnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/arbitrum
+    ```
+    </CodeBox>
+- Arbitrum Testnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/arbitrum-testnet
+    ```
+    </CodeBox>
+- Arbitrum Devnet RPC
+    <CodeBox>
+    ```
+    https://omnid-proxy.herokuapp.com/arbitrum-devnet
     ```
     </CodeBox>
 
