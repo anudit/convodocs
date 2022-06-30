@@ -74,6 +74,35 @@ let resp = await convo.omnid.computeTrustScore(
 ```
 </CodeBox>
 
+## Omnid Kits
+
+### `isMalicious`
+
+Syntax,
+<CodeBox>
+```javascript
+convo.omnid.kits.isMalicious(
+    signerAddress,  // Ethereum Address
+    computeConfig,
+)
+```
+</CodeBox>
+
+Example,
+<CodeBox>
+```javascript
+const computeConfig = {
+    maticMainnetRpc: 'https://polygon-rpc.com/';
+}
+
+let resp = await convo.omnid.kits.isMalicious(
+    "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
+    computeConfig
+);
+```
+</CodeBox>
+
+
 ## Execute individual Adaptors
 
 Syntax,
