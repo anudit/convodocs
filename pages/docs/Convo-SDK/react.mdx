@@ -1,0 +1,155 @@
+---
+title: React Library - Convo Space
+---
+
+import CodeBox from './../../../components/CodeBox'
+import Callout from 'nextra-theme-docs/callout'
+
+# React Library
+
+## Installation & Setup
+
+The React Library is built on,
+- [Ethers](https://ethers.org/): A complete and compact library for interacting with the Ethereum Blockchain and its ecosystem.
+- [Degen](https://degen-xyz.vercel.app/): Design system for Mirror.xyz
+- [Convo Space SDK](/docs/Convo-SDK/installation): SDK for building on theconvo.space
+
+
+### Install Dependenices
+
+<Nextra.Tabs items={['Yarn', 'NPM', 'PNPM', 'Browser']} defaultIndex={1}>
+<Nextra.Tab>
+<CodeBox>
+```bash
+yarn add @theconvospace/react degen ethers
+```
+</CodeBox>
+</Nextra.Tab>
+<Nextra.Tab>
+<CodeBox>
+```bash
+npm i @theconvospace/react degen ethers
+```
+</CodeBox>
+</Nextra.Tab>
+<Nextra.Tab>
+<CodeBox>
+```bash
+pnpm i @theconvospace/react degen ethers
+```
+</CodeBox>
+</Nextra.Tab>
+<Nextra.Tab>
+<CodeBox>
+```javascript
+<script src="https://cdn.jsdelivr.net/npm/@theconvospace/react@latest/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@latest/dist/ethers.umd.min.js"></script>
+```
+</CodeBox>
+</Nextra.Tab>
+</Nextra.Tabs>
+
+### Setup
+
+Wrap the root of your app in a ThemeProvider, import the external stylesheet. [Reference](https://degen-xyz.vercel.app/#set-up)
+<CodeBox>
+```jsx
+import { ThemeProvider } from 'degen'
+import 'degen/styles'
+
+const App = () => {
+  return <ThemeProvider>{children}</ThemeProvider>
+}
+```
+</CodeBox>
+
+All Done.
+
+<Callout type="info" emoji="ℹ️">
+    To theme the components acording to your website, refer to [`ThemeProvider`](https://degen-xyz.vercel.app/components/ThemeProvider)
+</Callout>
+
+## Component Guide
+
+
+### `CommentSection`
+
+- `query`: Defines the Conversation the Comment Section gets anchored to,
+    -   `threadId`: This uniquely anchors a conversation to an element. Could be the Unique Id of the Post, Image, NFT etc.
+    - `url`: This sets the source of the Conversations, like `https://opensea.io`. If setting up for your own website, it should be the hostname of your wesbite.
+- `apikey`: Defines the API Key the Comment Section uses to query Convo Space. Grab one on the [Developer Dashboard](https://theconvo.space/dashboard/developer) if you don't have one.
+- `hostname`: This sets the source of the Conversations, this should always be your website's hostname.
+- `provider`: An Ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider) is used to Connect to a user's wallet and Sign a Message to Authenticate the user.
+
+Example,
+<CodeBox>
+```jsx
+import { CommentSection } from "@theconvospace/react";
+
+<CommentSection
+    query={{
+        threadId: "KIGZUnR4RzXDFheXoOwo",
+        url: "https://theconvo.space/",
+    }}
+    apikey="CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO"
+    hostname="https://theconvo.space/"
+    provider={web3}
+/>
+
+```
+</CodeBox>
+
+
+### `Comment`
+
+- `commentId`: Unique Id of the Comment.
+- `apikey`: Defines the API Key the Comment Section uses to query Convo Space. Grab one on the [Developer Dashboard](https://theconvo.space/dashboard/developer) if you don't have one.
+
+Example,
+<CodeBox>
+```jsx
+import { Comment } from "@theconvospace/react";
+
+<Comment
+    commentId="01g6w7sg6f5d9p5tcy95m75rr6"
+    apikey="CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO"
+/>
+```
+</CodeBox>
+
+### `CommentEmbed`
+
+Sets up an Iframe.
+
+Example,
+<CodeBox>
+```jsx
+import { CommentEmbed } from "@theconvospace/react";
+
+<CommentEmbed
+    config={{ commentId: "01g40c9sx52cp69hqa155wt2yd" }}
+    width="500px"
+    height="300px"
+/>
+```
+</CodeBox>
+
+
+### `ConvoEmbed`
+
+Sets up an Iframe.
+
+Example,
+<CodeBox>
+```jsx
+import { ConvoEmbed } from "@theconvospace/react";
+
+<ConvoEmbed embedConfig={{
+    threadId: "KIGZUnR4RzXDFheXoOwo",
+    url: "https://theconvo.space/",
+    theme: "dark",
+    width: "700px",
+    height: "500px"
+}} loading="eager" width="700px" height="550px" />
+```
+</CodeBox>
