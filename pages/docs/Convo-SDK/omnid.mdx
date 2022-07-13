@@ -5,6 +5,7 @@ image: https://docs.theconvo.space/omnid.png
 
 import CommentBox from './../../../components/CommentBox'
 import CodeBox from './../../../components/CodeBox'
+import Callout from 'nextra-theme-docs/callout'
 
 # SDK - Omnid
 
@@ -42,6 +43,7 @@ convo.omnid.computeTrustScore(
 
 `ComputeConfig` is used to pass private variables to adaptors. For eg - API keys, RPC URLs etc. Some adaptors need these, some do not.
 
+<CodeBox>
 ```typescript
 type ComputeConfig = {
   polygonMainnetRpc: string;
@@ -59,7 +61,7 @@ type ComputeConfig = {
   DEBUG: boolean;
 };
 ```
-
+</CodeBox>
 Example,
 <CodeBox>
 ```javascript
@@ -78,6 +80,20 @@ let resp = await convo.omnid.computeTrustScore(
 
 ### `isMalicious`
 
+The `isMalicious` kit sources its information from the following Adaptors
+- Alchemy Spam Contract Detection (`alchemy`)
+- CryptoScamDB (`cryptoscamdb`)
+- Etherscan Phishing/Hack Label Cloud (`etherscan`)
+- MEW Malicious Accounts (`mew`)
+- OFAC SDN list (`sdn`)
+- Top Stablecoin Blacklist data (`tokenblacklist`)
+
+Read more on the adaptors [here](/docs/Convo-API/omnid).
+
+<Callout type="info">
+    `isMalicious` requires `CNVSEC_ID` ([Request for one with support](https://docs.theconvo.space/docs/getting-started#need-help)) and `alchemyApiKey` in the `computeConfig`.
+</Callout>
+
 Syntax,
 <CodeBox>
 ```javascript
@@ -92,7 +108,8 @@ Example,
 <CodeBox>
 ```javascript
 const computeConfig = {
-    maticMainnetRpc: 'https://polygon-rpc.com/';
+    CNVSEC_ID: '',
+    alchemyApiKey: '',
 }
 
 let resp = await convo.omnid.kits.isMalicious(
