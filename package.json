@@ -15,18 +15,18 @@
     "@docsearch/css": "^3.1.1",
     "@docsearch/react": "3.1.1",
     "@mdx-js/react": "^2.1.2",
-    "@next/bundle-analyzer": "^12.2.0",
+    "@next/bundle-analyzer": "^12.2.2",
     "@reach/skip-nav": "^0.17.0",
     "d3": "^7.6.1",
     "focus-visible": "^5.2.0",
     "intersection-observer": "0.12.0",
     "markdown-to-jsx": "^7.1.7",
-    "next": "^12.2.0",
+    "next": "^12.2.2",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.5.4",
     "nextra": "2.0.0-alpha.56",
     "nextra-theme-docs": "2.0.0-alpha.59",
-    "preact": "^10.9.0",
+    "preact": "^10.10.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.34.0"
@@ -34,7 +34,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.4"
+    "tailwindcss": "^3.1.6"
   },
   "prettier": {
     "embeddedLanguageFormatting": "off",

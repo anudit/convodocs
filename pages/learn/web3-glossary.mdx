@@ -15,6 +15,7 @@ export const GlossaryRender = () => {
             }
         );
     }
+    console.log('Found', Object.keys(glossary).length, 'Word/Meanings.')
 
     return Object.entries(glossary).map(([word, meaning])=>{
         return {word, md:`## ${toTitleCase(word)} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}\n`};
@@ -77,3 +78,4 @@ export const GlossaryComp = () => {
 - [https://unstoppabledomains.com/blog/the-web3-glossary](https://unstoppabledomains.com/blog/the-web3-glossary)
 - [https://cypherpunks-core.github.io/ethereumbook/glossary.html#quick-glossary](https://cypherpunks-core.github.io/ethereumbook/glossary.html#quick-glossary)
 - [https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/](https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/)
+- [https://www.chainabuse.com/glossary](https://www.chainabuse.com/glossary)
