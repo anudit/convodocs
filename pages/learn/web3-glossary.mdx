@@ -15,13 +15,13 @@ export const GlossaryRender = () => {
             }
         );
     }
-    console.log('Found', Object.keys(glossary).length, 'Word/Meanings.')
+    // console.log('Found', Object.keys(glossary).length, 'Word/Meanings.')
 
     return Object.entries(glossary).map(([word, meaning])=>{
         return {word, md:`## ${toTitleCase(word)} \n ${meaning.slice(0, 1).toUpperCase()}${meaning.slice(1)}\n`};
     }).map(li=>{
         return(
-            <Markdown className='word' data-word={li.word}>
+            <Markdown className='word' data-word={li.word} key={li.word}>
                 { li.md }
             </Markdown>
         )

@@ -517,5 +517,5 @@
 	"yolo - you only live once": "investing too much money into a single asset; making a generally risky bet.",
 	"zero address": "A special Ethereum address, composed entirely of zeros, that is specified as the destination address of a contract creation transaction.",
 	"zero-knowledge proofs": "Proofs to verify that transactions are valid without revealing any information about these transactions, providing privacy to the transaction while maintaining its legitimacy.",
-	"zk-snark": "Zero-Knowledge Succinct Non-interactive ARguments of Knowledge are an incredible technology, and vital to the scaling of blockchain technology and the decentralized web. They are mathematically complex and can be daunting; this explanation from the Ethereum Foundation is a good primer.",
+	"zk-snark": "Zero-Knowledge Succinct Non-interactive ARguments of Knowledge are an incredible technology, and vital to the scaling of blockchain technology and the decentralized web. They are mathematically complex and can be daunting; this explanation from the Ethereum Foundation is a good primer."
 }
