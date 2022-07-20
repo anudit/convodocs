@@ -91,13 +91,13 @@ Omnid aggregates multiple on/off-chain ***sources of reputation*** into a singul
 
 API Request format,
 ```html
-https://theconvo.space/api/identity?address=<ethereum-address-or-ens>&apikey=<apikey>
+https://theconvo.space/api/identity?address=<ethereum-address-or-ens>&apikey=apikey
 ```
 
 
 Example 1,
 ```html
-https://theconvo.space/api/identity?address=vitalik.eth&apikey=<apikey>
+https://theconvo.space/api/identity?address=vitalik.eth&apikey=apikey
 ```
 
 <details>
@@ -466,7 +466,7 @@ https://theconvo.space/api/identity?address=vitalik.eth&apikey=<apikey>
 
 Example 2,
 ```html
-https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257Ed62CF&apikey=<apikey>
+https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257Ed62CF&apikey=apikey
 ```
 <details>
 <summary>View Response</summary>
@@ -687,14 +687,16 @@ https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257
 </Callout>
 
 <CodeBox>
+
 ```javascript
 const { utils } = require('ethers');
 
-let resp = await fetch('https://theconvo.space/api/identity?address=vitalik.eth&apikey=<apikey>');
+let resp = await fetch("https://theconvo.space/api/identity?address=vitalik.eth&apikey=apikey");
 let { signature, signatureAddress, _mod, ...scoreData } = await resp.json();
 let recoveredAddress = utils.verifyMessage(JSON.stringify(scoreData), signature);
 console.log( recoveredAddress === signatureAddress );
 ```
+
 </CodeBox>
 
 ## ZK Identity
@@ -705,7 +707,7 @@ Using a naive implementation of a Range Proof SNARK, we create a circuit to gene
 
 API Request format,
 ```html
-https://theconvo.space/api/zkidentity?address=<ethereum-address-or-ens>&apikey=<apikey>
+https://theconvo.space/api/zkidentity?address=<ethereum-address-or-ens>&apikey=apikey
 ```
 <details>
 <summary>View Response</summary>
@@ -747,6 +749,7 @@ https://theconvo.space/api/zkidentity?address=<ethereum-address-or-ens>&apikey=<
 - Contract Address: `0x1cb460256bcece9aa216e80ccff5c3b98f8c9263` [View on PolygonScan](https://mumbai.polygonscan.com/address/0x1cb460256bcece9aa216e80ccff5c3b98f8c9263#readContract)
 
 <CodeBox>
+
 ```javascript
 const { ethers } = require('ethers');
 
@@ -761,6 +764,7 @@ let resp = verifier.verifyTx(proof, inputs);
 
 console.log( resp === true );
 ```
+
 </CodeBox>
 
 ## Verifiable Credentials

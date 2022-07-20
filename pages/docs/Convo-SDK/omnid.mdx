@@ -13,37 +13,44 @@ import Callout from 'nextra-theme-docs/callout'
 
 Syntax,
 <CodeBox>
+
 ```javascript
 convo.omnid.getTrustScore(
     signerAddress,  // Ethereum Address
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.omnid.getTrustScore(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20"
 );
 ```
+
 </CodeBox>
 
 ## Compute entire Trust Score
 
 Syntax,
 <CodeBox>
+
 ```javascript
 convo.omnid.computeTrustScore(
     signerAddress,  // Ethereum Address
     computeConfig,
 )
 ```
+
 </CodeBox>
 
 `ComputeConfig` is used to pass private variables to adaptors. For eg - API keys, RPC URLs etc. Some adaptors need these, some do not.
 
 <CodeBox>
+
 ```typescript
 type ComputeConfig = {
   polygonMainnetRpc: string;
@@ -61,9 +68,11 @@ type ComputeConfig = {
   DEBUG: boolean;
 };
 ```
+
 </CodeBox>
 Example,
 <CodeBox>
+
 ```javascript
 const computeConfig = {
     maticMainnetRpc: 'https://polygon-rpc.com/';
@@ -74,6 +83,7 @@ let resp = await convo.omnid.computeTrustScore(
     computeConfig
 );
 ```
+
 </CodeBox>
 
 ## Omnid Kits
@@ -97,16 +107,19 @@ Read more on the adaptors [here](/docs/Convo-API/omnid).
 
 Syntax,
 <CodeBox>
+
 ```javascript
 convo.omnid.kits.isMalicious(
     signerAddress,  // Ethereum Address
     computeConfig,
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 const computeConfig = {
     CNVSEC_ID: '',
@@ -118,6 +131,7 @@ let resp = await convo.omnid.kits.isMalicious(
     computeConfig
 );
 ```
+
 </CodeBox>
 
 
@@ -125,23 +139,27 @@ let resp = await convo.omnid.kits.isMalicious(
 
 Syntax,
 <CodeBox>
+
 ```javascript
 convo.omnid.adaptors.*(
     signerAddress,  // Ethereum Address
     computeConfig, // Optional, ComputeConfig
 )
 ```
+
 </CodeBox>
 
 Here * is the name of the Adaptor.
 
 <CodeBox>
+
 ```javascript
 let resp = await convo.omnid.adaptors.getZoraData(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
     computeConfig,
 );
 ```
+
 </CodeBox>
 
 
@@ -149,37 +167,44 @@ let resp = await convo.omnid.adaptors.getZoraData(
 
 Syntax,
 <CodeBox>
+
 ```javascript
 convo.omnid.credentials.issue(
     signerAddress,  // Ethereum Address
     adaptor         // Adaptor Name to use as a data source
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.omnid.credentials.issue(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20"
     "age"
 );
 ```
+
 </CodeBox>
 
 ## Verify - Verifiable Credentials
 
 Syntax,
 <CodeBox>
+
 ```javascript
 convo.omnid.credentials.verify(
     verifiableCredential,  // vc
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.omnid.credentials.verify({
     "@context": [
@@ -218,4 +243,5 @@ let resp = await convo.omnid.credentials.verify({
     }
 });
 ```
+
 </CodeBox>

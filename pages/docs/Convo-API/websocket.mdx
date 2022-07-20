@@ -17,9 +17,11 @@ Websockets allow you to subscribe to a `threadId` and receive updates for new me
 ### Step 1 - Install Dependencies
 
 <CodeBox>
+
 ```bash
 yarn add ably
 ```
+
 </CodeBox>
 
 ### Step 2 - Setup your code
@@ -27,11 +29,12 @@ yarn add ably
 Let's create a file that'll have our React hook named `Ably.js`.
 
 <CodeBox>
+
 ```javascript
 import Ably from "ably/promises";
 import { useEffect } from 'react'
 
-const ably = new Ably.Realtime.Promise({ authUrl: 'https://theconvo.space/api/getAblyAuth?apikey=<apikey>' });
+const ably = new Ably.Realtime.Promise({ authUrl: 'https://theconvo.space/api/getAblyAuth?apikey=apikey' });
 
 export function useChannel(channelName, callbackOnMessage) {
     const channel = ably.channels.get(channelName);
@@ -54,11 +57,13 @@ export function useChannel(channelName, callbackOnMessage) {
     return [channel, ably];
 }
 ```
+
 </CodeBox>
 
 ### Step 3 - Subscribe to a Channel.
 
 <CodeBox>
+
 ```javascript
 import { useChannel } from "@/hooks/Ably";
 
@@ -69,6 +74,7 @@ const [channel, ably] = useChannel(threadId, (newMessage) => {
     console.log(newMessage);
 });
 ```
+
 </CodeBox>
 
 ## Using the SDK
@@ -76,10 +82,12 @@ const [channel, ably] = useChannel(threadId, (newMessage) => {
 ### Step 1 - Install & Setup the SDK
 
 <CodeBox>
+
 ```bash
 yarn add @theconvospace/react
 import { subscribe } from "@theconvospace/react"
 ```
+
 </CodeBox>
 
 Read more details on installing and Setting up the SDK [here](/docs/Convo-SDK/installation)
@@ -88,19 +96,23 @@ Read more details on installing and Setting up the SDK [here](/docs/Convo-SDK/in
 
 Syntax,
 <CodeBox>
+
 ```javascript
 const [channelDetails, ablyInstance] = subscribe('api-key','threadId', callback);
 ```
+
 </CodeBox>
 
 Example,
 
 <CodeBox>
+
 ```javascript
 const [channelDetails, ablyInstance] = subscribe('CONVO', 'KIGZUnR4RzXDFheXoOwo', (newMessage)=>{
     alert('Got a new Message', newMessage.text);
 });
 ```
+
 </CodeBox>
 
 ## Tracking Events

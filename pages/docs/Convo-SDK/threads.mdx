@@ -10,6 +10,7 @@ import CodeBox from './../../../components/CodeBox'
 ## Create a new Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.create(
     signerAddress: string, // Blockchain wallet address of the creator
@@ -23,9 +24,11 @@ convo.threads.create(
     keywords: Array<string> // Keywards to identify
 )
 ```
+
 </CodeBox>
 Examples,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.create(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -39,10 +42,12 @@ let resp = await convo.threads.create(
     ["one", "two", "three"]
 )
 ```
+
 </CodeBox>
 
 ## Delete a Thread (Group)
 <CodeBox>
+
 ```javascript
 convo.threads.delete(
     signerAddress: string, // Blockchain wallet address of the creator
@@ -50,10 +55,12 @@ convo.threads.delete(
     threadId: string, // Unique ThreadID
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.delete(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -61,11 +68,13 @@ let resp = await convo.threads.delete(
     "tkhbnvkskjcn",
 )
 ```
+
 </CodeBox>
 
 ## Query a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.query({
     threadId?: string, // filter by unique ThreadId
@@ -82,21 +91,25 @@ convo.threads.query({
     pageSize?: string, //Paginate Request, Page Size
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 // Get a user's threads.
 let resp = await convo.threads.query({
     member:"0x707aC3937A9B31C225D8C240F5917Be97cab9F20"
 };
 ```
+
 </CodeBox>
 
 ## Add Members to a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.addMembers({
     signerAddress: string, // Blockchain wallet address.
@@ -105,10 +118,12 @@ convo.threads.addMembers({
     members: Array<string> //  Array of Blockchain Addresses to add.
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.addMembers(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -117,10 +132,12 @@ let resp = await convo.threads.addMembers(
     ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
 );
 ```
+
 </CodeBox>
 
 ## Remove Members from a Thread (Group)
 <CodeBox>
+
 ```javascript
 convo.threads.removeMembers({
     signerAddress: string, // Blockchain wallet address.
@@ -129,10 +146,12 @@ convo.threads.removeMembers({
     members: Array<string> //  Array of Blockchain Addresses to add.
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.removeMembers(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -141,11 +160,13 @@ let resp = await convo.threads.removeMembers(
     ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
 );
 ```
+
 </CodeBox>
 
 ## Add Moderators to a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.addModerators({
     signerAddress: string, // Blockchain wallet address.
@@ -154,10 +175,12 @@ convo.threads.addModerators({
     members: Array<string> //  Array of Blockchain Addresses to add.
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.addModerators(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -166,11 +189,13 @@ let resp = await convo.threads.addModerators(
     ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
 );
 ```
+
 </CodeBox>
 
 ## Remove Moderators from a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.removeModerators({
     signerAddress: string, // Blockchain wallet address.
@@ -179,10 +204,12 @@ convo.threads.removeModerators({
     members: Array<string> //  Array of Blockchain Addresses to add.
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.removeModerators(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -191,11 +218,13 @@ let resp = await convo.threads.removeModerators(
     ["0xdd9b23df00c681ab8405a7a4627e843da614eba8", "0x8405a7a4627e84"]
 );
 ```
+
 </CodeBox>
 
 ## Update title of a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.updateTitle({
     signerAddress: string, // Blockchain wallet address.
@@ -204,10 +233,12 @@ convo.threads.updateTitle({
     title: string // New title
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.updateTitle(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -216,12 +247,14 @@ let resp = await convo.threads.updateTitle(
     "This is a new Title"
 );
 ```
+
 </CodeBox>
 
 
 ## Update description of a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.updateDescription({
     signerAddress: string, // Blockchain wallet address.
@@ -230,10 +263,12 @@ convo.threads.updateDescription({
     description: string // New description
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.updateDescription(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -242,11 +277,13 @@ let resp = await convo.threads.updateDescription(
     "This is a new Description"
 );
 ```
+
 </CodeBox>
 
 ## Toggle Public Read Access of a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.togglePublicRead({
     signerAddress: string, // Blockchain wallet address.
@@ -254,10 +291,12 @@ convo.threads.togglePublicRead({
     threadId: string, // Unique ThreadID
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.togglePublicRead(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -265,11 +304,13 @@ let resp = await convo.threads.togglePublicRead(
     "hjbskjfvnkfsj",
 );
 ```
+
 </CodeBox>
 
 ## Toggle Public Write Access of a Thread (Group)
 
 <CodeBox>
+
 ```javascript
 convo.threads.togglePublicWrite({
     signerAddress: string, // Blockchain wallet address.
@@ -277,10 +318,12 @@ convo.threads.togglePublicWrite({
     threadId: string, // Unique ThreadID
 })
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.threads.togglePublicWrite(
     "0x707aC3937A9B31C225D8C240F5917Be97cab9F20",
@@ -288,4 +331,5 @@ let resp = await convo.threads.togglePublicWrite(
     "hjbskjfvnkfsj",
 );
 ```
+
 </CodeBox>

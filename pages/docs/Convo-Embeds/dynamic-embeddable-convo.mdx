@@ -23,7 +23,7 @@ Embed a Convos use a combination of the **Site URL** and **Custom Thread ID** to
 
 ```html
 // Link Format
-https://theconvo.space/embed/dt?url=<url-encoded-website-link>&threadId=<unique-thread-identifier>
+https://theconvo.space/embed/dt?url=url-encoded-website-link&threadId=unique-thread-identifier
 ```
 Here are the details on the *required* query parameters for a dynamic embeddable convo,
 - `url`: This is the url encoded (`encodeURIComponent()`) full website link. This should ideally contain the url *without* any query parameters or internal links (i.e origin+pathname). You can use `new URL("<your-site-url>")` to clean your url and get the origin and pathname values easily.
@@ -36,6 +36,7 @@ Here are the details on the *required* query parameters for a dynamic embeddable
 
 Example,
 <CodeBox>
+
 ```jsx
 <iframe id="frm" src="https://theconvo.space/embed/dt?url=https%3A%2F%2Fdeepdao.io%2F&threadId=fJPU8mZiQwVXV6K1xXlw" allowtransparency="true" width="100%" height="600px" style="border: none;">
   Comments
@@ -67,6 +68,7 @@ We use [`window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API
 ### Update Theme
 
 <CodeBox>
+
 ```js
 const msg = {
   target: "convo-embed",
@@ -78,6 +80,7 @@ const msg = {
 const frm = document.getElementById('frm').contentWindow;
 frm.postMessage(msg, "https://theconvo.space/");
 ```
+
 </CodeBox>
 
 Allowed values for `theme` are: `dark` & `light`.

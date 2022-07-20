@@ -9,6 +9,7 @@ import CodeBox from './../../../components/CodeBox'
 
 ## Create a Comment
 <CodeBox>
+
 ```javascript
 convo.comments.create(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -18,10 +19,12 @@ convo.comments.create(
     url // Url of the page where the message is from.
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.comments.create(
     accounts[0],
@@ -31,11 +34,13 @@ let resp = await convo.comments.create(
     encodeURIComponent('https://theconvo.space/')
 );
 ```
+
 </CodeBox>
 
 ## Delete a Comment
 
 <CodeBox>
+
 ```javascript
 convo.comments.delete(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -43,10 +48,12 @@ convo.comments.delete(
     commentId // Comment ID
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.comments.delete(
     accounts[0],
@@ -54,32 +61,38 @@ let resp = await convo.comments.delete(
     "KIGZUnR4RzXDFheXoOwo"
 );
 ```
+
 </CodeBox>
 
 ## Nuke All Comments
 
 <CodeBox>
+
 ```javascript
 convo.comments.nuke(
     signerAddress,  // Ethereum Address or NEAR Public Key
     token, // JWT Auth Token
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.comments.nuke(
     accounts[0],
     ""
 );
 ```
+
 </CodeBox>
 
 ## Update a Comment
 
 <CodeBox>
+
 ```javascript
 convo.comments.update(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -88,10 +101,12 @@ convo.comments.update(
     comment // New Comment Text.
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.comments.update(
     accounts[0],
@@ -100,10 +115,12 @@ let resp = await convo.comments.update(
     "Hey"
 );
 ```
+
 </CodeBox>
 
 ## Toggle Upvote
 <CodeBox>
+
 ```javascript
 convo.comments.toggleUpvote(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -111,10 +128,12 @@ convo.comments.toggleUpvote(
     commentId // Comment ID
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.comments.toggleUpvote(
     accounts[0],
@@ -122,10 +141,12 @@ let resp = await convo.comments.toggleUpvote(
     "KIGZUnR4RzXDFheXoOwo"
 );
 ```
+
 </CodeBox>
 
 ## Toggle Downvote
 <CodeBox>
+
 ```javascript
 convo.comments.toggleDownvote(
     signerAddress,  // Ethereum Address or NEAR Public Key
@@ -133,10 +154,12 @@ convo.comments.toggleDownvote(
     commentId       // Comment ID
 )
 ```
+
 </CodeBox>
 
 Example,
 <CodeBox>
+
 ```javascript
 let resp = await convo.comments.toggleDownvote(
     accounts[0],
@@ -144,11 +167,13 @@ let resp = await convo.comments.toggleDownvote(
     "KIGZUnR4RzXDFheXoOwo"
 );
 ```
+
 </CodeBox>
 
 ## Query Comments
 
 <CodeBox>
+
 ```javascript
 convo.comments.query({
     threadId,   // Unique ThreadId
@@ -163,10 +188,12 @@ convo.comments.query({
     airdrop,    // Boolean, `true`or `false` (default)
 })
 ```
+
 </CodeBox>
 
 Examples,
 <CodeBox>
+
 ```javascript
 // query by website
 let resp = await convo.comments.query({
@@ -179,4 +206,5 @@ let resp = await convo.comments.query({
     url:"https://opensea.io/",
 });
 ```
+
 </CodeBox>

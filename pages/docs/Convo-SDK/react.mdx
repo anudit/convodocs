@@ -20,31 +20,39 @@ The React Library is built on,
 <Nextra.Tabs items={['Yarn', 'NPM', 'PNPM', 'Browser']} defaultIndex={1}>
 <Nextra.Tab>
 <CodeBox>
+
 ```bash
 yarn add @theconvospace/react degen ethers
 ```
+
 </CodeBox>
 </Nextra.Tab>
 <Nextra.Tab>
 <CodeBox>
+
 ```bash
 npm i @theconvospace/react degen ethers
 ```
+
 </CodeBox>
 </Nextra.Tab>
 <Nextra.Tab>
 <CodeBox>
+
 ```bash
 pnpm i @theconvospace/react degen ethers
 ```
+
 </CodeBox>
 </Nextra.Tab>
 <Nextra.Tab>
 <CodeBox>
+
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@theconvospace/react@latest/dist/bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ethers@latest/dist/ethers.umd.min.js"></script>
 ```
+
 </CodeBox>
 </Nextra.Tab>
 </Nextra.Tabs>
@@ -53,6 +61,7 @@ pnpm i @theconvospace/react degen ethers
 
 Wrap the root of your app in a ThemeProvider, import the external stylesheet. [Reference](https://degen-xyz.vercel.app/#set-up)
 <CodeBox>
+
 ```jsx
 import { ThemeProvider } from 'degen'
 import 'degen/styles'
@@ -61,6 +70,7 @@ const App = () => {
   return <ThemeProvider>{children}</ThemeProvider>
 }
 ```
+
 </CodeBox>
 
 All Done.
@@ -83,6 +93,7 @@ All Done.
 
 Example,
 <CodeBox>
+
 ```jsx
 import { CommentSection } from "@theconvospace/react";
 
@@ -97,6 +108,7 @@ import { CommentSection } from "@theconvospace/react";
 />
 
 ```
+
 </CodeBox>
 
 
@@ -107,6 +119,7 @@ import { CommentSection } from "@theconvospace/react";
 
 Example,
 <CodeBox>
+
 ```jsx
 import { Comment } from "@theconvospace/react";
 
@@ -115,6 +128,7 @@ import { Comment } from "@theconvospace/react";
     apikey="CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO"
 />
 ```
+
 </CodeBox>
 
 ### `CommentEmbed`
@@ -123,6 +137,7 @@ Sets up an Iframe.
 
 Example,
 <CodeBox>
+
 ```jsx
 import { CommentEmbed } from "@theconvospace/react";
 
@@ -132,6 +147,7 @@ import { CommentEmbed } from "@theconvospace/react";
     height="300px"
 />
 ```
+
 </CodeBox>
 
 
@@ -141,6 +157,7 @@ Sets up an Iframe.
 
 Example,
 <CodeBox>
+
 ```jsx
 import { ConvoEmbed } from "@theconvospace/react";
 
@@ -152,4 +169,5 @@ import { ConvoEmbed } from "@theconvospace/react";
     height: "500px"
 }} loading="eager" width="700px" height="550px" />
 ```
+
 </CodeBox>

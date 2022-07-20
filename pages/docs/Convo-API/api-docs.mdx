@@ -15,7 +15,7 @@ import CodeBox from './../../../components/CodeBox'
 - OpenAPI 3 Config : [https://github.com/anudit/convodocs/tree/main/public/Convo.yaml/](https://github.com/anudit/convodocs/tree/main/public/Convo.yaml)
 
 <Callout type="info" emoji="ℹ️">
-  Use `apikey=<apikey>` added as a query parameter or a `x-api-key` header for all requests. Returns a `401` Unauthorized Error otherwise.
+  Use `apikey=apikey` added as a query parameter or a `x-api-key` header for all requests. Returns a `401` Unauthorized Error otherwise.
   Breaking changes might be introduced to the endpoints as Convo is still in Early-access. All such changes will be informed well in advance.
 </Callout>
 
@@ -25,7 +25,7 @@ import CodeBox from './../../../components/CodeBox'
 
 **Auth Route : `/auth`**
 
-**Full Endpoint : `https://theconvo.space/api/auth?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/auth?apikey=apikey`**
 
 <Callout type="info" emoji="ℹ️">
   You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
@@ -59,6 +59,7 @@ Send a `POST` request to the endpoint with the following example body,
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20. Timestamp:1623254904621'
 
 <CodeBox>
+
 ```javascript
 // Sample signature generation code using ethers.js
 let timestamp = Date.now();
@@ -74,6 +75,7 @@ let authBody = {
   "chain": "ethereum"
 };
 ```
+
 </CodeBox>
 </Nextra.Tab>
 
@@ -104,6 +106,7 @@ Send a `POST` request to the endpoint with the following example body,
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account convo.testnet. Timestamp:1623254904621'
 
 <CodeBox>
+
 ```javascript
 // Sample signature generation code using near-api-js.js
 let accountId = wallet.getAccountId();
@@ -120,6 +123,7 @@ let authBody = {
 };
 
 ```
+
 </CodeBox>
 </Nextra.Tab>
 
@@ -148,6 +152,7 @@ Send a `POST` request to the endpoint with the following example body,
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x4268f655cacd5436. Timestamp:1634402654144'
 
 <CodeBox>
+
 ```javascript
 // Sample signature generation code using "@onflow/fcl"
 import * as fcl from "@onflow/fcl"
@@ -177,6 +182,7 @@ let authBody = {
 
 let isValid = await fcl.verifyUserSignatures(MSG, signature);
 ```
+
 </CodeBox>
 </Nextra.Tab>
 </Nextra.Tabs>
@@ -200,7 +206,7 @@ let isValid = await fcl.verifyUserSignatures(MSG, signature);
 
 **Auth Route : `/authV2`**
 
-**Full Endpoint : `https://theconvo.space/api/authV2?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/authV2?apikey=apikey`**
 
 <Callout type="info" emoji="ℹ️">
   You do not require an auth token for read-only `GET` requests. Each authentication token is valid for a maximum of `1 day` only.
@@ -215,16 +221,19 @@ Quick Links,
 Eg,
 
 <CodeBox>
+
 ```javascript
 const convoInstance = new Convo("apikey");
 // Variable `message` will contain the SIWE compatible message ready for Signing.
 let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', 1);
 ```
+
 </CodeBox>
 
 **Second**, Let's Sign the message.
 
 <CodeBox>
+
 ```javascript
 // Sample signature generation code using ethers.js
 const convoInstance = new Convo("apikey");
@@ -241,6 +250,7 @@ let authV2Body = {
   "chain": "ethereum"
 };
 ```
+
 </CodeBox>
 
 **Third**, Send a `POST` request to the endpoint with the following example body,
@@ -279,7 +289,7 @@ let authV2Body = {
 
 **Auth Route : `/validateAuth`**
 
-**Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/validateAuth?apikey=apikey`**
 
 
 <Nextra.Tabs items={['Ethereum', 'Near', 'Flow']} defaultIndex={1}>
@@ -415,7 +425,7 @@ You can reorder the comments fetching the latest first using `latestFirst` query
 
 **Route : `/comments`**
 
-**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=apikey`**
 
 Send a `POST` request to the endpoint with the following request schema,
 ```json
@@ -456,7 +466,7 @@ Possible Response Error Messages,
 
 **Route : `/comments`**
 
-**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=apikey`**
 
 Send a `DELETE` request to the endpoint with the following request schema,
 ```json
@@ -485,7 +495,7 @@ Possible Response Error Messages,
 
 **Route : `/comments`**
 
-**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=apikey`**
 
 Send a `DELETE` request to the endpoint with the following request schema,
 ```json
@@ -514,7 +524,7 @@ Possible Response Error Messages,
 
 **Route : `/comments`**
 
-**Full Endpoint : `https://theconvo.space/api/comments?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/comments?apikey=apikey`**
 
 Send a `PATCH` request to the endpoint with the following request schema,
 ```json
@@ -545,7 +555,7 @@ Possible Response Error Messages,
 
 **Route : `/vote`**
 
-**Full Endpoint : `https://theconvo.space/api/vote?apikey=<apikey>`**
+**Full Endpoint : `https://theconvo.space/api/vote?apikey=apikey`**
 
 Send a `POST` request to the endpoint with the following body schema,
 ```json
