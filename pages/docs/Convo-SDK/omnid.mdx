@@ -97,12 +97,13 @@ The `isMalicious` kit sources its information from the following Adaptors
 - Etherscan Phishing/Hack Label Cloud (`etherscan`)
 - MEW Malicious Accounts (`mew`)
 - OFAC SDN list (`sdn`)
-- Top Stablecoin Blacklist data (`tokenblacklist`)
+- Stablecoin Blacklist data (`tokenblacklist`)
+- Tornado Cash Interactions (`txn`)
 
 Read more on the adaptors [here](/docs/Convo-API/omnid).
 
 <Callout type="info">
-    `isMalicious` requires `CNVSEC_ID` ([Request for one with support](https://docs.theconvo.space/docs/getting-started#need-help)) and `alchemyApiKey` in the `computeConfig`.
+    `isMalicious` requires `CNVSEC_ID` ([Request for one with support](https://docs.theconvo.space/docs/getting-started#need-help)) in the `computeConfig` along with others shown in the example below.
 </Callout>
 
 Syntax,
@@ -124,6 +125,9 @@ Example,
 const computeConfig = {
     CNVSEC_ID: '',
     alchemyApiKey: '',
+    etherscanApiKey: '',
+    polygonscanApiKey: '',
+    optimismscanApiKey: '',
 }
 
 let resp = await convo.omnid.kits.isMalicious(
