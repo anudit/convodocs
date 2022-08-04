@@ -12,88 +12,73 @@ Omnid's RPC is an [open-source](https://github.com/anudit/omnid-proxy-rpc), self
 
 ## Supported Networks
 
+
 ### Ethereum
 
-- Ethereum Mainnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/mainnet
-    ```
-    </CodeBox>
-- Ethereum Testnet Goerli RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/goerli
-    ```
-    </CodeBox>
-- Ethereum Testnet Ropsten RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/ropsten
-    ```
-    </CodeBox>
-- Ethereum Testnet Kovan RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/kovan
-    ```
-    </CodeBox>
-- Ethereum Testnet Rinkeby RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/rinkeby
-    ```
-    </CodeBox>
+
+| Network | RPC | ChainId |
+|:---:|:---:|:---:|
+| Mainnet | `https://omnid-proxy.herokuapp.com/mainnet` | 1 `0x1` |
+| Goerli Testnet | `https://omnid-proxy.herokuapp.com/goerli` | 5 `0x5` |
+| Sepolia Testnet | `https://omnid-proxy.herokuapp.com/sepolia`     |    11155111 `0xAA36A7` |
+| ⚠️ Rinkeby Testnet   (DEPRECATED) | `https://omnid-proxy.herokuapp.com/rinkeby` | 4 `0x4` |
+| ⚠️ Ropsten Testnet   (DEPRECATED) | `https://omnid-proxy.herokuapp.com/ropsten` | 3 `0x3` |
+| ⚠️ Kovan Testnet   (DEPRECATED) | `https://omnid-proxy.herokuapp.com/kovan` | 42 `0x2A` |
+
+### Flashbots
+
+
+| Network | RPC | ChainId |
+|:---:|:---:|:---:|
+| Ethereum Mainnet | `https://omnid-proxy.herokuapp.com/mainnet-flashbots` | 1 `0x1` |
+| Ethereum Mainnet (Fast Mode) | `https://omnid-proxy.herokuapp.com/mainnet-flashbots-fast` | 1 `0x1` |
+| Ethereum Goerli | `https://omnid-proxy.herokuapp.com/goerli-flashbots` | 5 `0x5` |
 
 ### Polygon
-- Polygon Mainnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/polygon
-    ```
-    </CodeBox>
-- Polygon Mumbai Testnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/polygon-mumbai
-    ```
-    </CodeBox>
+
+
+| Network | RPC | ChainId |
+|:---:|:---:|:---:|
+| Mainnet | `https://omnid-proxy.herokuapp.com/polygon`     |    137 `0x89` |
+| Mumbai Testnet | `https://omnid-proxy.herokuapp.com/polygon-testnet`     |    80001 `0x13881` |
 
 ### Optimism
-- Optimism Mainnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/optimism
-    ```
-    </CodeBox>
-- Optimism Testnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/optimism-testnet
-    ```
-    </CodeBox>
+
+
+| Network | RPC | ChainId |
+|:---:|:---:|:---:|
+| Mainnet | `https://omnid-proxy.herokuapp.com/optimism`     |    10 `0xA` |
+| Goerli Testnet | `https://omnid-proxy.herokuapp.com/optimism-testnet`     |    420 `0x1A4` |
 
 ### Arbitrum
-- Arbitrum Mainnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/arbitrum
-    ```
-    </CodeBox>
-- Arbitrum Testnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/arbitrum-testnet
-    ```
-    </CodeBox>
-- Arbitrum Devnet RPC
-    <CodeBox>
-    ```
-    https://omnid-proxy.herokuapp.com/arbitrum-devnet
-    ```
-    </CodeBox>
+
+
+| Network | RPC | ChainId |
+|:---:|:---:|:---:|
+| Mainnet | `https://omnid-proxy.herokuapp.com/arbitrum`     |    42161 `0xA4B1` |
+| Nitro Goerli Rollup Testnet | `https://omnid-proxy.herokuapp.com/arbitrum-testnet`     |    421613 `0x66EED` |
+
+### Advanced
+
+
+| Network | RPC | ChainId |
+|:---:|:---:|:---:|
+| manual | `https://omnid-proxy.herokuapp.com/manual?rpcUrl=https://polygon-rpc.com` | auto |
+
+## 🦺 LifeJackets
+
+LifeJackets are customised security layers that can help setup additional layers of protection.
+
+### Query Params
+
+| Param | Description | Example |
+|:---:|:---:|:---:|
+| blockUnverifiedContracts | Block Transactions to   Un-Verified Contracts. Powered by Sourcify.dev | `https://omnid-proxy.herokuapp.com/ethereum?blockUnverifiedContracts=true` |
+| enableScanners | Run verified contracts through Slither   & Mythril for vulnerability analysis. | `https://omnid-proxy.herokuapp.com/polygon-testnet?enableScanners=slither` |
 
 
 ## Relevant links
  - Source Code : [GitHub](https://github.com/anudit/omnid-proxy-rpc)
  - [Website](https://omnid-proxy.herokuapp.com)
+
+
