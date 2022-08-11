@@ -3,7 +3,8 @@ title: React Library - Convo Space
 ---
 
 import CodeBox from './../../../components/CodeBox'
-import Callout from 'nextra-theme-docs/callout'
+import { Callout } from 'nextra-theme-docs'
+import { Tabs, Tab } from 'nextra-theme-docs'
 
 # React Library
 
@@ -17,8 +18,8 @@ The React Library is built on,
 
 ### Install Dependenices
 
-<Nextra.Tabs items={['Yarn', 'NPM', 'PNPM', 'Browser']} defaultIndex={1}>
-<Nextra.Tab>
+<Tabs items={['Yarn', 'NPM', 'PNPM', 'Browser']} defaultIndex={1}>
+<Tab>
 <CodeBox>
 
 ```bash
@@ -26,8 +27,8 @@ yarn add @theconvospace/react degen ethers
 ```
 
 </CodeBox>
-</Nextra.Tab>
-<Nextra.Tab>
+</Tab>
+<Tab>
 <CodeBox>
 
 ```bash
@@ -35,8 +36,8 @@ npm i @theconvospace/react degen ethers
 ```
 
 </CodeBox>
-</Nextra.Tab>
-<Nextra.Tab>
+</Tab>
+<Tab>
 <CodeBox>
 
 ```bash
@@ -44,8 +45,8 @@ pnpm i @theconvospace/react degen ethers
 ```
 
 </CodeBox>
-</Nextra.Tab>
-<Nextra.Tab>
+</Tab>
+<Tab>
 <CodeBox>
 
 ```javascript
@@ -54,8 +55,8 @@ pnpm i @theconvospace/react degen ethers
 ```
 
 </CodeBox>
-</Nextra.Tab>
-</Nextra.Tabs>
+</Tab>
+</Tabs>
 
 ### Setup
 

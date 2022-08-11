@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import copyToClipboard from 'utils/clipboard';
-import Callout from 'nextra-theme-docs/callout'
+import { Callout } from 'nextra-theme-docs'
 import CodeBox from './CodeBox'
 
 const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a URL and ThreadId`, threadIdPrompt = "threadId", defaultUrl=undefined}) => {
