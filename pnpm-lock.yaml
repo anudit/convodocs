@@ -1,10 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@docsearch/css': ^3.2.0
-  '@docsearch/react': 3.2.0
-  '@mdx-js/react': ^2.1.2
-  '@next/bundle-analyzer': ^12.2.4
+  '@docsearch/css': ^3.2.1
+  '@docsearch/react': 3.2.1
+  '@mdx-js/react': ^2.1.3
+  '@next/bundle-analyzer': ^12.2.5
   '@reach/skip-nav': ^0.17.0
   autoprefixer: ^10.4.8
   d3: ^7.6.1
@@ -13,21 +13,21 @@ specifiers:
   markdown-to-jsx: ^7.1.7
   next: 12.2.0
   next-compose-plugins: ^2.2.1
-  next-pwa: ^5.5.5
-  nextra: 2.0.0-beta.17
-  nextra-theme-docs: 2.0.0-beta.17
+  next-pwa: ^5.6.0
+  nextra: 2.0.0-beta.18
+  nextra-theme-docs: 2.0.0-beta.18
   postcss: ^8.4.16
-  preact: ^10.10.2
+  preact: ^10.10.6
   react: ^17.0.2
   react-dom: ^17.0.2
   react-intersection-observer: ^8.34.0
   tailwindcss: ^3.1.8
 
 dependencies:
-  '@docsearch/css': 3.2.0
-  '@docsearch/react': 3.2.0_sfoxds7t5ydpegc3knd667wn6m
-  '@mdx-js/react': 2.1.2_react@17.0.2
-  '@next/bundle-analyzer': 12.2.4
+  '@docsearch/css': 3.2.1
+  '@docsearch/react': 3.2.1_sfoxds7t5ydpegc3knd667wn6m
+  '@mdx-js/react': 2.1.3_react@17.0.2
+  '@next/bundle-analyzer': 12.2.5
   '@reach/skip-nav': 0.17.0_sfoxds7t5ydpegc3knd667wn6m
   d3: 7.6.1
   focus-visible: 5.2.0
@@ -35,10 +35,10 @@ dependencies:
   markdown-to-jsx: 7.1.7_react@17.0.2
   next: 12.2.0_sfoxds7t5ydpegc3knd667wn6m
   next-compose-plugins: 2.2.1
-  next-pwa: 5.5.5_next@12.2.0
-  nextra: 2.0.0-beta.17_nsrodebypp3mcf7ihyfjqmpudu
-  nextra-theme-docs: 2.0.0-beta.17_nsrodebypp3mcf7ihyfjqmpudu
-  preact: 10.10.2
+  next-pwa: 5.6.0_next@12.2.0
+  nextra: 2.0.0-beta.18_nsrodebypp3mcf7ihyfjqmpudu
+  nextra-theme-docs: 2.0.0-beta.18_nsrodebypp3mcf7ihyfjqmpudu
+  preact: 10.10.6
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-intersection-observer: 8.34.0_react@17.0.2
@@ -46,7 +46,7 @@ dependencies:
 devDependencies:
   autoprefixer: 10.4.8_postcss@8.4.16
   postcss: 8.4.16
-  tailwindcss: 3.1.8
+  tailwindcss: 3.1.8_postcss@8.4.16
 
 packages:
 
@@ -1315,20 +1315,27 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
-  /@docsearch/css/3.2.0:
-    resolution: {integrity: sha512-jnNrO2JVYYhj2pP2FomlHIy6220n6mrLn2t9v2/qc+rM7M/fbIcKMgk9ky4RN+L/maUEmteckzg6/PIYoAAXJg==}
+  /@docsearch/css/3.2.1:
+    resolution: {integrity: sha512-gaP6TxxwQC+K8D6TRx5WULUWKrcbzECOPA2KCVMuI+6C7dNiGUk5yXXzVhc5sld79XKYLnO9DRTI4mjXDYkh+g==}
     dev: false
 
-  /@docsearch/react/3.2.0_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-ATS3w5JBgQGQF0kHn5iOAPfnCCaoLouZQMmI7oENV//QMFrYbjhUZxBU9lIwAT7Rzybud+Jtb4nG5IEjBk3Ixw==}
+  /@docsearch/react/3.2.1_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
       react: '>= 16.8.0 < 19.0.0'
       react-dom: '>= 16.8.0 < 19.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
     dependencies:
       '@algolia/autocomplete-core': 1.7.1
       '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.14.0
-      '@docsearch/css': 3.2.0
+      '@docsearch/css': 3.2.1
       algoliasearch: 4.14.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -1416,8 +1423,8 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/react/2.1.2_react@17.0.2:
-    resolution: {integrity: sha512-52e3DTJBrjsw3U51ZCdZ3N1IBaqnbzLIngCSXpKtiYiGr7PIqp3/P/+kym0MPTwBL/y9ZBmCieD8FyrXuEDrRw==}
+  /@mdx-js/react/2.1.3_react@17.0.2:
+    resolution: {integrity: sha512-11n4lTvvRyxq3OYbWJwEYM+7q6PE0GxKbk0AwYIIQmrRkxDeljIsjDQkKOgdr/orgRRbYy5zi+iERdnwe01CHQ==}
     peerDependencies:
       react: '>=16'
     dependencies:
@@ -1542,8 +1549,8 @@ packages:
       '@napi-rs/simple-git-win32-x64-msvc': 0.1.8
     dev: false
 
-  /@next/bundle-analyzer/12.2.4:
-    resolution: {integrity: sha512-7kyv8UBSq85wODeqemHJrvc1eg7He+oyA04XTKL8gUvE50uKlIpCh5PXP4ko4yphhWADGq8LeFOZXLIfbc7Fdg==}
+  /@next/bundle-analyzer/12.2.5:
+    resolution: {integrity: sha512-lj7ese4GnfbO8tCc9/g1O3/hzgb+pVkrsNgfF929CgZHCFQxplqxY++MIO4aCFwzt0vDx0KL78LOVxzjDDKjlA==}
     dependencies:
       webpack-bundle-analyzer: 4.3.0
     transitivePeerDependencies:
@@ -3543,8 +3550,8 @@ packages:
       react: 17.0.2
     dev: false
 
-  /match-sorter/4.2.1:
-    resolution: {integrity: sha512-s+3h9TiZU9U1pWhIERHf8/f4LmBN6IXaRgo2CI17+XGByGS1GvG5VvXK9pcGyCjGe3WM3mSYRC3ipGrd5UEVgw==}
+  /match-sorter/6.3.1:
+    resolution: {integrity: sha512-mxybbo3pPNuA+ZuCUhm5bwNkXrJTbsk5VWbR5wiwz/GC6LIiegBGn2w3O08UG/jdbYLinw51fSQ5xNU1U3MgBw==}
     dependencies:
       '@babel/runtime': 7.18.9
       remove-accents: 0.4.2
@@ -4112,8 +4119,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: false
 
-  /next-pwa/5.5.5_next@12.2.0:
-    resolution: {integrity: sha512-EdheDzxr3V7piAeW2qAeH0uJW5iouSt7s/Fzz6xuvkmRPgbyqQeRY/3ZOWbhfgbPBuzGjdbBWzVurWJPH8bY5w==}
+  /next-pwa/5.6.0_next@12.2.0:
+    resolution: {integrity: sha512-XV8g8C6B7UmViXU8askMEYhWwQ4qc/XqJGnexbLV68hzKaGHZDMtHsm2TNxFcbR7+ypVuth/wwpiIlMwpRJJ5A==}
     peerDependencies:
       next: '>=9.0.0'
     dependencies:
@@ -4191,22 +4198,22 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/2.0.0-beta.17_nsrodebypp3mcf7ihyfjqmpudu:
-    resolution: {integrity: sha512-N+b3OTpXKJ/AwwPq0RBjNLSUSAnFB1TOlMIEjQG+rxtANlBpkCe4+65d9fIIAtL6Kw2/+3GNeM6R4PijStMJag==}
+  /nextra-theme-docs/2.0.0-beta.18_nsrodebypp3mcf7ihyfjqmpudu:
+    resolution: {integrity: sha512-lvJ39ICR3R9/w1JjLTBVsP+1zxyC0DMz5DIWcLpGfwapZAqxj8fXFinA3XCRC5QCdzAbP6O+p4Miswl32wa1/w==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
       '@headlessui/react': 1.6.6_sfoxds7t5ydpegc3knd667wn6m
-      '@mdx-js/react': 2.1.2_react@17.0.2
+      '@mdx-js/react': 2.1.3_react@17.0.2
       '@reach/skip-nav': 0.17.0_sfoxds7t5ydpegc3knd667wn6m
       clsx: 1.2.1
       flexsearch: 0.7.21
       focus-visible: 5.2.0
       github-slugger: 1.4.0
       intersection-observer: 0.12.2
-      match-sorter: 4.2.1
+      match-sorter: 6.3.1
       next: 12.2.0_sfoxds7t5ydpegc3knd667wn6m
       next-themes: 0.2.0_nsrodebypp3mcf7ihyfjqmpudu
       parse-git-url: 1.0.1
@@ -4216,8 +4223,8 @@ packages:
       title: 3.5.1
     dev: false
 
-  /nextra/2.0.0-beta.17_nsrodebypp3mcf7ihyfjqmpudu:
-    resolution: {integrity: sha512-V/FIjroXeh1C9QuGJIUo5g+82GyQAjnLGX97AEJfXaf5Vy61wmZ8rWXm8D0KUTGvGp4ILUuzzFuNe/f+C/l1zw==}
+  /nextra/2.0.0-beta.18_nsrodebypp3mcf7ihyfjqmpudu:
+    resolution: {integrity: sha512-MmAQ4FAquEzIsEz0HDaGeuEHBXv6sHW3MCylZZ9OgIV/me+fOCX8zqsmKWOqW32CYGzK/B2mJOPkZ0PcD8gK7Q==}
     peerDependencies:
       next: '>=9.5.3'
       react: '>=16.13.1'
@@ -4498,8 +4505,8 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
-  /preact/10.10.2:
-    resolution: {integrity: sha512-GUXSsfwq4NKhlLYY5ctfNE0IjFk7Xo4952yPI8yMkXdhzeQmQ+FahZITe7CeHXMPyKBVQ8SoCmGNIy9TSOdhgQ==}
+  /preact/10.10.6:
+    resolution: {integrity: sha512-w0mCL5vICUAZrh1DuHEdOWBjxdO62lvcO++jbzr8UhhYcTbFkpegLH9XX+7MadjTl/y0feoqwQ/zAnzkc/EGog==}
     dev: false
 
   /pretty-bytes/5.6.0:
@@ -5025,10 +5032,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
