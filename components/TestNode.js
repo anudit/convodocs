@@ -63,45 +63,47 @@ const TestNode = ({testUrl, host}) => {
 
     let [time, setTime] = useState(0); // ms
 
-    useEffect(async ()=>{
+    useEffect(()=>{
 
-        let timeMetrics = false;
+        async function run(){
+            let timeMetrics = false;
 
-        console.log('starting clock', testUrl);
-        let countUp = setInterval(()=>{
-            setTime((current)=>current+100)
-        }, 100);
+            console.log('starting clock', testUrl);
+            let countUp = setInterval(()=>{
+                setTime((current)=>current+100)
+            }, 100);
 
-        try {
+            try {
 
-            const reqUrl = testUrl + "/comments?page=0&pageSize=10&latestFirst=true&apikey=CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO&threadId=KIGZUnR4RzXDFheXoOwo";
+                const reqUrl = testUrl + "/comments?page=0&pageSize=10&latestFirst=true&apikey=CSCpPwHnkB3niBJiUjy92YGP6xVkVZbWfK8xriDO&threadId=KIGZUnR4RzXDFheXoOwo";
 
-            let resp = await fetch(reqUrl);
-            let data = await resp.json();
+                let resp = await fetch(reqUrl);
+                let data = await resp.json();
 
-            timeMetrics = window.performance.getEntriesByType("resource")
-                                            .filter(n => n.initiatorType === "fetch")
-                                            .filter(n => n.name === reqUrl)[0];
+                timeMetrics = window.performance.getEntriesByType("resource")
+                                                .filter(n => n.initiatorType === "fetch")
+                                                .filter(n => n.name === reqUrl)[0];
 
-            console.log(testUrl, timeMetrics, resp.status, data);
-            if (resp.status >= 200 && data.length === 10){
-                setTestResult(true);
-            }
-            else {
+                console.log(testUrl, timeMetrics, resp.status, data);
+                if (resp.status >= 200 && data.length === 10){
+                    setTestResult(true);
+                }
+                else {
+                    setTestResult(false);
+                }
+                clearInterval(countUp);
+                setTime(timeMetrics?.duration);
+
+
+            } catch (error) {
+                console.error(testUrl, error);
+                clearInterval(countUp);
                 setTestResult(false);
             }
-            clearInterval(countUp);
-            setTime(timeMetrics?.duration);
-
-
-        } catch (error) {
-            console.error(testUrl, error);
-            clearInterval(countUp);
-            setTestResult(false);
 
         }
 
-
+        run();
 
     },[]);
 
