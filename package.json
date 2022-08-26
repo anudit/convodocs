@@ -19,7 +19,7 @@
     "@reach/skip-nav": "^0.17.0",
     "d3": "^7.6.1",
     "focus-visible": "^5.2.0",
-    "intersection-observer": "0.12.0",
+    "intersection-observer": "0.12.2",
     "markdown-to-jsx": "^7.1.7",
     "next": "12.2.0",
     "next-compose-plugins": "^2.2.1",
@@ -27,9 +27,9 @@
     "nextra": "2.0.0-beta.18",
     "nextra-theme-docs": "2.0.0-beta.18",
     "preact": "^10.10.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-intersection-observer": "^8.34.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

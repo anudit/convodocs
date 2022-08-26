@@ -18,53 +18,53 @@ Omnid's RPC is an [open-source](https://github.com/anudit/omnid-proxy-rpc), self
 
 | Network | RPC | ChainId |
 |:---|:---:|:---:|
-| Mainnet | `https://omnid-proxy.herokuapp.com/mainnet` | 1 `0x1` |
-| Goerli Testnet | `https://omnid-proxy.herokuapp.com/goerli` | 5 `0x5` |
-| Sepolia Testnet | `https://omnid-proxy.herokuapp.com/sepolia`     |    11155111 `0xAA36A7` |
-| ⚠️ Rinkeby Testnet   ([DEPRECATED](https://blog.ethereum.org/2022/06/21/testnet-deprecation/)) | `https://omnid-proxy.herokuapp.com/rinkeby` | 4 `0x4` |
-| ⚠️ Ropsten Testnet   ([DEPRECATED](https://blog.ethereum.org/2022/06/21/testnet-deprecation/)) | `https://omnid-proxy.herokuapp.com/ropsten` | 3 `0x3` |
-| ⚠️ Kovan Testnet   ([DEPRECATED](https://blog.ethereum.org/2022/06/21/testnet-deprecation/)) | `https://omnid-proxy.herokuapp.com/kovan` | 42 `0x2A` |
+| Mainnet | `https://rpc.omnid.space/mainnet` | 1 `0x1` |
+| Goerli Testnet | `https://rpc.omnid.space/goerli` | 5 `0x5` |
+| Sepolia Testnet | `https://rpc.omnid.space/sepolia`     |    11155111 `0xAA36A7` |
+| ⚠️ Rinkeby Testnet   ([DEPRECATED](https://blog.ethereum.org/2022/06/21/testnet-deprecation/)) | `https://rpc.omnid.space/rinkeby` | 4 `0x4` |
+| ⚠️ Ropsten Testnet   ([DEPRECATED](https://blog.ethereum.org/2022/06/21/testnet-deprecation/)) | `https://rpc.omnid.space/ropsten` | 3 `0x3` |
+| ⚠️ Kovan Testnet   ([DEPRECATED](https://blog.ethereum.org/2022/06/21/testnet-deprecation/)) | `https://rpc.omnid.space/kovan` | 42 `0x2A` |
 
 ### Flashbots
 
 
 | Network | RPC | ChainId |
 |:---|:---:|:---:|
-| Ethereum Mainnet | `https://omnid-proxy.herokuapp.com/mainnet-flashbots` | 1 `0x1` |
-| Ethereum Mainnet (Fast Mode) | `https://omnid-proxy.herokuapp.com/mainnet-flashbots-fast` | 1 `0x1` |
-| Ethereum Goerli | `https://omnid-proxy.herokuapp.com/goerli-flashbots` | 5 `0x5` |
+| Ethereum Mainnet | `https://rpc.omnid.space/mainnet-flashbots` | 1 `0x1` |
+| Ethereum Mainnet (Fast Mode) | `https://rpc.omnid.space/mainnet-flashbots-fast` | 1 `0x1` |
+| Ethereum Goerli | `https://rpc.omnid.space/goerli-flashbots` | 5 `0x5` |
 
 ### Polygon
 
 
 | Network | RPC | ChainId |
 |:---|:---:|:---:|
-| Mainnet | `https://omnid-proxy.herokuapp.com/polygon`     |    137 `0x89` |
-| Mumbai Testnet | `https://omnid-proxy.herokuapp.com/polygon-testnet`     |    80001 `0x13881` |
+| Mainnet | `https://rpc.omnid.space/polygon`     |    137 `0x89` |
+| Mumbai Testnet | `https://rpc.omnid.space/polygon-testnet`     |    80001 `0x13881` |
 
 ### Optimism
 
 
 | Network | RPC | ChainId |
 |:---|:---:|:---:|
-| Mainnet | `https://omnid-proxy.herokuapp.com/optimism`     |    10 `0xA` |
-| Goerli Testnet | `https://omnid-proxy.herokuapp.com/optimism-testnet`     |    420 `0x1A4` |
+| Mainnet | `https://rpc.omnid.space/optimism`     |    10 `0xA` |
+| Goerli Testnet | `https://rpc.omnid.space/optimism-testnet`     |    420 `0x1A4` |
 
 ### Arbitrum
 
 
 | Network | RPC | ChainId |
 |:---|:---:|:---:|
-| Mainnet (Arbitrum One) | `https://omnid-proxy.herokuapp.com/arbitrum`     |    42161 `0xA4B1` |
-| Mainnet (Arbitrum Nova) | `https://omnid-proxy.herokuapp.com/arbitrum-nova`     |    42170 `0xA4BA` |
-| Nitro Goerli Rollup Testnet | `https://omnid-proxy.herokuapp.com/arbitrum-testnet`     |    421613 `0x66EED` |
+| Mainnet (Arbitrum One) | `https://rpc.omnid.space/arbitrum`     |    42161 `0xA4B1` |
+| Mainnet (Arbitrum Nova) | `https://rpc.omnid.space/arbitrum-nova`     |    42170 `0xA4BA` |
+| Nitro Goerli Rollup Testnet | `https://rpc.omnid.space/arbitrum-testnet`     |    421613 `0x66EED` |
 
 ### Advanced
 
 
 | Network | RPC | ChainId |
 |:---|:---:|:---:|
-| manual | `https://omnid-proxy.herokuapp.com/manual?rpcUrl=https://polygon-rpc.com` | auto |
+| manual | `https://rpc.omnid.space/manual?rpcUrl=https://polygon-rpc.com` | auto |
 
 ## 🦺 LifeJackets
 
@@ -74,12 +74,12 @@ LifeJackets are customised security layers that can help setup additional layers
 
 | Param | Description | Example |
 |:---:|:---:|:---:|
-| blockUnverifiedContracts | Block Transactions to   Un-Verified Contracts. Powered by Sourcify.dev | `https://omnid-proxy.herokuapp.com/ethereum?blockUnverifiedContracts=true` |
-| enableScanners | Run verified contracts through Slither   & Mythril for vulnerability analysis. | `https://omnid-proxy.herokuapp.com/polygon-testnet?enableScanners=slither` |
-
+| `blockUnverifiedContracts` | Block Transactions to Un-Verified Contracts. Powered by [Sourcify.dev](https://sourcify.dev). Suported values: `true`, `false`. | `https://rpc.omnid.space/ethereum?blockUnverifiedContracts=true` |
+| `enableScanners` | Run verified contracts through Slither for vulnerability analysis. Suported values: `slither`. | `https://rpc.omnid.space/polygon-testnet?enableScanners=slither` |
+| `blockRecentDnsUpdates` | Checks the DNS records for a domain to see when it was last updated ([Only RFC 1912 Compliant Domains](https://www.ripe.net/publications/docs/ripe-203)). Blocks recently modified domains to prevent [DNS poisioning atttacks](https://cointelegraph.com/news/breaking-curve-finance-team-warns-users-to-avoid-using-site-until-further-notice). Supported Values: number set in Days. | `https://rpc.omnid.space/ethereum?blockRecentDnsUpdates=2` |
 
 ## Relevant links
  - Source Code : [GitHub](https://github.com/anudit/omnid-proxy-rpc)
- - [Website](https://omnid-proxy.herokuapp.com)
+ - [Website](https://rpc.omnid.space)
 
 
