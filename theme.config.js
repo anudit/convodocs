@@ -2,20 +2,21 @@ import DocSearch from './components/DocSearch'
 import Logo from './components/Logo'
 
 export default {
-  projectLink: 'https://github.com/anudit/convo',
-  projectChatLink: "https://discord.gg/MFtmrng9J7",
+  project: {link: 'https://github.com/anudit/convo'},
+  projectChat: {link: "https://discord.gg/MFtmrng9J7"},
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
   titleSuffix: " – Convo Space",
   search: true,
-  customSearch: <DocSearch />,
+  search: {component: <DocSearch />},
   // unstable_flexsearch: true,
-  floatTOC: true,
-  feedbackLink: () => {
-    return ("Question? Give us feedback →");
+  feedback: {
+    labels: "feedback",
+    link: "Question? Give us feedback →",
   },
-  feedbackLabels: "feedback",
-  prevLinks: true,
-  nextLinks: true,
+  navigation: {
+    prev: true,
+    next: true,
+  },
   logo: () => {
     return (
       <>
@@ -80,18 +81,25 @@ export default {
       </>
     );
   },
-  footerEditLink: () => {
-    return "Edit this page on GitHub →";
+  editLink: {
+    text: () => {
+      return "Edit this page on GitHub →";
+    }
   },
-  footerText:  `MIT ${new Date().getFullYear()} © CUPOC, Inc.`,
-  bannerKey: "isBannerOpen",
-  banner: () => {
-    return (
-    <>
-      ✨ Learn more about <a href="https://blog.cupoc.space/" target="_blank"> Convo Space & Omnid →</a>
-    </>);
+  footer: {
+    text:  `MIT ${new Date().getFullYear()} © CUPOC, Inc.`,
   },
-  tocExtraContent: () => {
-    return <a href="https://cupoc.space/careers" target="_blank"><img src="/hiring.webp" width="150px"/></a>;
+  banner: {
+    key: "isBannerOpen",
+    text: () => {
+      return (
+      <>
+        ✨ Learn more about <a href="https://blog.cupoc.space/" target="_blank"> Convo Space & Omnid →</a>
+      </>);
+    },
+  },
+  toc: {
+    extraContent: <a href="https://cupoc.space/careers" target="_blank"><img src="/hiring.webp" width="150px"/></a>,
+    float: true,
   },
 };
