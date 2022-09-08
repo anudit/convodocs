@@ -17,7 +17,6 @@ specifiers:
   nextra: 2.0.0-beta.24
   nextra-theme-docs: 2.0.0-beta.24
   postcss: ^8.4.16
-  preact: ^10.10.6
   react: ^18.2.0
   react-dom: ^18.2.0
   react-intersection-observer: ^9.4.0
@@ -38,7 +37,6 @@ dependencies:
   next-pwa: 5.6.0_next@12.2.5
   nextra: 2.0.0-beta.24_3xcjr4wz26biff45sz3jtokgje
   nextra-theme-docs: 2.0.0-beta.24_3xcjr4wz26biff45sz3jtokgje
-  preact: 10.10.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-intersection-observer: 9.4.0_react@18.2.0
@@ -4514,10 +4512,6 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
-
-  /preact/10.10.6:
-    resolution: {integrity: sha512-w0mCL5vICUAZrh1DuHEdOWBjxdO62lvcO++jbzr8UhhYcTbFkpegLH9XX+7MadjTl/y0feoqwQ/zAnzkc/EGog==}
-    dev: false
 
   /pretty-bytes/5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}

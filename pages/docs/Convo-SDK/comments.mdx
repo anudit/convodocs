@@ -3,12 +3,12 @@ title: SDK - Comments
 ---
 
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 
 # SDK - Comments
 
 ## Create a Comment
-<CodeBox>
+
 
 ```javascript
 convo.comments.create(
@@ -20,10 +20,10 @@ convo.comments.create(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.comments.create(
@@ -35,11 +35,11 @@ let resp = await convo.comments.create(
 );
 ```
 
-</CodeBox>
+
 
 ## Delete a Comment
 
-<CodeBox>
+
 
 ```javascript
 convo.comments.delete(
@@ -49,10 +49,10 @@ convo.comments.delete(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.comments.delete(
@@ -62,11 +62,11 @@ let resp = await convo.comments.delete(
 );
 ```
 
-</CodeBox>
+
 
 ## Nuke All Comments
 
-<CodeBox>
+
 
 ```javascript
 convo.comments.nuke(
@@ -75,10 +75,10 @@ convo.comments.nuke(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.comments.nuke(
@@ -87,11 +87,11 @@ let resp = await convo.comments.nuke(
 );
 ```
 
-</CodeBox>
+
 
 ## Update a Comment
 
-<CodeBox>
+
 
 ```javascript
 convo.comments.update(
@@ -102,10 +102,10 @@ convo.comments.update(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.comments.update(
@@ -116,10 +116,10 @@ let resp = await convo.comments.update(
 );
 ```
 
-</CodeBox>
+
 
 ## Toggle Upvote
-<CodeBox>
+
 
 ```javascript
 convo.comments.toggleUpvote(
@@ -129,10 +129,10 @@ convo.comments.toggleUpvote(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.comments.toggleUpvote(
@@ -142,10 +142,10 @@ let resp = await convo.comments.toggleUpvote(
 );
 ```
 
-</CodeBox>
+
 
 ## Toggle Downvote
-<CodeBox>
+
 
 ```javascript
 convo.comments.toggleDownvote(
@@ -155,10 +155,10 @@ convo.comments.toggleDownvote(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.comments.toggleDownvote(
@@ -168,11 +168,11 @@ let resp = await convo.comments.toggleDownvote(
 );
 ```
 
-</CodeBox>
+
 
 ## Query Comments
 
-<CodeBox>
+
 
 ```javascript
 convo.comments.query({
@@ -189,10 +189,10 @@ convo.comments.query({
 })
 ```
 
-</CodeBox>
+
 
 Examples,
-<CodeBox>
+
 
 ```javascript
 // query by website
@@ -207,4 +207,4 @@ let resp = await convo.comments.query({
 });
 ```
 
-</CodeBox>
+

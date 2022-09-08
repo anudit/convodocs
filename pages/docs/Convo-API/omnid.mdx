@@ -4,7 +4,7 @@ image: https://docs.theconvo.space/omnid.png
 ---
 
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 import { Callout } from 'nextra-theme-docs'
 
 # Omnid
@@ -689,7 +689,7 @@ https://theconvo.space/api/identity?address=0xD665afb9A4019a8c482352aaa862567257
 	Omnid uses `0xCCcccCcC54317EE02C2dBfdD832a67C7acD28e06` as SignatureAddress to sign the oracle data.
 </Callout>
 
-<CodeBox>
+
 
 ```javascript
 const { utils } = require('ethers');
@@ -700,7 +700,7 @@ let recoveredAddress = utils.verifyMessage(JSON.stringify(scoreData), signature)
 console.log( recoveredAddress === signatureAddress );
 ```
 
-</CodeBox>
+
 
 ## ZK Identity
 
@@ -751,7 +751,7 @@ https://theconvo.space/api/zkidentity?address=<ethereum-address-or-ens>&apikey=a
 ### Verifying ZkProof
 - Contract Address: `0x1cb460256bcece9aa216e80ccff5c3b98f8c9263` [View on PolygonScan](https://mumbai.polygonscan.com/address/0x1cb460256bcece9aa216e80ccff5c3b98f8c9263#readContract)
 
-<CodeBox>
+
 
 ```javascript
 const { ethers } = require('ethers');
@@ -768,7 +768,7 @@ let resp = verifier.verifyTx(proof, inputs);
 console.log( resp === true );
 ```
 
-</CodeBox>
+
 
 ## Verifiable Credentials
 Read more on the API [here](/docs/Convo-SDK/omnid#issue---verifiable-credentials).

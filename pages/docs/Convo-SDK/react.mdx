@@ -2,7 +2,7 @@
 title: React Library - Convo Space
 ---
 
-import CodeBox from './../../../components/CodeBox'
+
 import { Callout } from 'nextra-theme-docs'
 import { Tabs, Tab } from 'nextra-theme-docs'
 
@@ -20,48 +20,48 @@ The React Library is built on,
 
 <Tabs items={['Yarn', 'NPM', 'PNPM', 'Browser']} defaultIndex={1}>
 <Tab>
-<CodeBox>
+
 
 ```bash
 yarn add @theconvospace/react degen ethers
 ```
 
-</CodeBox>
+
 </Tab>
 <Tab>
-<CodeBox>
+
 
 ```bash
 npm i @theconvospace/react degen ethers
 ```
 
-</CodeBox>
+
 </Tab>
 <Tab>
-<CodeBox>
+
 
 ```bash
 pnpm i @theconvospace/react degen ethers
 ```
 
-</CodeBox>
+
 </Tab>
 <Tab>
-<CodeBox>
+
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@theconvospace/react@latest/dist/bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ethers@latest/dist/ethers.umd.min.js"></script>
 ```
 
-</CodeBox>
+
 </Tab>
 </Tabs>
 
 ### Setup
 
 Wrap the root of your app in a ThemeProvider, import the external stylesheet. [Reference](https://degen-xyz.vercel.app/#set-up)
-<CodeBox>
+
 
 ```jsx
 import { ThemeProvider } from 'degen'
@@ -72,7 +72,7 @@ const App = () => {
 }
 ```
 
-</CodeBox>
+
 
 All Done.
 
@@ -93,7 +93,7 @@ All Done.
 - `provider`: An Ethers [`Web3Provider`](https://docs.ethers.io/v5/api/providers/other/#Web3Provider) is used to Connect to a user's wallet and Sign a Message to Authenticate the user.
 
 Example,
-<CodeBox>
+
 
 ```jsx
 import { CommentSection } from "@theconvospace/react";
@@ -110,7 +110,7 @@ import { CommentSection } from "@theconvospace/react";
 
 ```
 
-</CodeBox>
+
 
 
 ### `Comment`
@@ -119,7 +119,7 @@ import { CommentSection } from "@theconvospace/react";
 - `apikey`: Defines the API Key the Comment Section uses to query Convo Space. Grab one on the [Developer Dashboard](https://theconvo.space/dashboard/developer) if you don't have one.
 
 Example,
-<CodeBox>
+
 
 ```jsx
 import { Comment } from "@theconvospace/react";
@@ -130,14 +130,14 @@ import { Comment } from "@theconvospace/react";
 />
 ```
 
-</CodeBox>
+
 
 ### `CommentEmbed`
 
 Sets up an Iframe.
 
 Example,
-<CodeBox>
+
 
 ```jsx
 import { CommentEmbed } from "@theconvospace/react";
@@ -149,7 +149,7 @@ import { CommentEmbed } from "@theconvospace/react";
 />
 ```
 
-</CodeBox>
+
 
 
 ### `ConvoEmbed`
@@ -157,7 +157,7 @@ import { CommentEmbed } from "@theconvospace/react";
 Sets up an Iframe.
 
 Example,
-<CodeBox>
+
 
 ```jsx
 import { ConvoEmbed } from "@theconvospace/react";
@@ -171,4 +171,4 @@ import { ConvoEmbed } from "@theconvospace/react";
 }} loading="eager" width="700px" height="550px" />
 ```
 
-</CodeBox>
+

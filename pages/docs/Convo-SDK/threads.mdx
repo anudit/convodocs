@@ -3,13 +3,13 @@ title: SDK - Threads
 ---
 
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 
 # SDK - Threads
 
 ## Create a new Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.create(
@@ -25,9 +25,9 @@ convo.threads.create(
 )
 ```
 
-</CodeBox>
+
 Examples,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.create(
@@ -43,10 +43,10 @@ let resp = await convo.threads.create(
 )
 ```
 
-</CodeBox>
+
 
 ## Delete a Thread (Group)
-<CodeBox>
+
 
 ```javascript
 convo.threads.delete(
@@ -56,10 +56,10 @@ convo.threads.delete(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.delete(
@@ -69,11 +69,11 @@ let resp = await convo.threads.delete(
 )
 ```
 
-</CodeBox>
+
 
 ## Query a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.query({
@@ -92,10 +92,10 @@ convo.threads.query({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 // Get a user's threads.
@@ -104,11 +104,11 @@ let resp = await convo.threads.query({
 };
 ```
 
-</CodeBox>
+
 
 ## Add Members to a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.addMembers({
@@ -119,10 +119,10 @@ convo.threads.addMembers({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.addMembers(
@@ -133,10 +133,10 @@ let resp = await convo.threads.addMembers(
 );
 ```
 
-</CodeBox>
+
 
 ## Remove Members from a Thread (Group)
-<CodeBox>
+
 
 ```javascript
 convo.threads.removeMembers({
@@ -147,10 +147,10 @@ convo.threads.removeMembers({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.removeMembers(
@@ -161,11 +161,11 @@ let resp = await convo.threads.removeMembers(
 );
 ```
 
-</CodeBox>
+
 
 ## Add Moderators to a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.addModerators({
@@ -176,10 +176,10 @@ convo.threads.addModerators({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.addModerators(
@@ -190,11 +190,11 @@ let resp = await convo.threads.addModerators(
 );
 ```
 
-</CodeBox>
+
 
 ## Remove Moderators from a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.removeModerators({
@@ -205,10 +205,10 @@ convo.threads.removeModerators({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.removeModerators(
@@ -219,11 +219,11 @@ let resp = await convo.threads.removeModerators(
 );
 ```
 
-</CodeBox>
+
 
 ## Update title of a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.updateTitle({
@@ -234,10 +234,10 @@ convo.threads.updateTitle({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.updateTitle(
@@ -248,12 +248,12 @@ let resp = await convo.threads.updateTitle(
 );
 ```
 
-</CodeBox>
+
 
 
 ## Update description of a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.updateDescription({
@@ -264,10 +264,10 @@ convo.threads.updateDescription({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.updateDescription(
@@ -278,11 +278,11 @@ let resp = await convo.threads.updateDescription(
 );
 ```
 
-</CodeBox>
+
 
 ## Toggle Public Read Access of a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.togglePublicRead({
@@ -292,10 +292,10 @@ convo.threads.togglePublicRead({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.togglePublicRead(
@@ -305,11 +305,11 @@ let resp = await convo.threads.togglePublicRead(
 );
 ```
 
-</CodeBox>
+
 
 ## Toggle Public Write Access of a Thread (Group)
 
-<CodeBox>
+
 
 ```javascript
 convo.threads.togglePublicWrite({
@@ -319,10 +319,10 @@ convo.threads.togglePublicWrite({
 })
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.threads.togglePublicWrite(
@@ -332,4 +332,4 @@ let resp = await convo.threads.togglePublicWrite(
 );
 ```
 
-</CodeBox>
+

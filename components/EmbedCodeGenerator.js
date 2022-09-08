@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import copyToClipboard from 'utils/clipboard';
-import { Callout } from 'nextra-theme-docs'
-import CodeBox from './CodeBox'
+import { Callout } from 'nextra-theme-docs';
 
 const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a URL and ThreadId`, threadIdPrompt = "threadId", defaultUrl=undefined}) => {
 
@@ -65,11 +64,11 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
                     style={{padding: '10px', width: '300px'}}
                     />
                 <br/>
-                <CodeBox>
+
                     <pre>
                         {data}
                     </pre>
-                </CodeBox>
+
             </div>
         )
     }
@@ -99,11 +98,11 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
                     style={{padding: '10px'}}
                 />
                 <br/>
-                <CodeBox>
+
                     <pre>
                         {data}
                     </pre>
-                </CodeBox>
+
             </div>
         )
     }

@@ -4,7 +4,7 @@ title: Convo API
 
 import { Callout } from 'nextra-theme-docs'
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 import { Tabs, Tab } from 'nextra-theme-docs'
 
 # Convo API
@@ -59,7 +59,7 @@ Send a `POST` request to the endpoint with the following example body,
 
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x707aC3937A9B31C225D8C240F5917Be97cab9F20. Timestamp:1623254904621'
 
-<CodeBox>
+
 
 ```javascript
 // Sample signature generation code using ethers.js
@@ -77,7 +77,7 @@ let authBody = {
 };
 ```
 
-</CodeBox>
+
 </Tab>
 
 <Tab>
@@ -106,7 +106,7 @@ Send a `POST` request to the endpoint with the following example body,
 
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account convo.testnet. Timestamp:1623254904621'
 
-<CodeBox>
+
 
 ```javascript
 // Sample signature generation code using near-api-js.js
@@ -125,7 +125,7 @@ let authBody = {
 
 ```
 
-</CodeBox>
+
 </Tab>
 
 <Tab>
@@ -152,7 +152,7 @@ Send a `POST` request to the endpoint with the following example body,
 
 Example, `data` = 'I allow this site to access my data on The Convo Space using the account 0x4268f655cacd5436. Timestamp:1634402654144'
 
-<CodeBox>
+
 
 ```javascript
 // Sample signature generation code using "@onflow/fcl"
@@ -184,7 +184,7 @@ let authBody = {
 let isValid = await fcl.verifyUserSignatures(MSG, signature);
 ```
 
-</CodeBox>
+
 </Tab>
 </Tabs>
 
@@ -221,7 +221,7 @@ Quick Links,
 
 Eg,
 
-<CodeBox>
+
 
 ```javascript
 const convoInstance = new Convo("apikey");
@@ -229,11 +229,11 @@ const convoInstance = new Convo("apikey");
 let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045', 1);
 ```
 
-</CodeBox>
+
 
 **Second**, Let's Sign the message.
 
-<CodeBox>
+
 
 ```javascript
 // Sample signature generation code using ethers.js
@@ -252,7 +252,7 @@ let authV2Body = {
 };
 ```
 
-</CodeBox>
+
 
 **Third**, Send a `POST` request to the endpoint with the following example body,
 

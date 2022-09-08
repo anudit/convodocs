@@ -3,12 +3,12 @@ title: SDK - Auth
 ---
 
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 
 # SDK - Auth
 
 ## Generate Signature Data
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.auth.getSignatureData(
@@ -17,19 +17,19 @@ let resp = await convo.auth.getSignatureData(
 );
 ```
 
-</CodeBox>
+
 
 Example Usage,
-<CodeBox>
+
 
 ```javascript
 let timestamp = Date.now();
 let data = convo.auth.getSignatureData(accounts[0], timestamp);
 ```
 
-</CodeBox>
+
 ## Authenticate Session
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.auth.authenticate(
@@ -41,9 +41,9 @@ let resp = await convo.auth.authenticate(
 );
 ```
 
-</CodeBox>
+
 Example Usage,
-<CodeBox>
+
 
 ```javascript
 let timestamp = Date.now();
@@ -55,12 +55,12 @@ let signature = await web3.send(
 convo.auth.authenticate(accounts[0], signature, timestamp, "ethereum").then(console.log);
 ```
 
-</CodeBox>
+
 
 ## Generate Signature Data V2
 This is for EIP-4361: Sign In with Ethereum compliance.
 
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.auth.getSignatureDataV2(
@@ -71,9 +71,9 @@ let resp = await convo.auth.getSignatureDataV2(
 );
 ```
 
-</CodeBox>
+
 Example Usage,
-<CodeBox>
+
 
 ```javascript
 const convoInstance = new Convo("apikey");
@@ -83,12 +83,12 @@ let signerAddress = await signer.getAddress();
 let message = convoInstance.auth.getSignatureDataV2('https://theconvo.space/', signerAddress, 1, resources);
 ```
 
-</CodeBox>
+
 
 ## Authenticate Session V2
 This is for EIP-4361: Sign In with Ethereum compliance.
 
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.auth.authenticateV2(
@@ -97,11 +97,11 @@ let resp = await convo.auth.authenticateV2(
 );
 ```
 
-</CodeBox>
+
 
 Example Usage,
 
-<CodeBox>
+
 
 ```javascript
 const convoInstance = new Convo("apikey");
@@ -115,10 +115,10 @@ let signature = await provider.send('personal_sign',[ ethers.utils.hexlify(ether
 let resp = await convo.auth.authenticateV2(message, signature);
 ```
 
-</CodeBox>
+
 
 ## Validate Authentication
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.auth.validate(
@@ -127,9 +127,9 @@ let resp = await convo.auth.validate(
 );
 ```
 
-</CodeBox>
+
 Example,
-<CodeBox>
+
 
 ```javascript
 convo.auth.validate(
@@ -138,4 +138,4 @@ convo.auth.validate(
 ).then(console.log);
 ```
 
-</CodeBox>
+

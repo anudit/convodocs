@@ -4,7 +4,7 @@ title: Websocket
 
 import { Callout } from 'nextra-theme-docs'
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 
 # WebSocket
 
@@ -16,19 +16,19 @@ Websockets allow you to subscribe to a `threadId` and receive updates for new me
 
 ### Step 1 - Install Dependencies
 
-<CodeBox>
+
 
 ```bash
 yarn add ably
 ```
 
-</CodeBox>
+
 
 ### Step 2 - Setup your code
 
 Let's create a file that'll have our React hook named `Ably.js`.
 
-<CodeBox>
+
 
 ```javascript
 import Ably from "ably/promises";
@@ -58,11 +58,11 @@ export function useChannel(channelName, callbackOnMessage) {
 }
 ```
 
-</CodeBox>
+
 
 ### Step 3 - Subscribe to a Channel.
 
-<CodeBox>
+
 
 ```javascript
 import { useChannel } from "@/hooks/Ably";
@@ -75,37 +75,37 @@ const [channel, ably] = useChannel(threadId, (newMessage) => {
 });
 ```
 
-</CodeBox>
+
 
 ## Using the SDK
 
 ### Step 1 - Install & Setup the SDK
 
-<CodeBox>
+
 
 ```bash
 yarn add @theconvospace/react
 import { subscribe } from "@theconvospace/react"
 ```
 
-</CodeBox>
+
 
 Read more details on installing and Setting up the SDK [here](/docs/Convo-SDK/installation)
 
 ### Step 2 - Use the `subscribe` React Hook.
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 const [channelDetails, ablyInstance] = subscribe('api-key','threadId', callback);
 ```
 
-</CodeBox>
+
 
 Example,
 
-<CodeBox>
+
 
 ```javascript
 const [channelDetails, ablyInstance] = subscribe('CONVO', 'KIGZUnR4RzXDFheXoOwo', (newMessage)=>{
@@ -113,7 +113,7 @@ const [channelDetails, ablyInstance] = subscribe('CONVO', 'KIGZUnR4RzXDFheXoOwo'
 });
 ```
 
-</CodeBox>
+
 
 ## Tracking Events
 

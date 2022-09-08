@@ -3,7 +3,7 @@ title: Omnid x MetaMask
 ---
 
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 import Markdown from 'markdown-to-jsx';
 import { useSSG } from 'nextra/ssg';
 
@@ -44,7 +44,7 @@ All done.
 ## Add Snap Installer to your Site
 NPM: https://www.npmjs.com/package/@omnid/snap
 
-<CodeBox>
+
 
 ```js
 await ethereum.request({
@@ -55,7 +55,7 @@ await ethereum.request({
 })
 ```
 
-</CodeBox>
+
 
 
 ## RPC API
@@ -65,7 +65,7 @@ await ethereum.request({
 You can use `omnid_getTrustScoreData` to get an arbitary user's TrustScore and Omnid Data.
 
 Example,
-<CodeBox>
+
 
 ```js
 const snapId = `npm:@omnid/snap`;
@@ -80,14 +80,14 @@ const response = await ethereum.request({
 console.log('response', response);
 ```
 
-</CodeBox>
+
 
 ### `omnid_getFortaData`
 
 You can use `omnid_getFortaData` to get an arbitary user's Forta Alerts.
 
 Example,
-<CodeBox>
+
 
 ```js
 const snapId = `npm:@omnid/snap`;
@@ -102,7 +102,7 @@ const response = await ethereum.request({
 console.log('response', response);
 ```
 
-</CodeBox>
+
 
 
 

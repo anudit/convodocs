@@ -3,7 +3,7 @@ title: Convo SDK
 ---
 import CommentBox from './../../../components/CommentBox';
 import Markdown from 'markdown-to-jsx';
-import CodeBox from './../../../components/CodeBox'
+
 import { Tabs, Tab } from 'nextra-theme-docs'
 
 # Convo SDK
@@ -22,53 +22,53 @@ SDK containing all the functions you'll need to build on [theconvo.space](thecon
 ### NodeJs
 <Tabs items={['Yarn', 'NPM', 'PNPM']} defaultIndex={1}>
 <Tab>
-<CodeBox>
+
 
 ```bash
 yarn add degen @theconvospace/sdk
 ```
 
-</CodeBox>
+
 </Tab>
 <Tab>
-<CodeBox>
+
 
 ```bash
 npm i --save degen @theconvospace/sdk
 ```
 
-</CodeBox>
+
 </Tab>
 <Tab>
-<CodeBox>
+
 
 ```bash
 pnpm i --save degen @theconvospace/sdk
 ```
 
-</CodeBox>
+
 </Tab>
 </Tabs>
 
 ### Browser (UMD)
 
-<CodeBox>
+
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/@theconvospace/sdk@latest/dist/index.global.js"></script>
 ```
 
-</CodeBox>
+
 
 ### Deno
 
-<CodeBox>
+
 
 ```javascript
 import { Convo } from "https://deno.land/x/convo@v0.1.1/packages/sdk-deno/mod.ts";
 ```
 
-</CodeBox>
+
 
 ### Valist
 
@@ -81,41 +81,41 @@ Grab and install the latest realease from [@theconvospace/sdk](https://app.valis
 
     <Tabs items={['ESM', 'CJS', 'UMD', 'ESM.run']} defaultIndex={1}>
     <Tab>
-    <CodeBox>
+
     ```javascript
     import { Convo } from '@theconvospace/sdk';
     ```
-    </CodeBox>
+
     </Tab>
     <Tab>
-    <CodeBox>
+
     ```javascript
     const { Convo } = require('@theconvospace/sdk');
     ```
-    </CodeBox>
+
     </Tab>
     <Tab>
-    <CodeBox>
+
     ```javascript
     const { Convo } = convo;
     ```
-    </CodeBox>
+
     </Tab>
     <Tab>
-    <CodeBox>
+
     ```javascript
     import { Convo } from 'https://esm.run/@theconvospace/sdk';
     ```
-    </CodeBox>
+
     </Tab>
     </Tabs>
 
 3. Setup an new instance of Convo using
-    <CodeBox>
+
     ```javascript
     const convo = new Convo("apikey")
     ```
-    </CodeBox>
+
     Replace `apikey` with your newly generated key.
 
 

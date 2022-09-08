@@ -4,7 +4,7 @@ image: https://docs.theconvo.space/omnid.png
 ---
 
 import CommentBox from './../../../components/CommentBox'
-import CodeBox from './../../../components/CodeBox'
+
 import { Callout } from 'nextra-theme-docs'
 
 # SDK - Omnid
@@ -12,7 +12,7 @@ import { Callout } from 'nextra-theme-docs'
 ## Get TrustScore for Address
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 convo.omnid.getTrustScore(
@@ -20,10 +20,10 @@ convo.omnid.getTrustScore(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.omnid.getTrustScore(
@@ -31,12 +31,12 @@ let resp = await convo.omnid.getTrustScore(
 );
 ```
 
-</CodeBox>
+
 
 ## Compute entire Trust Score
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 convo.omnid.computeTrustScore(
@@ -45,11 +45,11 @@ convo.omnid.computeTrustScore(
 )
 ```
 
-</CodeBox>
+
 
 `ComputeConfig` is used to pass private variables to adaptors. For eg - API keys, RPC URLs etc. Some adaptors need these, some do not.
 
-<CodeBox>
+
 
 ```typescript
 type ComputeConfig = {
@@ -69,9 +69,9 @@ type ComputeConfig = {
 };
 ```
 
-</CodeBox>
+
 Example,
-<CodeBox>
+
 
 ```javascript
 const computeConfig = {
@@ -84,7 +84,7 @@ let resp = await convo.omnid.computeTrustScore(
 );
 ```
 
-</CodeBox>
+
 
 ## Omnid Kits
 
@@ -107,7 +107,7 @@ Read more on the adaptors [here](/docs/Convo-API/omnid).
 </Callout>
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 convo.omnid.kits.isMalicious(
@@ -116,10 +116,10 @@ convo.omnid.kits.isMalicious(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 const computeConfig = {
@@ -136,13 +136,13 @@ let resp = await convo.omnid.kits.isMalicious(
 );
 ```
 
-</CodeBox>
+
 
 
 ## Execute individual Adaptors
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 convo.omnid.adaptors.*(
@@ -151,11 +151,11 @@ convo.omnid.adaptors.*(
 )
 ```
 
-</CodeBox>
+
 
 Here * is the name of the Adaptor.
 
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.omnid.adaptors.getZoraData(
@@ -164,13 +164,13 @@ let resp = await convo.omnid.adaptors.getZoraData(
 );
 ```
 
-</CodeBox>
+
 
 
 ## Issue - Verifiable Credentials
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 convo.omnid.credentials.issue(
@@ -179,10 +179,10 @@ convo.omnid.credentials.issue(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.omnid.credentials.issue(
@@ -191,12 +191,12 @@ let resp = await convo.omnid.credentials.issue(
 );
 ```
 
-</CodeBox>
+
 
 ## Verify - Verifiable Credentials
 
 Syntax,
-<CodeBox>
+
 
 ```javascript
 convo.omnid.credentials.verify(
@@ -204,10 +204,10 @@ convo.omnid.credentials.verify(
 )
 ```
 
-</CodeBox>
+
 
 Example,
-<CodeBox>
+
 
 ```javascript
 let resp = await convo.omnid.credentials.verify({
@@ -248,4 +248,4 @@ let resp = await convo.omnid.credentials.verify({
 });
 ```
 
-</CodeBox>
+
