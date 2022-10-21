@@ -4,7 +4,7 @@ import '@docsearch/css';
 
 const Doc = () => {
   return (
-    <div className="relative w-full md:w-32 mr-2 docs-search">
+    <div className="relative w-full md:w-32 mr-12 docs-search">
       <DocSearch
         appId="VT0SRL8DNS"
         indexName="data_convo"

@@ -65,9 +65,9 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
                     />
                 <br/>
 
-                    <pre>
+                    <code>
                         {data}
-                    </pre>
+                    </code>
 
             </div>
         )
@@ -99,9 +99,9 @@ const EmbedCodeGenerator = ({kind="default", defaultData=`Start by Entering a UR
                 />
                 <br/>
 
-                    <pre>
+                    <code>
                         {data}
-                    </pre>
+                    </code>
 
             </div>
         )
