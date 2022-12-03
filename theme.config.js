@@ -1,14 +1,23 @@
 import DocSearch from './components/DocSearch'
 import Logo from './components/Logo'
+import { useRouter } from 'next/router'
 
 export default {
   project: {link: 'https://github.com/anudit/convo'},
   chat: {link: "https://discord.gg/MFtmrng9J7"},
   docsRepositoryBase: 'https://github.com/anudit/convodocs',
-  titleSuffix: " – Convo Space",
-  search: true,
-  search: {component: <DocSearch />},
+  // titleSuffix: " – Convo Space",
+  // search: true,
   // unstable_flexsearch: true,
+  search: {component: <DocSearch />},
+  useNextSeoProps() {
+    const { route } = useRouter()
+    if (route !== '/') {
+      return {
+        titleTemplate: '%s – Convo Space'
+      }
+    }
+  },
   feedback: {
     labels: "feedback",
     link: "Question? Give us feedback →",
@@ -53,29 +62,12 @@ export default {
           sizes="180x180"
           href="/apple-icon-180x180.png"
         />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link
           rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/android-icon-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-          href="/favicon-96x96.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
+          href="/icon-white.svg"
+          type="image/svg+xml"
+          media="(prefers-color-scheme: dark)"
         />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       </>
