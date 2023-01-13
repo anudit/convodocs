@@ -21,6 +21,9 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['bafybeib5lto34gw74pcaa3woggtvltpt35hhselq6ijoctunyauroyyely.ipfs.w3s.link'],
+  },
 }
 
 module.exports = withPlugins([
