@@ -22,6 +22,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    unoptimized: true,
     domains: ['bafybeib5lto34gw74pcaa3woggtvltpt35hhselq6ijoctunyauroyyely.ipfs.w3s.link'],
   },
 }
