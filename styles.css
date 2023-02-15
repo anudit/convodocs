@@ -118,3 +118,12 @@ html[class~=dark] .dark\:nx-bg-dark {
   padding-bottom: 5px;
   margin-top: 20px;
 }
+
+@font-face {
+  font-family: "Beatrice Display";
+  src: url("/fonts/BeatriceDisplay-Medium.woff2");
+}
+
+h1 {
+  font-family: "Beatrice Display";
+}
